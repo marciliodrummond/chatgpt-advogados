@@ -98,7 +98,7 @@ export const sections: Section[] = [
 
 Cada ferramenta do ChatGPT traduzida para a linguagem do seu escritório. Sem termos técnicos. Com tudo que você precisa para começar.`,
         elementGrid: [
-          { icon: 'message-square', name: 'Chat', tech: 'chat.openai.com', description: 'A **recepção do escritório**. Conversas rápidas, ida e volta.', whenToUse: 'Perguntas rápidas, brainstorming, tirar dúvidas', highlight: false },
+          { icon: 'message-square', name: 'Chat', tech: 'chatgpt.com', description: 'A **recepção do escritório**. Conversas rápidas, ida e volta.', whenToUse: 'Perguntas rápidas, brainstorming, tirar dúvidas', highlight: false },
           { icon: 'zap', name: 'Canvas', tech: 'Editor colaborativo', description: 'A **sala de edição**. Escreva e edite documentos longos lado a lado com o ChatGPT.', whenToUse: 'Petições, contratos, relatórios, documentos longos', highlight: true },
           { icon: 'terminal', name: 'Code Interpreter', tech: 'Análise de dados', description: 'O **analista de dados**. Processa planilhas, faz cálculos e gera gráficos.', whenToUse: 'Análise de dados, cálculos jurídicos, planilhas', highlight: false },
         ],
@@ -108,7 +108,7 @@ Cada ferramenta do ChatGPT traduzida para a linguagem do seu escritório. Sem te
           'Não precisa ativar tudo de uma vez — vá no seu ritmo',
         ],
         links: [
-          { label: 'Acessar ChatGPT', url: 'https://chat.openai.com' },
+          { label: 'Acessar ChatGPT', url: 'https://chatgpt.com' },
           { label: 'Página de Preços', url: 'https://openai.com/chatgpt/pricing' },
         ],
       },
@@ -176,25 +176,25 @@ O aplicativo desktop permite acessar o ChatGPT rapidamente com atalhos de teclad
 
 **ChatGPT Chat** = Você conversa com o ChatGPT, ele responde. Mas ele não mexe nos seus arquivos. É como conversar com um colega pelo WhatsApp — ele te dá ideias, mas não coloca a mão na massa.
 
-**ChatGPT Canvas** = Você entrega uma pasta de documentos e uma tarefa. Ele lê os documentos, faz um plano, executa o trabalho e entrega pronto. É como ter um estagiário sentado ao seu lado que realmente faz o trabalho.
+**ChatGPT Canvas** = Um editor colaborativo que abre ao lado do chat. Você e o ChatGPT editam o mesmo documento em tempo real — como um Google Docs com IA. Ideal para textos longos como petições, contratos e pareceres.
 
-O Canvas pode: ler dezenas de documentos de uma vez, organizar pastas, criar Word/Excel/PowerPoint, extrair informações, montar relatórios, comparar cláusulas e muito mais.
+Canvas é perfeito para: escrever e revisar documentos longos lado a lado com o ChatGPT, editar código, fazer ajustes pontuais com sugestões inline, e trabalhar iterativamente em textos complexos.
 
 | Característica | Chat | Canvas |
 |----------------|------|--------|
-| **Acessa arquivos?** | Não (só uploads) | Sim, pastas inteiras |
-| **Cria documentos?** | Só artefatos | Word, Excel, PPT reais |
-| **Subtarefas?** | Não | Sim, em paralelo |
-| **Ideal para** | Consultas rápidas | Tarefas completas |`,
+| **Formato** | Mensagens curtas (ida e volta) | Editor de documento (painel lateral) |
+| **Edição** | Copiar/colar do chat | Edição direta inline no documento |
+| **Ideal para** | Consultas rápidas, brainstorming | Textos longos: petições, contratos, pareceres |
+| **Ativação** | Automático | Peça "use o Canvas" ou o ChatGPT abre automaticamente |`,
         tips: [
           'Use o Chat para consultas rápidas e brainstorming',
-          'Use o Canvas para tarefas que envolvem arquivos e entregas',
-          'Você pode alternar entre os dois modos a qualquer momento',
+          'Use o Canvas para redigir e revisar documentos longos colaborativamente',
+          'O Canvas abre automaticamente para tarefas de redação — ou peça "use o Canvas"',
         ],
         flowSteps: [
           { title: 'Chat', description: 'Consulta rápida, brainstorming, dúvidas jurídicas' },
-          { title: 'Canvas', description: 'Tarefas com documentos: análise, redação, organização' },
-          { title: 'Resultado', description: 'Documentos prontos salvos na sua pasta' },
+          { title: 'Canvas', description: 'Redação e revisão de documentos longos lado a lado' },
+          { title: 'Resultado', description: 'Copie o texto final ou baixe via Code Interpreter' },
         ],
       },
       {
@@ -260,7 +260,7 @@ O Canvas pode: ler dezenas de documentos de uma vez, organizar pastas, criar Wor
 | Classificação de documentos | **GPT-5.2** | Repetitivo e previsível |
 | Resumo de decisões | **GPT-5.2** | Extrair pontos-chave rapidamente |
 
-**No chat.openai.com:**
+**No chatgpt.com:**
 Você pode alternar entre os modelos no seletor de modelo (canto superior). O ChatGPT seleciona automaticamente o melhor modelo (GPT-5.2 por padrão), mas você pode escolher GPT-5 manualmente para análises complexas.
 
 **Dica de ouro:**
@@ -380,8 +380,8 @@ Para o **ecossistema mais completo** e maduro, com GPTs, Canvas, Code Interprete
         content: `Cada ambiente tem um propósito diferente. Entender isso é a chave para usar o ChatGPT com eficiência.`,
         elementGrid: [
           { icon: 'message-square', name: 'Chat', tech: 'A Recepção', description: 'O cliente chega, pergunta, o advogado responde. Conversa rápida, ida e volta. Ele **não mexe nos seus arquivos**.', whenToUse: 'Perguntas rápidas, brainstorming, tirar dúvidas, rascunhos curtos', highlight: false },
-          { icon: 'zap', name: 'Canvas', tech: 'A Sala de Trabalho', description: 'Entregue documentos, explique a tarefa e **saia para tomar café**. Quando voltar, o trabalho está pronto.', whenToUse: 'Contratos, relatórios, due diligence, peças processuais, organização', highlight: true },
-          { icon: 'terminal', name: 'Code Interpreter', tech: 'Sala do Programador', description: 'Tela preta, código, terminal. Muito poderoso, mas **feito para desenvolvedores**. A maioria não precisa.', whenToUse: 'Criar sistemas, ferramentas de legaltech, automações complexas', highlight: false },
+          { icon: 'zap', name: 'Canvas', tech: 'A Sala de Trabalho', description: 'Editor colaborativo: você e o ChatGPT editam o mesmo documento lado a lado. Peça ajustes, o ChatGPT sugere — vocês constroem juntos.', whenToUse: 'Petições, contratos, pareceres, revisão de textos longos', highlight: true },
+          { icon: 'terminal', name: 'Code Interpreter', tech: 'O Analista de Dados', description: 'Executa código Python, analisa planilhas, gera gráficos. **Perfeito para advogados** que lidam com cálculos e dados.', whenToUse: 'Cálculos jurídicos, análise de planilhas, gráficos de jurimetria, correção monetária', highlight: false },
         ],
       },
       {
@@ -392,26 +392,24 @@ Para o **ecossistema mais completo** e maduro, com GPTs, Canvas, Code Interprete
         analogy: {
           text: 'Imagine um **armário com pastas etiquetadas**: "Trabalhista", "Consumidor", "Previdenciário". Cada pasta tem tudo: modelos, checklists, legislação, fluxos. **Sem a pasta = genérico. Com a pasta = especialista.**',
         },
-        content: `GPTs são pacotes completos de funcionalidade que transformam o ChatGPT em um especialista de uma área. Eles combinam Custom Instructions + GPT Actions + Integrações em um kit pronto.`,
+        content: `GPTs são assistentes personalizados que transformam o ChatGPT em um especialista de uma área. Eles combinam Instructions (regras de comportamento) + Knowledge (documentos de referência) + Actions (conexões com APIs) + Conversation Starters (sugestões de uso).`,
         relationship: {
           title: 'O que tem dentro de um GPT',
           items: [
-            { label: 'GPT', value: 'O pacote completo', sub: 'Kit Jurídico', highlight: true, flex: 2 },
-            { label: 'Custom Instructions', value: 'Conhecimento', sub: 'Como revisar contrato' },
-            { label: 'Commands', value: 'Atalhos /', sub: '/review-contract' },
-            { label: 'Integrações', value: 'Ligações', sub: 'Slack, Drive' },
+            { label: 'GPT', value: 'O assistente completo', sub: 'Kit Jurídico', highlight: true, flex: 2 },
+            { label: 'Instructions', value: 'Regras de comportamento', sub: 'Como revisar contrato' },
+            { label: 'Starters', value: 'Sugestões de uso', sub: '"Revise este contrato"' },
+            { label: 'Actions', value: 'Conexões com APIs', sub: 'Drive, calendário' },
           ],
           symbols: ['=', '+', '+'],
         },
         tips: [
-          'Instale o GPT Legal para ter os comandos jurídicos',
-          'GPTs podem ser criados por você ou pela comunidade',
-          'Cada GPT instalado adiciona novos GPT Actions',
+          'Explore a GPT Store para encontrar GPTs jurídicos da comunidade',
+          'GPTs podem ser criados por você (sem programar!) ou pela comunidade',
+          'Para criar um GPT: chatgpt.com → seu perfil → Meus GPTs → Criar',
         ],
         links: [
-          { label: 'Página de GPTs', url: 'https://chat.openai.com/gpts' },
-          { label: 'GPT Jurídico', url: 'https://chat.openai.com/gpts/legal' },
-          { label: 'GitHub dos GPTs', url: 'https://github.com/openai/knowledge-work-GPTs' },
+          { label: 'GPT Store', url: 'https://chatgpt.com/gpts' },
         ],
       },
       {
@@ -459,41 +457,41 @@ Para o **ecossistema mais completo** e maduro, com GPTs, Canvas, Code Interprete
         ],
       },
       {
-        title: 'GPT Actions: Formulários Prontos',
-        subtitle: 'Atalhos que transformam tarefas complexas em formulários simples',
+        title: 'Conversation Starters e Prompts Padrão',
+        subtitle: 'Prompts prontos que transformam tarefas complexas em um clique',
         level: 'intermediario',
         icon: 'sliders',
         analogy: {
           text: 'A secretária tem **formulários prontos** para os pedidos mais comuns. Em vez de explicar tudo do zero, você pega o formulário, **preenche os campos e entrega**. O trabalho sai padronizado.',
         },
-        content: `No Canvas, digite \`/\` na caixa de texto, escolha o comando e preencha o formulário.`,
+        content: `Ao abrir um GPT personalizado, você verá **Conversation Starters** — botões com prompts sugeridos que iniciam fluxos pré-configurados. Basta clicar e complementar com os dados do caso.`,
         commandList: [
-          { command: '/review-contract', description: 'Análise cláusula por cláusula com semáforo verde/amarelo/vermelho' },
-          { command: '/triage-nda', description: 'Classificação rápida de NDAs por nível de risco' },
-          { command: '/brief', description: 'Geração de briefing jurídico formatado' },
-          { command: '/vendor-check', description: 'Verificação de status de contrato de fornecedor' },
-          { command: '/respond', description: 'Modelo de resposta padronizada (LGPD, discovery, etc.)' },
+          { command: 'Revise este contrato', description: 'Análise cláusula por cláusula com semáforo verde/amarelo/vermelho' },
+          { command: 'Triar este NDA', description: 'Classificação rápida de NDAs por nível de risco' },
+          { command: 'Gerar briefing', description: 'Geração de briefing jurídico formatado' },
+          { command: 'Verificar fornecedor', description: 'Verificação de status de contrato de fornecedor' },
+          { command: 'Responder LGPD', description: 'Modelo de resposta padronizada para solicitações LGPD' },
         ],
       },
       {
-        title: 'Multi-tools: Estagiários em Paralelo',
-        subtitle: 'Processos automáticos que dividem tarefas grandes',
+        title: 'Processamento de Múltiplos Arquivos',
+        subtitle: 'Envie vários documentos e o ChatGPT analisa todos',
         level: 'intermediario',
         icon: 'users',
         analogy: {
-          text: 'O estagiário principal recebe: "Analise 20 contratos". Em vez de fazer sozinho, **divide o trabalho entre vários sub-estagiários**. Cada um faz sua parte, devolve, e o principal monta o relatório final. **Acontece automaticamente.**',
+          text: 'Você entrega 20 contratos para o estagiário. Ele lê cada um, anota os pontos relevantes e monta um relatório consolidado. O ChatGPT faz o mesmo — basta enviar os arquivos no chat.',
         },
-        content: `Quando você pede algo complexo, o ChatGPT não faz tudo sozinho. Ele **delega subtarefas** para multi-tools especializados. Isso acontece **em paralelo** — 5 contratos são analisados simultaneamente, não um por um.`,
+        content: `Quando você envia múltiplos arquivos no chat, o ChatGPT analisa todos na mesma conversa. Envie PDFs, planilhas e documentos Word diretamente no chat e peça análises comparativas, resumos ou relatórios consolidados.`,
         flowSteps: [
-          { title: 'Tarefa', description: '"Analise 20 contratos"' },
-          { title: 'Divisão automática', description: 'Multi-tools 1-4 analisam em paralelo (5 contratos cada)' },
-          { title: 'Combinação', description: 'Resultados são consolidados automaticamente' },
-          { title: 'Relatório Final', description: 'Documento completo com todas as análises' },
+          { title: 'Upload', description: 'Envie os arquivos no chat (arraste ou clique no "+")' },
+          { title: 'Instrução', description: '"Analise estes 5 contratos e compare as cláusulas de rescisão"' },
+          { title: 'Análise', description: 'O ChatGPT processa cada documento e cruza informações' },
+          { title: 'Resultado', description: 'Relatório comparativo na conversa (copie ou peça download)' },
         ],
         tips: [
-          'Quanto mais clara sua instrução, melhor o ChatGPT divide as tarefas',
-          'Para tarefas com muitos documentos, organize-os em subpastas temáticas',
-          'O Canvas mostra o plano de execução antes de começar — revise-o',
+          'Quanto mais clara sua instrução, melhor o resultado da análise',
+          'Para documentos muito grandes, divida em partes e analise em conversas separadas',
+          'Use o Code Interpreter para gerar planilhas comparativas e gráficos',
         ],
       },
       {
@@ -528,7 +526,7 @@ Para o **ecossistema mais completo** e maduro, com GPTs, Canvas, Code Interprete
         },
         content: `Existem duas formas de dar contexto permanente ao ChatGPT:`,
         elementGrid: [
-          { icon: 'folder-open', name: 'Projetos (chat.openai.com)', tech: 'A Pasta do Caso — Web', description: 'Espaço no chat.openai.com com documentos de referência e instruções. O ChatGPT **usa em todas as conversas** daquele projeto.', highlight: false },
+          { icon: 'folder-open', name: 'Projetos (chatgpt.com)', tech: 'A Pasta do Caso — Web', description: 'Espaço no chatgpt.com com documentos de referência e instruções. O ChatGPT **usa em todas as conversas** daquele projeto.', highlight: false },
           { icon: 'file-text', name: 'Custom Instructions', tech: 'A Capa com Regras — Canvas', description: 'Arquivo **Custom Instructions** na raiz da pasta. O ChatGPT lê automaticamente toda vez que trabalha naquela pasta.', highlight: true },
         ],
       },
@@ -574,7 +572,7 @@ Para o **ecossistema mais completo** e maduro, com GPTs, Canvas, Code Interprete
           {
             title: 'Semana 1 — O Básico',
             items: [
-              'Criar conta em chat.openai.com',
+              'Criar conta em chatgpt.com',
               'Escolher plano (Plus = US$ 20/mês ~ R$ 120, ou Go = US$ 8/mês)',
               'Baixar ChatGPT Desktop',
               'Explorar as abas Chat e Canvas',
@@ -620,10 +618,10 @@ Para o **ecossistema mais completo** e maduro, com GPTs, Canvas, Code Interprete
         icon: 'link',
         content: `Acesse rapidamente os recursos mais importantes do ecossistema ChatGPT:`,
         links: [
-          { label: 'Criar Conta', url: 'https://chat.openai.com' },
+          { label: 'Criar Conta', url: 'https://chatgpt.com' },
           { label: 'Baixar ChatGPT Desktop', url: 'https://openai.com/chatgpt/download' },
           { label: 'Escolher Plano', url: 'https://openai.com/chatgpt/pricing' },
-          { label: 'GPT Store', url: 'https://chat.openai.com/gpts' },
+          { label: 'GPT Store', url: 'https://chatgpt.com/gpts' },
           { label: 'Guia do Canvas', url: 'https://help.openai.com/en/articles/9930697-what-is-the-canvas-feature-in-chatgpt' },
           { label: 'Central de Ajuda', url: 'https://help.openai.com' },
           { label: 'Blog OpenAI', url: 'https://openai.com/blog' },
@@ -659,62 +657,62 @@ Para o **ecossistema mais completo** e maduro, com GPTs, Canvas, Code Interprete
 
 **Exemplo prático:** Um advogado previdenciarista configura: "Sempre considere as atualizações da Reforma da Previdência (EC 103/2019), cite jurisprudência do STJ e TNU, e calcule tempos de contribuição usando a regra de transição aplicável."`,
         steps: [
-          'Acesse chat.openai.com e faça login',
+          'Acesse chatgpt.com e faça login',
           'Clique no menu lateral esquerdo, no ícone de maleta (Personalizar)',
           'Preencha suas informações: quem é, o que faz, como quer respostas',
-          'Crie um Instrução: clique em "Criar Instrução" e escreva instruções específicas',
+          'Personalize: clique em "Personalizar ChatGPT" e escreva instruções específicas',
           'Salve — as preferências valem para todas as conversas',
         ],
         prompt: `Sou advogado(a) [sua especialidade] no Brasil, inscrito(a) na OAB/[UF] nº [número]. Atuo principalmente em [áreas]. Sempre considere a legislação brasileira vigente, especialmente [CPC, CLT, CDC, CC etc]. Use linguagem técnica jurídica. Quando possível, cite jurisprudência recente dos tribunais superiores (STF, STJ, TST). Formate respostas com: I) tese principal, II) fundamentos legais, III) jurisprudência, IV) conclusão.`,
         links: [
-          { label: 'Acessar Personalizar', url: 'https://chat.openai.com/settings' },
+          { label: 'Acessar Personalizar', url: 'https://chatgpt.com/settings' },
         ],
       },
       {
-        title: 'Estilos de Escrita Jurídica',
-        subtitle: 'O ChatGPT escreve como você — literalmente',
+        title: 'Definindo seu Estilo de Escrita',
+        subtitle: 'Ensine o ChatGPT a escrever como você',
         level: 'intermediario',
         icon: 'pen-tool',
         analogy: {
-          text: 'Todo advogado experiente tem um **estilo de escrita reconhecível** — a forma como estrutura argumentos, a escolha de palavras, o tom. Os Estilos (Styles) permitem que o ChatGPT **absorva e reproduza** esse estilo em todas as respostas. É como clonar sua voz jurídica.',
+          text: 'Todo advogado experiente tem um **estilo de escrita reconhecível** — a forma como estrutura argumentos, a escolha de palavras, o tom. Usando as Custom Instructions e exemplos na conversa, o ChatGPT **aprende e reproduz** esse estilo. É como clonar sua voz jurídica.',
         },
-        content: `Os Estilos permitem definir COMO o ChatGPT escreve — não apenas O QUE ele escreve. Diferente do Personalizar (que diz quem você é), o Estilo define a forma, o tom e a estrutura das respostas.
+        content: `Você pode ensinar o ChatGPT a escrever no SEU estilo usando duas estratégias:
 
-**4 estilos pré-definidos:**
+**1. Via Custom Instructions (permanente):**
 
-| Estilo | Descrição | Uso Jurídico |
-|--------|-----------|-------------|
-| **Normal** | Equilibrado, conversacional | Conversas internas, brainstorming |
-| **Formal** | Polido, profissional, preciso | Petições, pareceres, contratos |
-| **Conciso** | Direto, sem rodeios | Resumos executivos, despachos, e-mails rápidos |
-| **Explicativo** | Didático, detalhado | Explicar direito para clientes leigos |
+No campo "Como você gostaria que o ChatGPT respondesse?", defina seu estilo:
 
-**O poder dos Estilos Personalizados:**
+| Instrução | Efeito |
+|-----------|--------|
+| "Use linguagem formal e técnica" | Tom profissional para petições |
+| "Parágrafos curtos, máximo 3 linhas" | Estrutura concisa |
+| "Cite jurisprudência no formato: STJ, REsp nº X" | Padrão de citação |
+| "Seja direto, sem rodeios" | Comunicação objetiva |
 
-Envie amostras do SEU trabalho (petições, pareceres, e-mails) e o ChatGPT aprende a escrever como você. Isso inclui:
+**2. Via exemplos na conversa (por sessão):**
+
+Cole uma amostra do seu trabalho e peça: "Analise meu estilo de escrita neste exemplo e reproduza-o nas próximas respostas." O ChatGPT absorve:
 - Estrutura de parágrafos e argumentos
 - Vocabulário e termos técnicos preferidos
 - Tom (mais combativo, mais conciliador, mais técnico)
-- Nível de formalidade
 - Padrões de citação jurisprudencial
 
 **Exemplo prático:**
-Um advogado tributarista envia 3 pareceres e 2 petições como amostra. O ChatGPT aprende que ele prefere: parágrafos curtos, citação no formato "STJ, REsp nº X, Rel. Min. Y", argumentação dedutiva (premissa geral → caso concreto), e conclusões numeradas.
+Cole um parecer seu e diga: "A partir de agora, escreva todos os textos neste estilo." O ChatGPT replica sua estrutura, tom e vocabulário.
 
-**Estilos combinados com Custom Instructions:**
-O Estilo define a FORMA. O Instrução define o CONTEÚDO. Juntos, o ChatGPT escreve como você E sabe o que você precisa.`,
+**Dica:** Combine as Custom Instructions (estilo base permanente) com exemplos na conversa (ajustes pontuais) para controle total.`,
         steps: [
-          'Acesse chat.openai.com → clique no seu avatar → "Estilos"',
-          'Escolha um estilo pré-definido (Formal é o melhor para começar)',
-          'Para personalizar: clique em "Criar Estilo Personalizado"',
-          'Envie 2-5 amostras do seu trabalho (petições, pareceres, e-mails)',
-          'O ChatGPT analisa e cria um perfil de escrita que replica seu estilo',
+          'Acesse chatgpt.com → clique no seu perfil → "Personalizar ChatGPT"',
+          'No campo "Como você gostaria que o ChatGPT respondesse?", defina seu estilo base',
+          'Para ajustar por conversa: cole um exemplo do seu trabalho e peça para replicar',
+          'Para Projetos: defina o estilo nas instruções do Projeto (campo mais longo)',
+          'Teste com uma petição curta e ajuste as instruções até ficar satisfeito',
         ],
         tips: [
-          'Crie estilos diferentes para contextos diferentes: "Petição" (formal), "Cliente" (acessível), "Colega" (técnico direto)',
-          'O estilo "Formal" é ideal como ponto de partida para toda redação jurídica',
-          'Envie suas MELHORES peças como amostra — o ChatGPT vai replicar aquele nível',
-          'Estilos funcionam em conjunto com Custom Instructions e Projetos — não se sobrepõem',
+          'Defina estilos diferentes em Projetos separados: "Petições" (formal), "Clientes" (acessível)',
+          'Custom Instructions são limitadas a ~1.500 caracteres — seja conciso nas instruções de estilo',
+          'Cole suas MELHORES peças como exemplo na conversa — o ChatGPT vai replicar aquele nível',
+          'Projetos permitem instruções mais longas — use-os para estilos detalhados por área',
         ],
       },
       {
@@ -723,15 +721,15 @@ O Estilo define a FORMA. O Instrução define o CONTEÚDO. Juntos, o ChatGPT esc
         level: 'intermediario',
         icon: 'brain',
         analogy: {
-          text: 'Imagine um assistente que **nunca esquece**: lembra que você prefere citar o STJ antes do STF, que seu cliente João Silva tem processo em 3 varas diferentes, e que você odeia latinismos. A Memória do ChatGPT faz exatamente isso — e agora é **grátis para todos**.',
+          text: 'Imagine um assistente que **nunca esquece**: lembra que você prefere citar o STJ antes do STF, que seu cliente João Silva tem processo em 3 varas diferentes, e que você odeia latinismos. A Memória do ChatGPT faz exatamente isso.',
         },
-        content: `A Memória permite que o ChatGPT lembre informações de conversas anteriores e as use automaticamente em conversas futuras. Desde março de 2026, está disponível gratuitamente para todos os usuários.
+        content: `A Memória permite que o ChatGPT lembre informações de conversas anteriores e as use automaticamente em conversas futuras. Disponível nos planos Plus, Pro, Team e Enterprise.
 
 **Como funciona:**
 
 | Aspecto | Detalhes |
 |---------|---------|
-| **Atualização** | A cada 24 horas, o ChatGPT sintetiza suas conversas recentes |
+| **Atualização** | Durante as conversas, o ChatGPT salva automaticamente fatos importantes que você menciona |
 | **Escopo** | Lembra preferências, padrões de trabalho, contexto recorrente |
 | **Controle** | Você pode pausar, deletar ou gerenciar o que é lembrado |
 | **Privacidade** | Dados da memória não são usados para treinamento |
@@ -747,9 +745,6 @@ O Estilo define a FORMA. O Instrução define o CONTEÚDO. Juntos, o ChatGPT esc
 **Exemplo prático:**
 Na segunda-feira, você diz: "Estou trabalhando no caso Maria Silva, rescisão indireta, 5ª Vara do Trabalho de BH." Na quinta, em outra conversa, basta dizer "continue a análise do caso Maria Silva" — o ChatGPT já sabe tudo.
 
-**Importação de memórias:**
-O ChatGPT agora permite importar memórias do ChatGPT e outros assistentes. Se você já tem histórico em outra IA, pode trazê-lo para o ChatGPT sem começar do zero.
-
 **Memória vs. Projeto:**
 
 | | Memória | Projeto |
@@ -760,10 +755,9 @@ O ChatGPT agora permite importar memórias do ChatGPT e outros assistentes. Se v
 | **Uso ideal** | Personalização geral | Contexto específico de um caso |`,
         steps: [
           'A memória já está ativa por padrão — basta usar o ChatGPT normalmente',
-          'Para gerenciar: Configurações → Privacidade → Controles de Memória',
+          'Para gerenciar: Configurações → Personalização → Memória',
           'Para deletar memórias específicas: peça "esqueça que eu prefiro X"',
-          'Para importar do ChatGPT: Configurações → Memória → Importar',
-          'Para pausar temporariamente: use o modo Incógnito',
+          'Para pausar temporariamente: use o Chat Temporário',
         ],
         tips: [
           'Nas primeiras conversas, seja explícito sobre suas preferências — o ChatGPT vai lembrar',
@@ -772,7 +766,7 @@ O ChatGPT agora permite importar memórias do ChatGPT e outros assistentes. Se v
           'Revise suas memórias periodicamente em Configurações para garantir que estão corretas',
         ],
         links: [
-          { label: 'Gerenciar Memória', url: 'https://chat.openai.com/settings/data-privacy-controls' },
+          { label: 'Gerenciar Memória', url: 'https://chatgpt.com/settings/data-privacy-controls' },
         ],
       },
       {
@@ -999,7 +993,7 @@ Seja honesto. Se a tese for fraca, diga claramente.`,
 
 **Vantagens dos Projetos:**
 - **Instruções personalizadas** que valem para todas as conversas do projeto
-- **Knowledge Base:** envie PDFs, Word, planilhas como referência permanente
+- **Arquivos do Projeto:** envie PDFs, Word, planilhas como referência permanente
 - **Múltiplas conversas** compartilhando o mesmo contexto
 - **Memória persistente:** diferente de conversas soltas, nada se perde
 
@@ -1017,7 +1011,7 @@ Crie um Projeto "Caso Maria Silva — Rescisão Indireta" e envie: petição ini
         ],
         tips: [
           'Crie um projeto para cada cliente ou caso importante',
-          'Envie a petição inicial, contestação, laudos periciais como Knowledge Base',
+          'Envie a petição inicial, contestação, laudos periciais como Arquivos do Projeto',
           'Inicie uma nova conversa dentro do projeto para cada tarefa diferente',
           'Atualize as instruções conforme o caso evolui',
         ],
@@ -1046,7 +1040,7 @@ Basta pedir! O ChatGPT decide automaticamente quando criar um artefato. Para for
         tips: [
           'Peça "Crie um fluxograma do procedimento de uma ação trabalhista"',
           'Use para criar apresentações visuais para clientes',
-          'Ative em Configurações → Canvas (recomendamos manter ligado)',
+          'Canvas ativa automaticamente — não precisa configurar nada',
           'Peça calculadoras: "Crie uma calculadora de custas judiciais para o TJ-SP"',
         ],
       },
@@ -1160,29 +1154,31 @@ Ao final, recomende a linha argumentativa mais robusta e explique por quê.`,
         level: 'intermediario',
         icon: 'monitor',
         analogy: {
-          text: 'A **sala de trabalho** do escritório. Entregue os documentos, explique a tarefa e **saia para tomar café**. Quando voltar, o trabalho está pronto — petições, planilhas, relatórios, tudo salvo na sua pasta.',
+          text: 'Um **quadro branco compartilhado** no escritório. Você e o ChatGPT editam o mesmo documento ao mesmo tempo — você sugere mudanças, ele refina; ele propõe uma estrutura, você ajusta. Colaboração real, em tempo real.',
         },
-        content: `O Canvas é a funcionalidade mais poderosa do ChatGPT para quem **não é programador**. Ele transforma o ChatGPT em um verdadeiro "colega de trabalho digital" que roda no seu computador.
+        content: `O Canvas é um **editor colaborativo de texto e código** que abre como um painel lateral ao lado do chat. Você e o ChatGPT trabalham juntos no mesmo documento — ambos podem sugerir edições, reescrever trechos e refinar o conteúdo em tempo real.
 
-Enquanto o chat responde mensagens uma a uma, o Canvas permite que o ChatGPT execute tarefas complexas de múltiplas etapas — criando arquivos reais, organizando pastas, gerando documentos formatados e coordenando subtarefas em paralelo.
+**O que o Canvas é:**
+- Editor de texto e código com painel lateral
+- Colaboração direta: você e o ChatGPT editam o mesmo documento
+- Ideal para documentos longos que precisam de refinamento iterativo
+- Perfeito para rascunhos de petições, contratos, pareceres e relatórios
 
-**O que ele pode fazer:**
-- Organizar arquivos e pastas inteiras
-- Criar documentos Word, Excel, PowerPoint
-- Processar dados e gerar relatórios
-- Pesquisar e sintetizar informações
-- Trabalhar com múltiplas tarefas em paralelo
-- Delegar para multi-tools especializados`,
+**O que o Canvas NÃO é:**
+- Não acessa arquivos locais do seu computador
+- Não cria documentos Word ou Excel automaticamente
+- Não organiza pastas ou executa tarefas no sistema operacional
+- Não é um agente autônomo que age enquanto você sai
+
+**Como o Canvas abre:**
+- Automaticamente: o ChatGPT decide abrir quando percebe que o documento merece edição colaborativa
+- Manualmente: diga "use o Canvas" ou "abra no Canvas" em qualquer mensagem`,
         steps: [
-          'Abra o ChatGPT Desktop e troque para a aba "Canvas"',
-          'Escolha uma pasta para o ChatGPT trabalhar',
-          'Conceda permissão para ler, editar e criar arquivos',
-          'Descreva sua tarefa de forma específica e detalhada',
-          'Revise o plano do ChatGPT e deixe-o executar',
-          'Acompanhe em tempo real ou volte quando terminar',
-        ],
-        links: [
-          { label: 'Baixar ChatGPT Desktop', url: 'https://chat.openai.com/download' },
+          'Abra o ChatGPT no navegador ou no aplicativo',
+          'Peça ajuda para escrever ou editar algo longo — petição, contrato, parecer',
+          'O Canvas abre automaticamente como painel lateral',
+          'Edite diretamente no painel ou peça ao ChatGPT para refinar trechos',
+          'Para forçar a abertura, diga explicitamente "use o Canvas para isto"',
         ],
       },
       {
@@ -2122,7 +2118,7 @@ Preencha com 10 linhas de exemplo realistas de processos trabalhistas.`,
         analogy: {
           text: 'Imagine ter um **quadro branco gigante** onde você cola 10 contratos lado a lado e marca as diferenças com caneta vermelha. O ChatGPT faz isso em segundos — compara cláusulas, identifica divergências e gera um relatório consolidado.',
         },
-        content: `Uma das tarefas mais demoradas na advocacia é comparar múltiplos documentos. O Canvas do ChatGPT, com sua janela de contexto de 1 milhão de tokens (~2.500 páginas), faz isso com profundidade impossível para qualquer humano.
+        content: `Uma das tarefas mais demoradas na advocacia é comparar múltiplos documentos. O ChatGPT, com sua janela de contexto de 256K tokens (~640 páginas), faz isso com profundidade impossível para qualquer humano.
 
 **Tipos de comparação disponíveis:**
 
@@ -2165,7 +2161,7 @@ Seja específico: cite números de cláusulas, artigos de lei e trechos exatos d
           'Coloque todos os documentos na mesma pasta do Canvas para análise conjunta',
           'Para contratos: peça comparação cláusula a cláusula com referência ao CC/CDC/CLT',
           'Para due diligence: analise todos os contratos de uma empresa em uma única sessão',
-          'O ChatGPT consegue processar até ~2.500 páginas em uma única conversa (1M tokens)',
+          'O ChatGPT consegue processar até ~640 páginas em uma única conversa (256K tokens)',
         ],
       },
       {
@@ -2433,7 +2429,7 @@ APÓS O CARROSSEL, crie também:
           'Crie um Project "Marketing Jurídico" com as regras OAB nas instruções',
           'Produza conteúdo em lote: 1 hora de ChatGPT = conteúdo para a semana toda',
           'Peça variações: "Agora adapte para público empresarial" ou "para pessoas físicas"',
-          'Use Artifacts para gerar tabelas e infográficos diretamente no ChatGPT',
+          'Use Canvas para gerar tabelas e infográficos diretamente no ChatGPT',
         ],
         checklist: [
           {
@@ -2550,19 +2546,29 @@ Salve cada documento em uma subpasta "Onboarding" dentro desta pasta.`,
         analogy: {
           text: 'Os **manuais de procedimento interno** do escritório. "Quando chegar um caso de dano moral, siga estes passos..." O estagiário novo não sabe nada, mas **quando lê o manual, segue o procedimento certo**.',
         },
-        content: `Custom Instructions são **instruções escritas em arquivo de texto simples** (.md) que ensinam o ChatGPT a fazer tarefas específicas do jeito que você quer. Quando você conversa, ele lê automaticamente todos os seus Custom Instructions e decide **sozinho** qual usar.
+        content: `Custom Instructions são **dois campos de texto** em Configurações → Personalizar ChatGPT que ensinam o ChatGPT a responder do jeito que você quer — em todas as conversas, automaticamente.
 
-**Custom Instructions vs GPTs do ChatGPT:**
+**Os dois campos:**
 
-| Característica | ChatGPT Custom Instructions | GPTs do ChatGPT |
-|----------------|--------------|-----------------|
-| Como ativa? | Automático | Manual (abrir GPT específico) |
-| Combinar vários? | Sim! Juntos na mesma conversa | Não. Cada GPT é isolado |
-| Onde funcionam? | Em qualquer conversa | Apenas naquele GPT |
-| Como criar? | Arquivo .md com instruções | Criador visual (limitado) |
-| Limite de instruções? | Amplo (milhares de tokens) | 8.000 caracteres |
+| Campo | O que colocar |
+|-------|--------------|
+| **"O que você gostaria que o ChatGPT soubesse sobre você?"** | Sua área de atuação, cargo, estado, preferências, contexto profissional |
+| **"Como você gostaria que o ChatGPT respondesse?"** | Tom, formato, estrutura, nível de formalidade, o que evitar |
 
-No ChatGPT, você troca de "assistente" para cada tarefa. No ChatGPT, você trabalha em uma conversa só e o ChatGPT ativa os Custom Instructions corretos automaticamente.`,
+**Características importantes:**
+- Cada campo suporta até ~1.500 caracteres
+- Aplicam-se a TODAS as conversas globalmente
+- Não precisam ser ativados manualmente — sempre estão ativos
+- Para instruções específicas por caso ou projeto, use a funcionalidade Projetos (limite de caracteres maior)
+
+**Custom Instructions vs Projetos:**
+
+| Característica | Custom Instructions | Projetos |
+|----------------|---------------------|---------|
+| Escopo | Todas as conversas | Apenas aquele projeto |
+| Ativação | Automática, sempre ativa | Manual (abrir o projeto) |
+| Limite de texto | ~1.500 caracteres por campo | Muito maior |
+| Uso ideal | Perfil e preferências gerais | Contexto específico de um caso |`,
       },
       {
         title: 'Criando Custom Instructions Jurídicos',
@@ -2588,7 +2594,7 @@ Instruções: "Sempre use a estrutura: I) Dos Fatos, II) Do Direito, III) Dos Pe
 - Acesso direto a **arquivos locais**`,
         steps: [
           'Vá em Personalizar → Custom Instructions',
-          'Clique em "Criar Instrução"',
+          'Clique em "Personalizar ChatGPT"',
           'Dê um nome descritivo (ex: "peticoes-trabalhistas")',
           'Escreva instruções detalhadas sobre formato, tom, estrutura, referências',
           'Salve — o Instrução fica ativo automaticamente em todas as conversas',
@@ -2678,7 +2684,7 @@ REGRA DE JURISPRUDÊNCIA:
 - Nunca invente números de processo ou relator
 - Prefira Súmulas e teses repetitivas
 \`\`\``,
-        prompt: `[SKILL DE PETIÇÃO UNIVERSAL — COPIE E SALVE COMO .md]
+        prompt: `[INSTRUÇÃO PERSONALIZADA DE PETIÇÃO UNIVERSAL — COPIE E SALVE COMO .md]
 
 IDENTIDADE:
 Você é um advogado [SUA ÁREA] com 15 anos de experiência, atuando no [SEU TRIBUNAL/REGIÃO].
@@ -2705,7 +2711,7 @@ ESTILO DE REFERÊNCIA:
         steps: [
           'Copie o template do prompt acima',
           'Personalize: substitua [SUA ÁREA], [SEU TRIBUNAL], [LEGISLAÇÃO]',
-          'Salve como arquivo .md (ex: skill-peticao-universal.md)',
+          'Cole o texto acima no campo de Custom Instructions ou nas instruções do Projeto',
           'No ChatGPT: Configurações → Custom Instructions → Adicionar → Envie o arquivo',
           'Teste: peça uma petição e veja o ChatGPT seguir todas as regras',
           'Ajuste: refine as instruções com base nos resultados',
@@ -2751,7 +2757,7 @@ ESTILO DE REFERÊNCIA:
 → Demonstre empatia com a situação do cliente
 → Confirme prazos e datas relevantes
 → Reforce que está acompanhando de perto`,
-        prompt: `[SKILL DE COMUNICAÇÃO — COPIE E SALVE COMO .md]
+        prompt: `[INSTRUÇÃO PERSONALIZADA DE COMUNICAÇÃO — COPIE E SALVE COMO .md]
 
 IDENTIDADE:
 Você é o assistente de comunicação do escritório [NOME DO ESCRITÓRIO].
@@ -2824,7 +2830,7 @@ Crie o Instrução com suas áreas de atuação, público-alvo preferencial e to
 
 **Fluxo semanal:**
 Segunda: escolha o tema → Terça: carrossel → Quarta: reels → Quinta: LinkedIn → Sexta: stories`,
-        prompt: `[SKILL DE MARKETING JURÍDICO — COPIE E SALVE COMO .md]
+        prompt: `[INSTRUÇÃO PERSONALIZADA DE MARKETING JURÍDICO — COPIE E SALVE COMO .md]
 
 IDENTIDADE:
 Você é um especialista em marketing de conteúdo para advogados brasileiros.
@@ -2870,7 +2876,7 @@ PROIBIDO:
           'Produza em lote: 1 hora com ChatGPT = conteúdo da semana inteira',
           'Peça "5 temas que geram engajamento em [sua área]" para nunca faltar pauta',
           'Adapte: "Transforme este carrossel em roteiro de Reels de 45 segundos"',
-          'Use Artifacts para gerar tabelas e infográficos diretamente no ChatGPT',
+          'Use Canvas para gerar tabelas e infográficos diretamente no ChatGPT',
         ],
         steps: [
           'Copie o template do Instrução acima',
@@ -2927,9 +2933,9 @@ Instruções específicas do cliente nas instruções do Projeto. Preferências,
         },
         content: `Crie um Instrução que ensina o ChatGPT a aplicar Visual Law em qualquer documento jurídico. Uma vez ativado, TODAS as peças que o ChatGPT gerar seguirão o padrão visual do escritório.
 
-**Como criar o Instrução:**
+**Como configurar:**
 
-Vá em ChatGPT → Personalizar → Custom Instructions → Criar Instrução e cole o conteúdo abaixo.
+Vá em ChatGPT → perfil → Personalizar ChatGPT → Custom Instructions e cole o conteúdo abaixo.
 
 **O que o Instrução faz automaticamente:**
 - Insere quadro resumo no topo de petições
@@ -2946,7 +2952,7 @@ Este Instrução pode ser combinado com qualquer outro Instrução do escritóri
 
 **Personalização:**
 Adapte o Instrução para o padrão do seu escritório: tipo de fonte, margens, estilo de tabelas, cores (se o tribunal aceitar).`,
-        prompt: `SKILL: Visual Law / Legal Design para Documentos Jurídicos
+        prompt: `INSTRUÇÃO PERSONALIZADA: Visual Law / Legal Design para Documentos Jurídicos
 
 Ao gerar qualquer documento jurídico (petição, parecer, recurso, contestação, contrato), aplique SEMPRE as seguintes técnicas de Visual Law:
 
@@ -2999,7 +3005,7 @@ Aplique estas regras em TODOS os documentos jurídicos, salvo instrução contr�
         ],
         steps: [
           'Abra o ChatGPT → clique em "Personalizar" (canto inferior esquerdo)',
-          'Vá em "Custom Instructions" → clique em "Criar Instrução"',
+          'Vá em "Custom Instructions" → clique em "Personalizar ChatGPT"',
           'Dê o nome "Visual Law / Legal Design"',
           'Cole o prompt completo acima no campo de instruções',
           'Salve — a partir de agora, TODA peça jurídica sairá com Visual Law',
@@ -3040,7 +3046,7 @@ Quando você joga a contestação no ChatGPT e pede "faça uma réplica", recebe
 3. Pontos de ataque específicos da defesa
 4. Fragilidades identificadas na contestação
 5. Pontos que precisam de reforço argumentativo ou probatório`,
-        prompt: `SKILL: Réplica Estratégica — Cadeia de 3 Prompts Sequenciais
+        prompt: `INSTRUÇÃO PERSONALIZADA: Réplica Estratégica — Cadeia de 3 Prompts Sequenciais
 
 Quando o usuário pedir para elaborar uma réplica à contestação, SEMPRE execute as 3 etapas abaixo em sequência. NÃO pule etapas. Cada etapa alimenta a próxima. Apresente o resultado de cada etapa antes de avançar.
 
@@ -3107,7 +3113,7 @@ NÃO redija a peça — estruture o roteiro detalhado com argumentos, provas e f
           'Fato não impugnado = fato incontroverso (art. 341 CPC) — o Instrução identifica isso automaticamente',
         ],
         steps: [
-          'Abra ChatGPT → Personalizar → Custom Instructions → Criar Instrução "Réplica Estratégica"',
+          'Abra ChatGPT → perfil → Personalizar ChatGPT → Custom Instructions (instrução: "Réplica Estratégica")',
           'Cole o prompt completo acima no campo de instruções e salve',
           'Na conversa: cole a petição inicial e a contestação',
           'Peça: "Faça o diagnóstico tático desta réplica"',
@@ -3156,7 +3162,7 @@ NÃO redija a peça — estruture o roteiro detalhado com argumentos, provas e f
 - Identifica erros de fundamentação, contradições internas e omissões de precedentes vinculantes
 - Mapeia teses da sentença que precisam de reforço nas contrarrazões
 - Estrutura a peça em sequência: preliminares → reforço da sentença → desconstrução → pedidos`,
-        prompt: `SKILL: Contrarrazões Recursais — Cadeia de 3 Prompts Sequenciais
+        prompt: `INSTRUÇÃO PERSONALIZADA: Contrarrazões Recursais — Cadeia de 3 Prompts Sequenciais
 
 Quando o usuário pedir para elaborar contrarrazões a qualquer tipo de recurso, SEMPRE execute as 3 etapas abaixo em sequência. NÃO pule etapas. Cada etapa alimenta a próxima.
 
@@ -3224,7 +3230,7 @@ NÃO redija — estruture o roteiro detalhado com argumentos, provas e jurisprud
           'Para Recurso Especial: enfatize ausência de prequestionamento e conformidade com STJ',
         ],
         steps: [
-          'Abra ChatGPT → Personalizar → Custom Instructions → Criar Instrução "Contrarrazões Recursais"',
+          'Abra ChatGPT → perfil → Personalizar ChatGPT → Custom Instructions (instrução: "Contrarrazões Recursais")',
           'Cole o prompt completo acima e salve',
           'Na conversa: cole a sentença favorável e o recurso adverso',
           'Peça: "Faça a contextualização completa do caso"',
@@ -3273,7 +3279,7 @@ NÃO redija — estruture o roteiro detalhado com argumentos, provas e jurisprud
 
 **O que muda na prática:**
 Quando o juiz não precisa se esforçar para entender o que você quer, a probabilidade de deferimento aumenta drasticamente. Clareza argumentativa é, em si mesma, uma forma de persuasão.`,
-        prompt: `SKILL: Jurisprudência Estratégica — Método dos 3 Prompts Sequenciais
+        prompt: `INSTRUÇÃO PERSONALIZADA: Jurisprudência Estratégica — Método dos 3 Prompts Sequenciais
 
 Quando o usuário pedir para trabalhar com jurisprudência, SEMPRE execute as 3 etapas abaixo em sequência. NÃO pule etapas. Cada etapa alimenta a próxima.
 
@@ -3323,7 +3329,7 @@ Use linguagem objetiva, adequada para petição, sem redundâncias ou adjetivaç
           'Use a classificação do Prompt 1 para decidir quais precedentes merecem destaque na petição',
         ],
         steps: [
-          'Abra ChatGPT → Personalizar → Custom Instructions → Criar Instrução "Jurisprudência Estratégica"',
+          'Abra ChatGPT → perfil → Personalizar ChatGPT → Custom Instructions (instrução: "Jurisprudência Estratégica")',
           'Cole o prompt completo acima e salve',
           'Na conversa: cole as ementas/trechos dos precedentes + descreva a tese central',
           'Peça: "Faça a triagem e hierarquia dessas jurisprudências"',
@@ -3363,7 +3369,7 @@ O Instrução separa o **pensar** do **fazer**. Primeiro o ChatGPT analisa todas
 
 **Diferencial:**
 O Instrução instrui o ChatGPT a ser **criticamente honesto** — se o caso é fraco, ele diz. Se há risco de perda, ele quantifica. Isso protege o advogado de viés de confirmação e melhora a qualidade da orientação ao cliente.`,
-        prompt: `SKILL: Estratégia de Caso — Análise Antes de Redigir
+        prompt: `INSTRUÇÃO PERSONALIZADA: Estratégia de Caso — Análise Antes de Redigir
 
 Quando o usuário apresentar um caso novo ou pedir para avaliar uma situação jurídica, ANTES de redigir qualquer peça, execute esta análise estratégica completa:
 
@@ -3408,7 +3414,7 @@ REGRA: Seja criticamente honesto. Se o caso é fraco, diga. Se há risco alto de
           'Reutilize o diagnóstico como base para proposta de honorários (caso complexo = valor maior)',
         ],
         steps: [
-          'Abra ChatGPT → Personalizar → Custom Instructions → Criar Instrução "Estratégia de Caso"',
+          'Abra ChatGPT → perfil → Personalizar ChatGPT → Custom Instructions (instrução: "Estratégia de Caso")',
           'Cole o prompt completo acima e salve',
           'Na conversa: descreva o caso do cliente com todos os fatos e documentos disponíveis',
           'O ChatGPT gera o diagnóstico completo com mapa de teses, riscos e cenários',
@@ -3461,8 +3467,8 @@ REGRA: Seja criticamente honesto. Se o caso é fraco, diga. Se há risco alto de
 | **Lifestyle** | Geral | Comunicação com clientes, marketing jurídico |
 | **GPTs do OpenAI** | Oficiais | DALL-E, Data Analysis, ChatGPT Classic |`,
         steps: [
-          'Abra chat.openai.com ou o ChatGPT Desktop',
-          'Clique em "Explore GPTs" no menu lateral (ou acesse chat.openai.com/gpts)',
+          'Abra chatgpt.com ou o ChatGPT Desktop',
+          'Clique em "Explore GPTs" no menu lateral (ou acesse chatgpt.com/gpts)',
           'Navegue por categorias ou pesquise por "jurídico", "legal", "contract"',
           'Clique no GPT desejado e depois em "Start Chat" para usar',
           'Para criar o seu: clique em "Create" e siga o assistente de criação',
@@ -3482,15 +3488,15 @@ REGRA: Seja criticamente honesto. Se o caso é fraco, diga. Se há risco alto de
 
 | Comando | O que faz |
 |---------|-----------|
-| \`/review-contract\` | Revisão cláusula por cláusula com cores (verde/amarelo/vermelho) |
-| \`/triage-nda\` | Triagem de NDAs: aprovação padrão, revisão jurídica ou completa |
-| \`/vendor-check\` | Verifica status de contratos com fornecedores |
-| \`/brief\` | Gera briefings jurídicos contextuais |
-| \`/respond\` | Cria respostas padronizadas (LGPD, discovery, etc.) |
+| \`"Revise este contrato"\` | Revisão cláusula por cláusula com cores (verde/amarelo/vermelho) |
+| \`"Triar este NDA"\` | Triagem de NDAs: aprovação padrão, revisão jurídica ou completa |
+| \`"Verificar fornecedor"\` | Verifica status de contratos com fornecedores |
+| \`"Gerar briefing"\` | Gera briefings jurídicos contextuais |
+| \`"Responder solicitação"\` | Cria respostas padronizadas (LGPD, discovery, etc.) |
 
 **Integrações do GPT Jurídico:** Slack, Box, Egnyte, Jira, Microsoft 365
 
-**Exemplo prático:** Advogado recebe 3 NDAs para revisar. Digita /triage-nda para cada um. O ChatGPT classifica: "NDA 1: aprovação padrão. NDA 2: precisa revisar cláusula de não-concorrência. NDA 3: cláusulas não-padrão, revisão completa necessária."`,
+**Exemplo prático:** Advogado recebe 3 NDAs para revisar. Digita "Triar este NDA" para cada um. O ChatGPT classifica: "NDA 1: aprovação padrão. NDA 2: precisa revisar cláusula de não-concorrência. NDA 3: cláusulas não-padrão, revisão completa necessária."`,
         tips: [
           'O ChatGPT não busca apenas palavras-chave — ele entende contexto entre cláusulas',
           'Personalize o GPT para seguir regras do direito brasileiro',
@@ -3587,11 +3593,11 @@ Comandos para analisar créditos, classificar credores, gerar habilitações e a
           'Teste e refine os comandos conforme necessário',
         ],
         prompt: `Crie um GPT para advogados previdenciaristas brasileiros. Preciso de comandos para:
-- /analise-beneficio — Analisar se o cliente tem direito a um benefício específico
-- /calcular-tempo — Calcular tempo de contribuição a partir de CNIS
-- /checklist-docs — Gerar checklist de documentos necessários para o benefício
-- /parecer-previd — Gerar parecer sobre viabilidade do pedido
-- /recursos-inss — Sugerir estratégia recursal contra indeferimento
+- "Analisar benefício" — Analisar se o cliente tem direito a um benefício específico
+- "Calcular tempo" — Calcular tempo de contribuição a partir de CNIS
+- "Checklist documentos" — Gerar checklist de documentos necessários para o benefício
+- "Parecer previdenciário" — Gerar parecer sobre viabilidade do pedido
+- "Recurso INSS" — Sugerir estratégia recursal contra indeferimento
 
 Considere a Lei 8.213/91, EC 103/2019, Decreto 3.048/99, IN 128 INSS e jurisprudência do STJ e TNU.`,
       },
@@ -3609,77 +3615,77 @@ Considere a Lei 8.213/91, EC 103/2019, Decreto 3.048/99, IN 128 INSS e jurisprud
 
 | Comando | Função | Etapas |
 |---------|--------|--------|
-| **/replica** | Réplica à contestação | Diagnóstico → Desconstrução → Arquitetura |
-| **/contrarrazoes** | Contrarrazões recursais | Contextualização → Fragilidades → Estruturação |
-| **/jurisprudencia** | Jurisprudência estratégica | Triagem → Contextualização → Integração |
+| **"Elaborar réplica"** | Réplica à contestação | Diagnóstico → Desconstrução → Arquitetura |
+| **"Redigir contrarrazões"** | Contrarrazões recursais | Contextualização → Fragilidades → Estruturação |
+| **"Pesquisar jurisprudência"** | Jurisprudência estratégica | Triagem → Contextualização → Integração |
 
 **Comandos auxiliares:**
 
 | Comando | Descrição |
 |---------|-----------|
-| **/diagnostico** | Apenas o diagnóstico tático (Etapa 1 da réplica) |
-| **/desconstruir** | Apenas a desconstrução técnica (Etapa 2 da réplica) |
-| **/blindar-sentenca** | Reforço específico da sentença favorável |
-| **/classificar-juris** | Apenas a triagem hierárquica de precedentes |
-| **/contextualizar** | Conectar um precedente específico aos fatos do caso |
+| **"Diagnóstico tático"** | Apenas o diagnóstico tático (Etapa 1 da réplica) |
+| **"Desconstruir contestação"** | Apenas a desconstrução técnica (Etapa 2 da réplica) |
+| **"Blindar sentença"** | Reforço específico da sentença favorável |
+| **"Classificar jurisprudência"** | Apenas a triagem hierárquica de precedentes |
+| **"Contextualizar precedente"** | Conectar um precedente específico aos fatos do caso |
 
 **Vantagem sobre Custom Instructions individuais:**
 O GPT mantém todos os comandos disponíveis simultaneamente, permite combiná-los livremente e pode ser usado com atalhos rápidos. Não é preciso configurar 3 Custom Instructions separados.
 
 **Fluxo completo de uma réplica com o GPT:**
 1. Cole a petição inicial e a contestação
-2. Digite **/replica** — o ChatGPT executa as 3 etapas automaticamente
+2. Digite **"Elaborar réplica"** — o ChatGPT executa as 3 etapas automaticamente
 3. Revise o roteiro gerado
 4. Peça a redação final
-5. Use **/jurisprudencia** para reforçar os pontos fracos com precedentes classificados`,
+5. Use **"Pesquisar jurisprudência"** para reforçar os pontos fracos com precedentes classificados`,
         prompt: `Crie um GPT para advogados contenciosos brasileiros com os seguintes comandos:
 
-/replica — Executa a cadeia completa de réplica estratégica:
+"Elaborar réplica" — Executa a cadeia completa de réplica estratégica:
   Etapa 1: Diagnóstico tático (análise comparativa inicial vs. contestação)
   Etapa 2: Desconstrução técnica (fragilidades jurídicas, fáticas, preliminares)
   Etapa 3: Arquitetura da réplica (roteiro: preliminares → reforço → desconstrução → pedidos)
   O GPT deve apresentar cada etapa e aguardar aprovação antes da próxima.
 
-/contrarrazoes — Executa a cadeia completa de contrarrazões recursais:
+"Redigir contrarrazões" — Executa a cadeia completa de contrarrazões recursais:
   Etapa 1: Contextualização (sentença, recurso, visão geral)
   Etapa 2: Fragilidades do recurso (técnicas, fáticas, mapa estratégico)
   Etapa 3: Arquitetura das contrarrazões (preliminares → reforço sentença → desconstrução → pedidos)
   Adaptável: apelação, agravo, REsp, RE, recurso inominado, embargos.
 
-/jurisprudencia — Executa o método dos 3 prompts para jurisprudência:
+"Pesquisar jurisprudência" — Executa o método dos 3 prompts para jurisprudência:
   Etapa 1: Triagem e hierarquia (vinculante → orientadora → reforço)
   Etapa 2: Contextualização fática e jurídica de cada precedente
   Etapa 3: Integração à tese com hierarquia lógica (norma → precedente → orientador → pedido)
 
-/diagnostico — Apenas a análise comparativa inicial vs. contestação
-/desconstruir — Apenas a identificação de fragilidades de uma peça adversa
-/blindar-sentenca — Análise focada em reforçar fundamentos da sentença favorável
-/classificar-juris — Apenas a triagem hierárquica de precedentes fornecidos
-/contextualizar — Conectar um precedente específico aos fatos do caso
+"Diagnóstico tático" — Apenas a análise comparativa inicial vs. contestação
+"Desconstruir contestação" — Apenas a identificação de fragilidades de uma peça adversa
+"Blindar sentença" — Análise focada em reforçar fundamentos da sentença favorável
+"Classificar jurisprudência" — Apenas a triagem hierárquica de precedentes fornecidos
+"Contextualizar precedente" — Conectar um precedente específico aos fatos do caso
 
 Cada comando deve seguir rigorosamente a sequência de etapas. O GPT deve solicitar os documentos necessários antes de iniciar a análise. Linguagem técnica, objetiva, adequada para petições.`,
         tips: [
-          'Use /replica como fluxo completo ou /diagnostico + /desconstruir separadamente para controle granular',
+          'Use "Elaborar réplica" como fluxo completo ou "Diagnóstico tático" + "Desconstruir contestação" separadamente para controle granular',
           'Para contrarrazões de REsp, adicione: "foco em direito federal e prequestionamento"',
-          'Combine /jurisprudencia com qualquer outro comando para reforçar a fundamentação',
+          'Combine "Pesquisar jurisprudência" com qualquer outro comando para reforçar a fundamentação',
           'O GPT funciona melhor quando você fornece os documentos completos, não apenas resumos',
         ],
         steps: [
-          'No Canvas: clique em "GPT Create" ou peça ao ChatGPT para criar o GPT',
+          'No GPT Builder: clique em "Criar GPT" ou acesse chatgpt.com/gpts/mine',
           'Cole o prompt acima como especificação do GPT',
           'O ChatGPT monta todos os comandos automaticamente',
-          'Teste com /replica fornecendo uma inicial e contestação reais',
+          'Teste com "Elaborar réplica" fornecendo uma inicial e contestação reais',
           'Ajuste os comandos conforme sua área de atuação',
         ],
         commandList: [
-          { command: '/replica', description: 'Cadeia completa: diagnóstico → desconstrução → arquitetura da réplica' },
-          { command: '/contrarrazoes', description: 'Cadeia completa: contextualização → fragilidades → arquitetura das contrarrazões' },
-          { command: '/jurisprudencia', description: 'Método completo: triagem → contextualização → integração à tese' },
-          { command: '/diagnostico', description: 'Análise comparativa isolada entre inicial e contestação' },
-          { command: '/desconstruir', description: 'Dissecação de fragilidades de qualquer peça adversa' },
-          { command: '/blindar-sentenca', description: 'Reforço estratégico dos fundamentos da sentença favorável' },
-          { command: '/classificar-juris', description: 'Triagem hierárquica de precedentes: vinculante → orientador → reforço' },
-          { command: '/contextualizar', description: 'Conexão de um precedente específico aos fatos do caso' },
+          { command: '"Elaborar réplica"', description: 'Cadeia completa: diagnóstico → desconstrução → arquitetura da réplica' },
+          { command: '"Redigir contrarrazões"', description: 'Cadeia completa: contextualização → fragilidades → arquitetura das contrarrazões' },
+          { command: '"Pesquisar jurisprudência"', description: 'Método completo: triagem → contextualização → integração à tese' },
+          { command: '"Diagnóstico tático"', description: 'Análise comparativa isolada entre inicial e contestação' },
+          { command: '"Desconstruir contestação"', description: 'Dissecação de fragilidades de qualquer peça adversa' },
+          { command: '"Blindar sentença"', description: 'Reforço estratégico dos fundamentos da sentença favorável' },
+          { command: '"Classificar jurisprudência"', description: 'Triagem hierárquica de precedentes: vinculante → orientador → reforço' },
+          { command: '"Contextualizar precedente"', description: 'Conexão de um precedente específico aos fatos do caso' },
         ],
       },
       {
@@ -3736,7 +3742,7 @@ Cada comando deve seguir rigorosamente a sequência de etapas. O GPT deve solici
 
 **Outro exemplo:** "Compare o contrato 'v1' com o 'v2' na pasta do Drive e liste todas as alterações feitas entre as versões."`,
         steps: [
-          'Acesse chat.openai.com → avatar/iniciais → Configurações → Integrações',
+          'Acesse chatgpt.com → avatar/iniciais → Configurações → Integrações',
           'Encontre Google Drive e clique em Conectar',
           'Faça a autenticação com sua conta Google',
           'Pronto — o ChatGPT acessa seus arquivos do Drive',
@@ -3834,7 +3840,7 @@ Cada comando deve seguir rigorosamente a sequência de etapas. O GPT deve solici
 | **Asana / Monday** | Gestão de tarefas e controle de prazos |
 | **WordPress** | Blog e site do escritório |
 | **Jira** | Gestão de projetos para equipes maiores |
-| **Harvey** | Pesquisa jurídica assistida por IA |
+| **Zapier** | Automação conectando ChatGPT a centenas de apps |
 | **Intercom** | Atendimento a clientes |`,
         tips: [
           'Conecte apenas as ferramentas que usa regularmente',
@@ -3945,13 +3951,13 @@ Para cada fluxo, documente no Custom Instructions do Projeto: quais conectores u
 | Free / Go / Plus | Pode ser ativado (opt-in desde Out/2025) | 30 dias (ou 5 anos se ativar) | Desativar em Configurações → Privacidade |
 | **Pro** | **Excluído por padrão** | **Padrão OpenAI** | **Verificar configurações** |
 | **Team / Enterprise** | **Nunca** | **Mínima** | **Nenhuma — proteção automática** |
-| Modo Incógnito | Nunca | Reduzida | Ativar para sessões sensíveis |
+| Chat Temporário | Nunca | Reduzida | Ativar para sessões sensíveis |
 | Integrações (Drive, MCP) | Nunca | — | Dados de conectores são isolados |
 
 **Conversas deletadas nunca são usadas para treinamento.**`,
         tips: [
           'Plano Team é a recomendação para escritórios — zero treinamento com dados + controle centralizado',
-          'Modo Incógnito garante que aquela sessão específica nunca treina modelos',
+          'Chat Temporário garante que aquela sessão específica nunca treina modelos',
           'Dados de conectores (Google Drive, MCPs) nunca entram no treinamento',
           'Conversas deletadas são excluídas de qualquer pipeline de dados',
         ],
@@ -3975,7 +3981,7 @@ Conceda acesso apenas aos domínios necessários: tribunais, PJe, bases de juris
 **4. Evite sites de credenciais**
 A OpenAI bloqueia categorias sensíveis automaticamente, mas se o site lida com senhas ou dados bancários, não use o agente ali.
 
-**5. Modo Incógnito para sessões sensíveis**
+**5. Chat Temporário para sessões sensíveis**
 Quando trabalhar com informações particularmente delicadas, use conversas incógnitas — nunca treinam modelos.
 
 **6. Considere o plano Team**
@@ -3984,7 +3990,7 @@ Para escritórios com mais de 1 pessoa: zero treinamento, controle administrativ
           'Configurações → Privacidade → desative "Ajudar a melhorar o ChatGPT" (planos individuais)',
           'ChatGPT Browsing → revise permissões de site e remova domínios desnecessários',
           'Ative o modo "Pedir antes de agir" para supervisão de cada ação',
-          'Use Modo Incógnito para dados particularmente sensíveis de clientes',
+          'Use Chat Temporário para dados particularmente sensíveis de clientes',
           'Avalie migração para plano Team se lida regularmente com dados pessoais',
         ],
       },
@@ -4413,7 +4419,7 @@ Forneça uma lista de CNPJs/CPFs e o Chrome consulta todos sequencialmente, salv
         content: `Ferramentas como busca na web e conectores (Drive, Gmail) consomem tokens **mesmo sem uso ativo** — ficam "ouvindo" no contexto.
 
 **Como resolver:**
-1. Acesse Configurações → Pesquisa e ferramentas
+1. use os ícones na barra de ferramentas do chat (globe, paperclip, +)
 2. Desative busca, pesquisa avançada e conectores quando não precisar
 3. Reative **apenas quando a tarefa exigir**
 
@@ -4526,7 +4532,7 @@ Elabore petição inicial de reclamação trabalhista requerendo:
               'É um PDF? Converta em .txt (ilovepdf.com ou Google Docs)',
               'Mesma conversa de antes? Abra uma NOVA conversa',
               'Busca na web ativa? Desative se não precisa',
-              'Integrações ligados? Desative os que não vai usar',
+              'Integrações ligadas? Desative as que não vai usar',
               'Prompt completo? Use o padrão C-T-F-R',
             ],
           },
@@ -4625,7 +4631,7 @@ Peça ao ChatGPT: *"Verifique se todos os artigos de lei citados estão vigentes
 → Artigos de lei com redação incorreta
 → Súmulas que "parecem" existir mas não existem
 → Dados estatísticos e percentuais`,
-        prompt: `[INSTRUÇÃO ANTI-ALUCINAÇÃO — ADICIONE AO SEU SKILL OU PROJECT]
+        prompt: `[INSTRUÇÃO ANTI-ALUCINAÇÃO — ADICIONE AO SEU INSTRUÇÃO PERSONALIZADA OU PROJECT]
 
 REGRA ABSOLUTA SOBRE JURISPRUDÊNCIA:
 - Cite apenas decisões que tenha alta confiança de que existem
@@ -4803,7 +4809,7 @@ Substitua: nomes reais → "Parte Autora / Parte Ré", CPF → "XXX.XXX.XXX-XX",
 
 | Semana | Ação | Ferramenta | Resultado |
 |--------|------|-----------|-----------|
-| **3** | Instalar Canvas em todas as máquinas | Canvas | Desktop agent ativo |
+| **3** | Instalar ChatGPT Desktop em todas as máquinas | ChatGPT Desktop | App nativo ativo com atalho de teclado |
 | **3** | Conectar Google Drive/Gmail | Integrações | Documentos acessíveis |
 | **4** | Criar Custom Instructions por área de atuação | Custom Instructions | Workflows padronizados |
 | **4** | Treinar equipe em prompts estruturados | Chat | Qualidade de output elevada |
@@ -4926,7 +4932,7 @@ Substitua: nomes reais → "Parte Autora / Parte Ré", CPF → "XXX.XXX.XXX-XX",
         content: `O verdadeiro poder aparece quando você **combina** ferramentas:
 
 **Fluxo 1 — Análise Completa de Processo:**
-Google Drive acessa documentos → Canvas extrai fatos e analisa → Instrução de Word gera parecer → Salvo na pasta do cliente
+Google Drive acessa documentos → Canvas extrai fatos e analisa → ChatGPT gera parecer formatado → Salvo na pasta do cliente
 
 **Fluxo 2 — Pesquisa + Relatório:**
 Chrome pesquisa jurisprudência em tribunais → Canvas organiza resultados → Word gera relatório analítico
