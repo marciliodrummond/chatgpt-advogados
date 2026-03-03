@@ -1,8 +1,23 @@
 import { useState, useRef, useEffect } from 'react'
-import { KeyRound, AlertCircle, Eye, EyeOff, ArrowRight } from 'lucide-react'
+import { Lock, AlertCircle, Eye, EyeOff, ArrowRight, MessageSquare } from 'lucide-react'
 
 const ACCESS_KEY = '6114Adv104ChatGPT'
 const STORAGE_KEY = 'si-chatgpt-advogados-auth'
+
+// ChatGPT-inspired teal/green palette (distinct from Claude gold)
+const TEAL = {
+  primary: '#10a37f',
+  light: '#34d399',
+  dark: '#0d8c6d',
+  glow: 'rgba(16, 163, 127, 0.25)',
+  glowSoft: 'rgba(16, 163, 127, 0.12)',
+  glowSubtle: 'rgba(16, 163, 127, 0.06)',
+  particle: (opacity: number) => `rgba(52, 211, 153, ${opacity})`,
+  shimmer: 'rgba(16, 163, 127, 0.3)',
+  focusShadow: '0 0 20px rgba(16, 163, 127, 0.15), 0 0 40px rgba(16, 163, 127, 0.05)',
+  buttonShadow: '0 0 30px rgba(16, 163, 127, 0.2), 0 4px 12px rgba(0,0,0,0.2)',
+  cardFocusShadow: '0 0 60px rgba(16, 163, 127, 0.1), 0 8px 32px rgba(0,0,0,0.4)',
+}
 
 interface LoginGateProps {
   onAuthenticated: () => void
@@ -29,7 +44,7 @@ export function useAuth() {
   return { isAuthenticated, authenticate }
 }
 
-/* Floating particles for ambient depth */
+/* Floating particles for ambient depth — teal variant */
 function Particles() {
   const count = 24
   const particles = Array.from({ length: count }, (_, i) => {
@@ -48,7 +63,7 @@ function Particles() {
           left: `${left}%`,
           bottom: '-5%',
           opacity: 0,
-          background: `rgba(226, 192, 116, ${opacity})`,
+          background: TEAL.particle(opacity),
           animation: `particleRise ${duration}s ease-in-out ${delay}s infinite`,
         }}
       />
@@ -57,32 +72,46 @@ function Particles() {
   return <>{particles}</>
 }
 
-/* Hexagonal logo SVG matching the brand */
-function HexLogo({ className }: { className?: string }) {
+/* ChatGPT-inspired circular logo with chat bubble */
+function ChatLogo({ className }: { className?: string }) {
   return (
-    <svg viewBox="0 0 780 780" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
-      <path
-        d="M390 0L693.8 175V525L390 700L86.2 525V175L390 0Z"
+    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+      {/* Outer ring */}
+      <circle
+        cx="50"
+        cy="50"
+        r="44"
+        stroke="url(#tealGrad)"
+        strokeWidth="4"
         fill="none"
-        stroke="url(#logoGrad)"
-        strokeWidth="48"
-        strokeLinejoin="round"
       />
-      <path
-        d="M390 140L598 260V500L390 620L182 500V260L390 140Z"
+      {/* Inner ring */}
+      <circle
+        cx="50"
+        cy="50"
+        r="34"
+        stroke="url(#tealGrad2)"
+        strokeWidth="2.5"
         fill="none"
-        stroke="url(#logoGrad2)"
-        strokeWidth="36"
-        strokeLinejoin="round"
       />
+      {/* Chat bubble icon in center */}
+      <path
+        d="M38 36h24a4 4 0 0 1 4 4v14a4 4 0 0 1-4 4H50l-6 6v-6h-6a4 4 0 0 1-4-4V40a4 4 0 0 1 4-4z"
+        fill="url(#tealGrad)"
+        opacity="0.9"
+      />
+      {/* Three dots inside bubble */}
+      <circle cx="44" cy="47" r="2" fill="#0f1419" />
+      <circle cx="50" cy="47" r="2" fill="#0f1419" />
+      <circle cx="56" cy="47" r="2" fill="#0f1419" />
       <defs>
-        <linearGradient id="logoGrad" x1="86" y1="0" x2="694" y2="700">
-          <stop offset="0%" stopColor="#e2c074" />
-          <stop offset="100%" stopColor="#d4a84e" />
+        <linearGradient id="tealGrad" x1="6" y1="6" x2="94" y2="94">
+          <stop offset="0%" stopColor={TEAL.light} />
+          <stop offset="100%" stopColor={TEAL.primary} />
         </linearGradient>
-        <linearGradient id="logoGrad2" x1="182" y1="140" x2="598" y2="620">
-          <stop offset="0%" stopColor="#e2c074" stopOpacity="0.5" />
-          <stop offset="100%" stopColor="#d4a84e" stopOpacity="0.3" />
+        <linearGradient id="tealGrad2" x1="16" y1="16" x2="84" y2="84">
+          <stop offset="0%" stopColor={TEAL.light} stopOpacity="0.5" />
+          <stop offset="100%" stopColor={TEAL.primary} stopOpacity="0.3" />
         </linearGradient>
       </defs>
     </svg>
@@ -116,7 +145,7 @@ export function LoginGate({ onAuthenticated }: LoginGateProps) {
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center px-4 overflow-hidden" style={{ background: 'var(--bg-page)' }}>
 
-      {/* Grid background overlay (matches main app) */}
+      {/* Grid background overlay */}
       <div className="absolute inset-0 pointer-events-none" style={{
         backgroundImage: `
           linear-gradient(var(--grid-color) 1px, transparent 1px),
@@ -129,15 +158,15 @@ export function LoginGate({ onAuthenticated }: LoginGateProps) {
         WebkitMaskImage: 'radial-gradient(ellipse 80% 60% at 50% 40%, black 20%, transparent 70%)',
       }} />
 
-      {/* Animated ambient orbs */}
+      {/* Animated ambient orbs — teal */}
       <div className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] rounded-full pointer-events-none blur-[120px] animate-[orbFloat_14s_ease-in-out_infinite]" style={{
-        background: 'radial-gradient(circle, rgba(226,192,116,0.14) 0%, transparent 70%)',
+        background: `radial-gradient(circle, ${TEAL.glowSoft} 0%, transparent 70%)`,
       }} />
       <div className="absolute bottom-[-5%] left-[-10%] w-[450px] h-[450px] rounded-full pointer-events-none blur-[120px] animate-[orbFloat_14s_ease-in-out_infinite_-5s]" style={{
-        background: 'radial-gradient(circle, rgba(226,192,116,0.10) 0%, transparent 70%)',
+        background: `radial-gradient(circle, rgba(16,163,127,0.10) 0%, transparent 70%)`,
       }} />
       <div className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full pointer-events-none blur-[150px] animate-[orbFloat_18s_ease-in-out_infinite_-8s]" style={{
-        background: 'radial-gradient(circle, rgba(226,192,116,0.06) 0%, transparent 60%)',
+        background: `radial-gradient(circle, ${TEAL.glowSubtle} 0%, transparent 60%)`,
       }} />
 
       {/* Floating particles */}
@@ -151,36 +180,41 @@ export function LoginGate({ onAuthenticated }: LoginGateProps) {
         {/* Branding section */}
         <div className="text-center mb-10" style={{ animation: 'fadeUp 0.8s ease 0.1s both' }}>
 
-          {/* Hexagonal logo with glow */}
+          {/* Chat logo with teal glow */}
           <div className="relative inline-flex items-center justify-center mb-7">
             {/* Glow behind logo */}
             <div className="absolute w-28 h-28 rounded-full blur-[40px]" style={{
-              background: 'radial-gradient(circle, rgba(226,192,116,0.25) 0%, transparent 70%)',
+              background: `radial-gradient(circle, ${TEAL.glow} 0%, transparent 70%)`,
               animation: 'loginPulse 4s ease-in-out infinite',
             }} />
-            <HexLogo className="relative w-20 h-20 sm:w-24 sm:h-24" />
+            <ChatLogo className="relative w-20 h-20 sm:w-24 sm:h-24" />
           </div>
 
           {/* Label line */}
           <div className="flex items-center justify-center gap-2.5 mb-4" style={{ animation: 'fadeIn 1s ease 0.2s both' }}>
-            <div className="w-8 h-px bg-gradient-to-r from-transparent via-[var(--fg-accent)] to-transparent" />
-            <span className="font-mono text-[10px] font-medium text-[var(--fg-accent)] uppercase tracking-[0.15em]">
+            <div className="w-8 h-px" style={{ background: `linear-gradient(to right, transparent, ${TEAL.primary}, transparent)` }} />
+            <span className="font-mono text-[10px] font-medium uppercase tracking-[0.15em]" style={{ color: TEAL.primary }}>
               Acesso Exclusivo
             </span>
-            <div className="w-8 h-px bg-gradient-to-r from-transparent via-[var(--fg-accent)] to-transparent" />
+            <div className="w-8 h-px" style={{ background: `linear-gradient(to right, transparent, ${TEAL.primary}, transparent)` }} />
           </div>
 
-          {/* Title with gradient */}
+          {/* Title with teal gradient */}
           <h1 className="font-display text-3xl sm:text-4xl font-extrabold tracking-[-0.04em] leading-[1.1] text-[var(--fg-primary)]">
             ChatGPT para{' '}
-            <span className="bg-gradient-to-br from-gold-300 via-gold-500 to-gold-400 bg-clip-text text-transparent">
+            <span style={{
+              background: `linear-gradient(135deg, ${TEAL.light}, ${TEAL.primary}, ${TEAL.dark})`,
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text',
+            }}>
               Advogados
             </span>
           </h1>
 
           <p className="text-sm text-[var(--fg-secondary)] mt-3 max-w-[320px] mx-auto leading-relaxed">
             Conteúdo reservado para membros do programa{' '}
-            <span className="text-[var(--fg-accent)] font-medium">Super Inteligênc[IA]</span>
+            <span className="font-medium" style={{ color: TEAL.primary }}>Super Inteligênc[IA]</span>
           </p>
         </div>
 
@@ -191,17 +225,17 @@ export function LoginGate({ onAuthenticated }: LoginGateProps) {
             background: 'var(--bg-card)',
             backdropFilter: 'blur(24px)',
             WebkitBackdropFilter: 'blur(24px)',
-            borderColor: focused ? 'var(--border-accent)' : 'var(--border-line)',
+            borderColor: focused ? TEAL.primary : 'var(--border-line)',
             boxShadow: focused
-              ? '0 0 60px rgba(226,192,116,0.08), 0 8px 32px rgba(0,0,0,0.4)'
+              ? TEAL.cardFocusShadow
               : '0 8px 32px rgba(0,0,0,0.3)',
             transition: 'border-color 0.4s ease, box-shadow 0.4s ease',
             animation: 'fadeUp 0.8s ease 0.25s both',
           }}
         >
-          {/* Shimmer top border */}
+          {/* Shimmer top border — teal */}
           <div className="absolute top-0 left-0 right-0 h-px" style={{
-            background: 'linear-gradient(90deg, transparent, rgba(226,192,116,0.3), transparent)',
+            background: `linear-gradient(90deg, transparent, ${TEAL.shimmer}, transparent)`,
             backgroundSize: '200% 100%',
             animation: 'shimmer 4s ease-in-out infinite',
           }} />
@@ -210,7 +244,7 @@ export function LoginGate({ onAuthenticated }: LoginGateProps) {
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label className="flex items-center gap-1.5 text-[11px] font-semibold text-[var(--fg-secondary)] uppercase tracking-[0.08em] font-mono mb-2.5">
-                  <KeyRound className="w-3.5 h-3.5 text-[var(--fg-accent)]" />
+                  <Lock className="w-3.5 h-3.5" style={{ color: TEAL.primary }} />
                   Chave de Acesso
                 </label>
 
@@ -226,16 +260,19 @@ export function LoginGate({ onAuthenticated }: LoginGateProps) {
                     className="w-full h-13 px-4 pr-12 rounded-xl border text-sm font-sans outline-none transition-all duration-300"
                     style={{
                       background: 'var(--bg-surface)',
-                      borderColor: error ? '#ef4444' : focused ? 'var(--border-focus)' : 'var(--border-line)',
+                      borderColor: error ? '#ef4444' : focused ? TEAL.primary : 'var(--border-line)',
                       color: 'var(--fg-primary)',
-                      boxShadow: focused ? 'var(--gold-glow-sm), inset 0 1px 0 rgba(226,192,116,0.05)' : 'none',
+                      boxShadow: focused ? `${TEAL.focusShadow}, inset 0 1px 0 rgba(16,163,127,0.05)` : 'none',
                     }}
                     autoComplete="off"
                   />
                   <button
                     type="button"
                     onClick={() => setShowPassword(!showPassword)}
-                    className="absolute right-3.5 top-1/2 -translate-y-1/2 text-[var(--fg-muted)] hover:text-[var(--fg-accent)] cursor-pointer bg-transparent border-none transition-colors duration-200"
+                    className="absolute right-3.5 top-1/2 -translate-y-1/2 cursor-pointer bg-transparent border-none transition-colors duration-200"
+                    style={{ color: 'var(--fg-muted)' }}
+                    onMouseEnter={(e) => (e.currentTarget.style.color = TEAL.primary)}
+                    onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--fg-muted)')}
                   >
                     {showPassword ? <EyeOff className="w-4.5 h-4.5" /> : <Eye className="w-4.5 h-4.5" />}
                   </button>
@@ -252,9 +289,9 @@ export function LoginGate({ onAuthenticated }: LoginGateProps) {
                 type="submit"
                 className="group/btn relative w-full h-13 rounded-xl text-sm font-semibold cursor-pointer border-none transition-all duration-300 hover:scale-[1.015] active:scale-[0.985] flex items-center justify-center gap-2.5 overflow-hidden"
                 style={{
-                  background: 'linear-gradient(135deg, var(--bg-accent), var(--bg-accent-hover))',
-                  color: 'var(--fg-on-accent)',
-                  boxShadow: '0 0 30px rgba(226,192,116,0.15), 0 4px 12px rgba(0,0,0,0.2)',
+                  background: `linear-gradient(135deg, ${TEAL.primary}, ${TEAL.dark})`,
+                  color: '#ffffff',
+                  boxShadow: TEAL.buttonShadow,
                 }}
               >
                 {/* Button shimmer effect */}
@@ -264,6 +301,7 @@ export function LoginGate({ onAuthenticated }: LoginGateProps) {
                   animation: 'shimmer 2s ease-in-out infinite',
                 }} />
                 <span className="relative z-10 flex items-center gap-2">
+                  <MessageSquare className="w-4 h-4" />
                   Acessar Guia
                   <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover/btn:translate-x-0.5" />
                 </span>

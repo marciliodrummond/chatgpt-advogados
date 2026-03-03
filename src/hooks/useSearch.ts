@@ -166,10 +166,10 @@ const synonyms: Record<string, string[]> = {
   'code interpreter': ['code interpreter', 'codigo', 'analise dados', 'python', 'advanced data'],
 
   // Modelos
-  'gpt4o': ['gpt 4o', 'modelo', 'o3', 'gpt 4o mini', 'qual modelo'],
-  'o3': ['o3', 'modelo', 'raciocinio', 'reasoning', 'qual modelo'],
-  'gpt 4o mini': ['gpt 4o mini', 'modelo', 'rapido', 'barato', 'qual modelo'],
-  'qual modelo': ['gpt 4o', 'o3', 'gpt 4o mini', 'modelo', 'escolher'],
+  'gpt5': ['gpt 5', 'gpt5', 'modelo', 'raciocinio', 'premium', 'qual modelo'],
+  'gpt 5.2': ['gpt 5.2', 'gpt5.2', 'modelo', 'padrao', 'default', 'qual modelo'],
+  'gpt5.2': ['gpt 5.2', 'modelo', 'padrao', 'rapido', 'default'],
+  'qual modelo': ['gpt 5', 'gpt 5.2', 'modelo', 'escolher'],
 
   // Ética e regulamentação
   'etica': ['etica', 'oab', 'cnj', 'regulamentacao', 'resolucao', 'regras'],
@@ -266,10 +266,10 @@ const intentMap: Record<string, string[]> = {
   'como usar': ['Chat vs Canvas', 'O que e o Canvas', 'Personalizar'],
 
   // Modelos
-  'qual modelo': ['Qual Modelo Usar', 'GPT 4o', 'o3', 'GPT 4o mini'],
-  'gpt4o ou o3': ['Qual Modelo Usar'],
-  'modelo mais rapido': ['Qual Modelo Usar', 'GPT 4o mini'],
-  'modelo mais inteligente': ['Qual Modelo Usar', 'o3'],
+  'qual modelo': ['Qual Modelo Usar', 'GPT-5.2', 'GPT-5'],
+  'gpt5 ou gpt5.2': ['Qual Modelo Usar'],
+  'modelo mais rapido': ['Qual Modelo Usar', 'GPT-5.2'],
+  'modelo mais inteligente': ['Qual Modelo Usar', 'GPT-5'],
 
   // Comparações
   'claude ou chatgpt': ['ChatGPT vs Claude vs Gemini'],
@@ -644,7 +644,7 @@ const relatedMap: Record<string, string[]> = {
   'Sigilo Profissional: Qual Plano Escolher?': ['Ética e IA na Advocacia', 'Escolhendo seu Plano'],
   'Roadmap: Implementando IA no Escritório': ['Automação Recorrente', 'Automação de Escritório'],
   'Framework CONTEXTO: Prompt Jurídico Perfeito': ['Técnicas Expert de Prompt Jurídico', 'Biblioteca de Prompts Jurídicos'],
-  'Técnicas Expert de Prompt Jurídico': ['Framework CONTEXTO: Prompt Jurídico Perfeito', 'Modelos de Raciocínio o1/o3'],
+  'Técnicas Expert de Prompt Jurídico': ['Framework CONTEXTO: Prompt Jurídico Perfeito', 'Raciocínio Avançado (GPT-5)'],
   'Biblioteca de Prompts Jurídicos': ['Framework CONTEXTO: Prompt Jurídico Perfeito', 'Custom Instructions de Petição Universal'],
   'Fluxo: Do Cliente à Petição em 10 Passos': ['Framework CONTEXTO: Prompt Jurídico Perfeito', 'Petições e Peças Processuais'],
   'Análise de Viabilidade de Tese': ['Custom Instructions de Estratégia de Caso', 'Parecer Jurídico'],
