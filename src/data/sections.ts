@@ -121,18 +121,19 @@ Cada ferramenta do ChatGPT traduzida para a linguagem do seu escritório. Sem te
 
 | Plano | Preço | Para quem? |
 |-------|-------|------------|
-| **Free** | Grátis | Experimentar — acesso limitado ao GPT-4o-mini |
-| **Plus** | US$ 20/mês (~R$ 120) | Advogado que usa regularmente |
-| **Pro** | US$ 200/mês (~R$ 1.200) | Uso ilimitado, acesso total ao o3 |
-| **Team** | US$ 25/usuário/mês | Equipes de advogados |
-| **Enterprise** | Sob consulta | Escritórios grandes com compliance |
+| **Free** | Grátis | Experimentar — acesso ao GPT-5.2 com limite de 10 msgs/5h |
+| **Go** | US$ 8/mês (~R$ 48) | Uso leve — mais mensagens com GPT-5.2 |
+| **Plus** | US$ 20/mês (~R$ 120) | Advogado que usa regularmente — GPT-5.2 generoso + GPT-5 |
+| **Pro** | US$ 200/mês (~R$ 1.200) | Uso ilimitado, acesso total ao GPT-5 e ferramentas avançadas |
+| **Team** | US$ 25–30/usuário/mês | Equipes de advogados com controle centralizado |
+| **Enterprise** | Sob consulta | Escritórios grandes com compliance e SLA dedicado |
 
-**Recomendação para começar:** O plano Plus (US$ 20/mês) já dá acesso ao Canvas, GPTs, Code Interpreter, DALL-E, Memory e Browsing. É suficiente para a maioria dos advogados.
+**Recomendação para começar:** O plano Plus (US$ 20/mês) já dá acesso ao Canvas, GPTs, Code Interpreter, DALL-E, Memory, Browsing e uso generoso do GPT-5.2. É suficiente para a maioria dos advogados. Se quiser apenas testar, o plano Go (US$ 8/mês) é uma boa porta de entrada.
 
 **Exemplo prático:** Um advogado trabalhista que faz 3-4 petições por semana, analisa 2-3 contratos e precisa de pesquisa jurisprudencial consegue trabalhar confortavelmente com o plano Plus.`,
         tips: [
           'O plano Plus é o melhor custo-benefício para começar',
-          'Você pode fazer upgrade a qualquer momento',
+          'O plano Go (US$ 8/mês) é ideal para quem quer começar gastando pouco',
           'O plano Free já permite testar o ChatGPT antes de assinar',
           'Para escritórios: Team tem administração centralizada e controles de segurança',
         ],
@@ -216,57 +217,59 @@ O Canvas pode: ler dezenas de documentos de uma vez, organizar pastas, criar Wor
 | **Memory** | Memória entre conversas — o ChatGPT lembra suas preferências |
 | **Browsing** | Capacidade de pesquisar na web em tempo real |
 | **DALL-E** | Geração de imagens integrada ao ChatGPT |
-| **o1/o3** | Modelos de raciocínio que "pensam mais" antes de responder |`,
+| **GPT-5 (Raciocínio)** | Modelo premium que "pensa mais" antes de responder |`,
         tips: [
           'Não precisa decorar tudo — use este glossário como referência rápida',
           'Os termos mais usados no dia a dia são: Token, GPT, Custom Instructions e Canvas',
         ],
       },
       {
-        title: 'Qual Modelo Usar? GPT-4o, o3 e GPT-4o-mini',
+        title: 'Qual Modelo Usar? GPT-5.2 e GPT-5',
         subtitle: 'Cada modelo tem um papel no seu escritório',
         level: 'iniciante',
         icon: 'layers',
         analogy: {
-          text: 'Pense no escritório: o **sócio sênior** (o3) resolve casos complexos e toma decisões estratégicas. O **associado pleno** (GPT-4o) faz de tudo com competência e rapidez. O **estagiário eficiente** (GPT-4o-mini) executa tarefas repetitivas em segundos. **Você não escala o sócio para fotocopiar — e não manda o estagiário fazer sustentação oral.**',
+          text: 'Pense no escritório: o **sócio sênior** (GPT-5) resolve casos complexos e toma decisões estratégicas. O **associado pleno** (GPT-5.2) faz de tudo com competência e rapidez. **Você não escala o sócio para fotocopiar — e não manda o estagiário fazer sustentação oral.**',
         },
-        content: `O ChatGPT possui diversos modelos. Escolher o modelo certo para cada tarefa é tão importante quanto escolher o advogado certo para cada caso.
+        content: `O ChatGPT possui diferentes modelos. Escolher o modelo certo para cada tarefa é tão importante quanto escolher o advogado certo para cada caso.
 
-**Comparativo completo:**
+**Modelos disponíveis (março 2026):**
 
-| Característica | **o3** | **GPT-4o** | **GPT-4o-mini** |
-|---------------|--------|-----------|----------------|
-| **Perfil** | Sócio sênior (raciocínio) | Associado pleno | Estagiário eficiente |
-| **Inteligência** | Máxima | Alta | Boa |
-| **Velocidade** | Moderada | Rápida | Ultra-rápida |
-| **Contexto** | 200K tokens | 128K tokens | 128K tokens |
-| **Custo API** | $10/$40 por M tokens | $2.50/$10 por M tokens | $0.15/$0.60 por M tokens |
-| **Melhor para** | Raciocínio complexo, estratégia | Uso diário, redação, pesquisa | Volume alto, triagem, rotina |
+| Característica | **GPT-5** | **GPT-5.2** |
+|---------------|-----------|------------|
+| **Perfil** | Sócio sênior (raciocínio premium) | Associado pleno (rápido e versátil) |
+| **Inteligência** | Máxima | Muito alta |
+| **Velocidade** | Moderada | Rápida |
+| **Contexto** | 256K tokens | 256K tokens |
+| **Disponibilidade** | Plus, Pro, Team, Enterprise | Todos os planos (Free com limite) |
+| **Melhor para** | Raciocínio complexo, estratégia, pareceres | Uso diário, redação, pesquisa, triagem |
+
+> **Nota:** Os modelos GPT-4o, GPT-4.1 e o4-mini foram aposentados. O GPT-5.2 é o modelo padrão desde fevereiro de 2026.
 
 **Quando usar cada modelo:**
 
 | Tarefa Jurídica | Modelo Ideal | Por quê |
 |----------------|-------------|---------|
-| Parecer jurídico complexo | **o3** | Raciocínio profundo e multifatorial |
-| Análise de contrato M&A | **o3** | Detecta nuances e riscos ocultos |
-| Estratégia de caso | **o3** | Avaliação de cenários e probabilidades |
-| Redação de petição | **GPT-4o** | Equilíbrio entre qualidade e velocidade |
-| Pesquisa de jurisprudência | **GPT-4o** | Rápido e preciso na busca |
-| Revisão de contratos simples | **GPT-4o** | Suficiente para riscos padrão |
-| Triagem de e-mails | **GPT-4o-mini** | Volume alto, decisão binária |
-| Classificação de documentos | **GPT-4o-mini** | Repetitivo e previsível |
-| Resumo de decisões | **GPT-4o-mini** | Extrair pontos-chave rapidamente |
+| Parecer jurídico complexo | **GPT-5** | Raciocínio profundo e multifatorial |
+| Análise de contrato M&A | **GPT-5** | Detecta nuances e riscos ocultos |
+| Estratégia de caso | **GPT-5** | Avaliação de cenários e probabilidades |
+| Redação de petição | **GPT-5.2** | Equilíbrio entre qualidade e velocidade |
+| Pesquisa de jurisprudência | **GPT-5.2** | Rápido e preciso na busca |
+| Revisão de contratos simples | **GPT-5.2** | Suficiente para riscos padrão |
+| Triagem de e-mails | **GPT-5.2** | Volume alto, decisão binária — rápido |
+| Classificação de documentos | **GPT-5.2** | Repetitivo e previsível |
+| Resumo de decisões | **GPT-5.2** | Extrair pontos-chave rapidamente |
 
 **No chat.openai.com:**
-Você pode alternar entre os modelos no seletor de modelo (canto superior). O ChatGPT seleciona automaticamente o melhor modelo, mas você pode escolher manualmente.
+Você pode alternar entre os modelos no seletor de modelo (canto superior). O ChatGPT seleciona automaticamente o melhor modelo (GPT-5.2 por padrão), mas você pode escolher GPT-5 manualmente para análises complexas.
 
 **Dica de ouro:**
-Use GPT-4o-mini para pré-processamento → GPT-4o para análise → o3 para decisões estratégicas. Esse pipeline economiza significativamente com mesma qualidade final.`,
+Use GPT-5.2 para o trabalho diário (redação, triagem, pesquisa) e reserve o GPT-5 para decisões estratégicas e pareceres que exigem raciocínio profundo. Esse uso inteligente economiza tokens sem perder qualidade.`,
         tips: [
           'No Chat: alterne entre modelos conforme a complexidade da tarefa',
-          'Para redação diária (petições, contratos, e-mails): GPT-4o é o melhor custo-benefício',
-          'Para análises que exigem raciocínio profundo: use o3 (modelo de raciocínio)',
-          'Para triagem de 50+ documentos: use GPT-4o-mini via API — é muito mais barato',
+          'Para redação diária (petições, contratos, e-mails): GPT-5.2 é rápido e excelente',
+          'Para análises que exigem raciocínio profundo: selecione GPT-5 manualmente',
+          'O GPT-5.2 está disponível até no plano Free (com limite de 10 msgs a cada 5h)',
         ],
       },
       {
@@ -275,23 +278,23 @@ Use GPT-4o-mini para pré-processamento → GPT-4o para análise → o3 para dec
         level: 'iniciante',
         icon: 'arrow-right-left',
         analogy: {
-          text: 'ChatGPT é o **escritório completo** (ecossistema maduro, GPTs, Canvas, DALL-E). ChatGPT é o **redator técnico meticuloso** (bom texto, instrução longa). Gemini é o **pesquisador com acesso à biblioteca** (conectado ao Google). **Cada um tem força — e para advocacia, o ChatGPT oferece o ecossistema mais completo.**',
+          text: 'ChatGPT é o **escritório completo** (ecossistema maduro, GPTs, Canvas, DALL-E). Claude é o **redator técnico meticuloso** (bom texto, instrução longa). Gemini é o **pesquisador com acesso à biblioteca** (conectado ao Google). **Cada um tem força — e para advocacia, o ChatGPT oferece o ecossistema mais completo.**',
         },
         content: `Comparação prática focada no que importa para advogados brasileiros:
 
 **Comparativo geral:**
 
-| Critério | **ChatGPT** | **ChatGPT** | **Gemini** |
+| Critério | **ChatGPT** | **Claude** | **Gemini** |
 |----------|------------|-----------|-----------|
 | **Qualidade de redação** | Excelente | Excelente | Boa |
-| **Raciocínio jurídico** | Excelente (o3) | Bom | Bom |
+| **Raciocínio jurídico** | Excelente (GPT-5) | Muito bom (Opus) | Bom |
 | **Instrução longa (>5 págs)** | Bom | Excelente | Bom |
-| **Janela de contexto** | 128K tokens | 1M tokens | 2M tokens |
+| **Janela de contexto** | 256K tokens | 1M tokens | 2M tokens |
 | **Análise de PDFs** | Sim | Nativa, até 32MB | Sim |
 | **Segurança de dados** | Team/Enterprise seguro | Alta | Variável |
 | **Pesquisa na web** | Integrada + Browsing | Integrada | Nativa (Google) |
-| **Integrações** | Maduro (GPTs, Actions) | Crescendo (GPTs) | Limitado |
-| **Desktop agent** | ChatGPT Desktop + Operator | Canvas | Limitado |
+| **Integrações** | Maduro (GPTs, Actions) | Crescendo (MCP) | Limitado |
+| **Desktop agent** | ChatGPT Desktop + Operator | Claude Desktop | Limitado |
 | **Preço Plus** | $20/mês | $20/mês | $19.99/mês |
 
 **Onde o ChatGPT se destaca para advogados:**
@@ -303,7 +306,7 @@ Use GPT-4o-mini para pré-processamento → GPT-4o para análise → o3 para dec
 - **Memory** — Lembra suas preferências e contexto entre conversas
 - **Browsing** — Pesquisa web integrada para jurisprudência atualizada
 
-**Onde ChatGPT vence:**
+**Onde Claude vence:**
 - Análise de documentos muito longos (1M tokens)
 - Fidelidade a instruções complexas
 - Redação de texto mais natural em alguns casos
@@ -314,7 +317,7 @@ Use GPT-4o-mini para pré-processamento → GPT-4o para análise → o3 para dec
 - Janela de contexto de 2M tokens
 
 **Veredicto para advogados brasileiros:**
-Para o **ecossistema mais completo** e maduro, com GPTs, Canvas, Code Interpreter, DALL-E e Memory, o ChatGPT é a escolha ideal. Para **documentos muito longos**, ChatGPT pode complementar. Para **pesquisa web integrada ao Google**, Gemini ajuda. **A recomendação: ChatGPT como ferramenta principal + Gemini/Perplexity como complemento para pesquisa.**`,
+Para o **ecossistema mais completo** e maduro, com GPTs, Canvas, Code Interpreter, DALL-E e Memory, o ChatGPT é a escolha ideal. Para **documentos muito longos**, Claude pode complementar. Para **pesquisa web integrada ao Google**, Gemini ajuda. **A recomendação: ChatGPT como ferramenta principal + Gemini/Perplexity como complemento para pesquisa.**`,
         tips: [
           'Não é preciso escolher apenas um — use cada IA onde ela é melhor',
           'ChatGPT para o dia a dia completo, Perplexity/Gemini para pesquisa rápida',
@@ -572,7 +575,7 @@ Para o **ecossistema mais completo** e maduro, com GPTs, Canvas, Code Interprete
             title: 'Semana 1 — O Básico',
             items: [
               'Criar conta em chat.openai.com',
-              'Escolher plano (Pro = US$ 20/mês ~ R$ 120)',
+              'Escolher plano (Plus = US$ 20/mês ~ R$ 120, ou Go = US$ 8/mês)',
               'Baixar ChatGPT Desktop',
               'Explorar as abas Chat e Canvas',
             ],
@@ -600,7 +603,7 @@ Para o **ecossistema mais completo** e maduro, com GPTs, Canvas, Code Interprete
               'Configurar Custom Instructions para sua área',
               'Criar um Project para um caso real',
               'Testar o Browsing para pesquisa jurídica',
-              'Experimentar os modelos o1/o3 para raciocínio complexo',
+              'Experimentar o modelo GPT-5 para raciocínio complexo',
             ],
           },
         ],
@@ -1073,14 +1076,14 @@ Basta pedir! O ChatGPT decide automaticamente quando criar um artefato. Para for
         ],
       },
       {
-        title: 'Raciocínio o1/o3',
+        title: 'Raciocínio Avançado (GPT-5)',
         subtitle: 'Quando o ChatGPT precisa pensar mais',
         level: 'avancado',
         icon: 'brain',
         analogy: {
-          text: 'Em questões simples, o advogado responde rápido. Mas para teses complexas com jurisprudência conflitante, ele **para, estuda, pondera e só então responde**. O Raciocínio o1/o3 é esse "modo estudo" do ChatGPT.',
+          text: 'Em questões simples, o advogado responde rápido. Mas para teses complexas com jurisprudência conflitante, ele **para, estuda, pondera e só então responde**. O GPT-5 é esse "modo estudo" do ChatGPT.',
         },
-        content: `O Raciocínio o1/o3 (Extended Thinking) faz o ChatGPT "pensar mais tempo" antes de responder. Ao ativar, ele:
+        content: `O GPT-5 (modelo de raciocínio premium) faz o ChatGPT "pensar mais tempo" antes de responder. Ao selecioná-lo, ele:
 
 - Analisa o problema de múltiplos ângulos
 - Considera contra-argumentos
@@ -3438,30 +3441,31 @@ REGRA: Seja criticamente honesto. Se o caso é fraco, diga. Se há risco alto de
         analogy: {
           text: 'Imagine um **armário com pastas etiquetadas**: "Trabalhista", "Consumidor", "Previdenciário". Cada pasta tem tudo: modelos, checklists, legislação, fluxos. **Sem a pasta = genérico. Com a pasta = especialista.**',
         },
-        content: `Um GPT é um "pacote de especialização" que transforma o ChatGPT de um assistente genérico em um especialista numa área.
+        content: `Um GPT (Custom GPT) é um "pacote de especialização" que transforma o ChatGPT de um assistente genérico em um especialista numa área.
 
-**Cada GPT contém:**
-- **Custom Instructions:** Conhecimento que o ChatGPT usa automaticamente
-- **Slash commands:** Atalhos com "/" para tarefas específicas (ex: /review-contract)
-- **Connectors:** Ligações com ferramentas como Google Drive, Slack, etc.
+**Cada GPT personalizado contém:**
+- **Instructions:** Instruções específicas que definem o comportamento e conhecimento do GPT
+- **Knowledge base:** Arquivos e documentos que o GPT pode consultar
+- **Actions:** Integrações com APIs externas para buscar dados ou executar tarefas
+- **Conversation starters:** Sugestões de perguntas para guiar o uso
 
-**Todos os 11 GPTs oficiais são gratuitos** e de código aberto. Você só precisa ter um plano pago.
+**A GPT Store possui milhares de GPTs** criados pela comunidade e por empresas. Além disso, você pode criar os seus próprios GPTs personalizados — sem precisar programar.
 
-| GPT | Foco | Utilidade para Advogados |
-|--------|------|-------------------------|
-| **Legal** | Jurídico | Revisão de contratos, NDAs, compliance |
-| **Productivity** | Produtividade | Tarefas, calendário, fluxos |
-| **Enterprise Search** | Busca | Encontrar em emails, docs, chats |
-| **Finance** | Financeiro | Análises, reconciliação |
-| **Data** | Dados | SQL, dashboards, jurimetria |
-| **Marketing** | Marketing | Conteúdo, campanhas |
-| **GPT Create** | Meta | Criar seus próprios GPTs |`,
+| Categoria na GPT Store | Foco | Utilidade para Advogados |
+|------------------------|------|-------------------------|
+| **Writing** | Redação | Petições, contratos, pareceres jurídicos |
+| **Research & Analysis** | Pesquisa | Jurisprudência, doutrina, análise de casos |
+| **Productivity** | Produtividade | Organização de tarefas, prazos, calendário |
+| **Education** | Educação | Estudo para concursos, OAB, atualização |
+| **Programming** | Código | Automações, planilhas, análise de dados |
+| **Lifestyle** | Geral | Comunicação com clientes, marketing jurídico |
+| **GPTs do OpenAI** | Oficiais | DALL-E, Data Analysis, ChatGPT Classic |`,
         steps: [
-          'Abra o ChatGPT Desktop e vá para a aba Canvas',
-          'No menu lateral, clique em "Customize" (Personalizar)',
-          'Clique em "Browse GPTs" (Navegar GPTs)',
-          'Encontre o GPT desejado e clique em "Install"',
-          'Pronto! Use os comandos digitando "/" na conversa',
+          'Abra chat.openai.com ou o ChatGPT Desktop',
+          'Clique em "Explore GPTs" no menu lateral (ou acesse chat.openai.com/gpts)',
+          'Navegue por categorias ou pesquise por "jurídico", "legal", "contract"',
+          'Clique no GPT desejado e depois em "Start Chat" para usar',
+          'Para criar o seu: clique em "Create" e siga o assistente de criação',
         ],
       },
       {
@@ -3516,24 +3520,24 @@ O GPT puxa dados do Calendar, cria tarefas no Notion/Asana e organiza tudo numa 
         ],
       },
       {
-        title: 'GPT Enterprise Search',
+        title: 'Search & Connectors (Enterprise)',
         subtitle: 'Encontre tudo em um só lugar',
         level: 'intermediario',
         icon: 'search',
         analogy: {
-          text: 'Como ter um **Google interno** do escritório: busca em emails, Drive, Slack, Notion — tudo de uma vez. "Contrato João Silva 2024" retorna resultados de todas as plataformas.',
+          text: 'Como ter um **Google interno** do escritório: busca em emails, Drive, SharePoint — tudo de uma vez. "Contrato João Silva 2024" retorna resultados de todas as plataformas conectadas.',
         },
-        content: `Busca em emails, chats, documentos e wikis — uma consulta única em todas as ferramentas.
+        content: `O ChatGPT Enterprise e Team oferecem funcionalidades de busca conectada — pesquisando em documentos, emails e plataformas integradas.
 
-Imagine buscar **"contrato João Silva 2024"** e encontrar resultados no email, Drive, Slack e notas — tudo de uma vez.
+Imagine buscar **"contrato João Silva 2024"** e encontrar resultados no SharePoint, Google Drive e emails — tudo de dentro do ChatGPT.
 
-**Para advogados:** Encontre rapidamente aquele e-mail do cliente, aquele contrato no Drive, aquela anotação no Notion — sem abrir cada ferramenta separadamente.
+**Para advogados:** Encontre rapidamente aquele e-mail do cliente, aquele contrato no Drive, aquela anotação — sem abrir cada ferramenta separadamente. Disponível nos planos Team e Enterprise com Connectors habilitados.
 
-**Exemplo prático:** "Encontre todas as comunicações e documentos relacionados ao caso nº 0001234 nos últimos 6 meses." O GPT busca em Gmail, Drive, Slack e Notion simultaneamente.`,
+**Exemplo prático:** "Encontre todas as comunicações e documentos relacionados ao caso nº 0001234 nos últimos 6 meses." O ChatGPT busca nas plataformas conectadas simultaneamente.`,
         tips: [
-          'Enterprise Search economiza horas procurando informações espalhadas',
-          'Ideal para escritórios com informações em múltiplas plataformas',
-          'Funciona simultaneamente com outros GPTs',
+          'Busca conectada economiza horas procurando informações espalhadas',
+          'Disponível nos planos Team e Enterprise com Connectors',
+          'Combina com GPTs personalizados para fluxos ainda mais poderosos',
         ],
       },
       {
@@ -3689,13 +3693,13 @@ Cada comando deve seguir rigorosamente a sequência de etapas. O GPT deve solici
         content: `No nível Expert, você combina múltiplos GPTs num único fluxo de trabalho:
 
 **Fluxo "Compliance Completo":**
-1. **Legal** → /review-contract em todos os contratos ativos
-2. **Enterprise Search** → Buscar comunicações relacionadas a cada contrato
-3. **Data** → Dashboard de vencimentos, valores e riscos
-4. **Productivity** → Criar tarefas para cada pendência identificada
+1. **GPT Legal** → Revisar contratos ativos
+2. **Search/Connectors** → Buscar comunicações relacionadas a cada contrato
+3. **Code Interpreter** → Dashboard de vencimentos, valores e riscos
+4. **GPT Productivity** → Criar tarefas para cada pendência identificada
 
 **Fluxo "Prospecção Jurídica":**
-1. **Enterprise Search** → Identificar leads em comunicações recebidas
+1. **Search/Connectors** → Identificar leads em comunicações recebidas
 2. **Marketing** → Gerar conteúdo jurídico para LinkedIn
 3. **Productivity** → Agendar follow-ups no CRM
 
@@ -3896,7 +3900,7 @@ Para cada fluxo, documente no Custom Instructions do Projeto: quais conectores u
 - "Perguntar antes de agir" (recomendado para começar)
 - "Agir sem perguntar" (só quando estiver confortável)`,
         steps: [
-          'Tenha um plano pago do ChatGPT (Pro, Max, Team ou Enterprise)',
+          'Tenha um plano pago do ChatGPT (Go, Plus, Pro, Team ou Enterprise)',
           'Na Chrome Web Store, pesquise "ChatGPT" e instale a extensão oficial',
           'Faça login com suas credenciais',
           'Fixe a extensão: ícone de quebra-cabeça → alfinete ao lado de "ChatGPT"',
@@ -3938,7 +3942,8 @@ Para cada fluxo, documente no Custom Instructions do Projeto: quais conectores u
 
 | Plano | Treinamento | Retenção | Ação necessária |
 |-------|------------|----------|----------------|
-| Free / Pro / Max | Pode ser ativado (opt-in desde Out/2025) | 30 dias (ou 5 anos se ativar) | Desativar em Configurações → Privacidade |
+| Free / Go / Plus | Pode ser ativado (opt-in desde Out/2025) | 30 dias (ou 5 anos se ativar) | Desativar em Configurações → Privacidade |
+| **Pro** | **Excluído por padrão** | **Padrão OpenAI** | **Verificar configurações** |
 | **Team / Enterprise** | **Nunca** | **Mínima** | **Nenhuma — proteção automática** |
 | Modo Incógnito | Nunca | Reduzida | Ativar para sessões sensíveis |
 | Integrações (Drive, MCP) | Nunca | — | Dados de conectores são isolados |
@@ -4544,7 +4549,7 @@ Elabore petição inicial de reclamação trabalhista requerendo:
               'NÃO use uma conversa única para tudo — abra uma nova para cada tarefa',
               'NÃO deixe conectores e busca web ligados quando não precisa — consomem tokens em silêncio',
               'NÃO faça prompts vagos como "faça uma petição" — use o padrão C-T-F-R',
-              'NÃO ative Raciocínio o1/o3 para tarefas simples — reserve para análises complexas',
+              'NÃO use GPT-5 para tarefas simples — reserve para análises complexas (GPT-5.2 resolve o resto)',
             ],
           },
         ],
@@ -4570,7 +4575,7 @@ Para documentos muito grandes, divida em pedaços temáticos. Em vez de enviar o
 **2. Templates no Projeto:**
 Crie Projetos com templates pré-configurados. Nas instruções: "Quando eu disser 'petição', use o template X. Quando disser 'parecer', use o template Y." Economiza explicação a cada nova conversa.
 
-**3. Raciocínio o1/o3 Seletivo:**
+**3. GPT-5 Seletivo (Raciocínio Premium):**
 Só ative para análises que realmente precisam de profundidade. Para redação com estrutura definida, o modo normal é suficiente e consome menos.
 
 **4. Pipeline de Processamento:**
@@ -4699,8 +4704,8 @@ Estabelece diretrizes para o uso de IA no Poder Judiciário:
 Um tribunal de Nova York decidiu que comunicações com ChatGPT AI sobre estratégia jurídica **NÃO são protegidas pelo sigilo advogado-cliente** (na versão consumidor). Motivo: a política de privacidade permite coleta e compartilhamento de dados com terceiros.
 
 **Implicações para advogados brasileiros:**
-- Versões gratuitas/Pro podem não garantir sigilo pleno
-- Planos Enterprise oferecem provisões de confidencialidade
+- Versões gratuitas/Go/Plus podem não garantir sigilo pleno
+- Planos Team e Enterprise oferecem provisões de confidencialidade
 - NUNCA insira dados sensíveis de clientes sem anonimização
 - Documente o uso de IA no caso para transparência processual
 
@@ -4737,22 +4742,22 @@ Um tribunal de Nova York decidiu que comunicações com ChatGPT AI sobre estrat�
 
 **Comparativo de segurança por plano:**
 
-| Proteção | **Gratuito** | **Pro** | **Team** | **Enterprise** |
-|----------|------------|--------|---------|---------------|
-| **Dados usados para treino?** | Exceções possíveis | Excluídos por padrão | Excluídos | Garantia contratual |
-| **Sigilo profissional** | Não garantido | Parcial | Adequado | Completo |
-| **Controle de dados** | Limitado | Moderado | Bom | Total |
-| **Retenção de dados** | Padrão OpenAI | Padrão OpenAI | Configurável | Customizável |
-| **SOC 2 / HIPAA** | Não | Não | Parcial | Completo |
-| **SSO / Admin central** | Não | Não | Sim | Sim |
-| **Adequado para dados sensíveis?** | Não | Com ressalvas | Sim | Sim |
+| Proteção | **Free/Go** | **Plus** | **Pro** | **Team** | **Enterprise** |
+|----------|-----------|---------|--------|---------|---------------|
+| **Dados usados para treino?** | Opt-in | Opt-in | Excluído por padrão | Excluídos | Garantia contratual |
+| **Sigilo profissional** | Não garantido | Não garantido | Parcial | Adequado | Completo |
+| **Controle de dados** | Limitado | Limitado | Moderado | Bom | Total |
+| **Retenção de dados** | Padrão OpenAI | Padrão OpenAI | Padrão OpenAI | Configurável | Customizável |
+| **SOC 2 / HIPAA** | Não | Não | Não | Parcial | Completo |
+| **SSO / Admin central** | Não | Não | Não | Sim | Sim |
+| **Adequado para dados sensíveis?** | Não | Não | Com ressalvas | Sim | Sim |
 
 **Recomendação por tipo de uso:**
 
 | Situação | Plano Mínimo | Justificativa |
 |----------|-------------|---------------|
-| Pesquisa jurídica genérica | Gratuito/Pro | Sem dados de clientes envolvidos |
-| Redação com dados fictícios | Pro | Dados anonimizados, sem risco |
+| Pesquisa jurídica genérica | Free/Go/Plus | Sem dados de clientes envolvidos |
+| Redação com dados fictícios | Plus/Pro | Dados anonimizados, sem risco |
 | Análise de contratos reais | Team | Dados confidenciais de terceiros |
 | Estratégia de caso com nomes reais | Enterprise | Sigilo advogado-cliente em jogo |
 | Due diligence corporativa | Enterprise | Dados empresariais sensíveis |
@@ -4761,7 +4766,7 @@ Um tribunal de Nova York decidiu que comunicações com ChatGPT AI sobre estrat�
 **Estratégia prática (custo-benefício):**
 
 A melhor abordagem para a maioria dos escritórios:
-1. **Pro** para uso pessoal com dados anonimizados
+1. **Plus ou Pro** para uso pessoal com dados anonimizados
 2. **Team** para equipe com processos padronizados
 3. **Anonimização rigorosa** como camada extra em qualquer plano
 
@@ -4769,7 +4774,7 @@ A melhor abordagem para a maioria dos escritórios:
 Substitua: nomes reais → "Parte Autora / Parte Ré", CPF → "XXX.XXX.XXX-XX", endereços → "[endereço omitido]", valores → mantenha (são necessários para análise).`,
         tips: [
           'Na dúvida, anonimize SEMPRE — é a camada de proteção mais simples e eficaz',
-          'Para escritórios: o plano Team ($25/usuário) é o melhor custo-benefício com segurança',
+          'Para escritórios: o plano Team ($25–30/usuário) é o melhor custo-benefício com segurança',
           'Enterprise é obrigatório para due diligence, M&A e casos de alta confidencialidade',
           'Mantenha uma política interna de uso de IA no escritório — documente regras',
         ],
@@ -4788,7 +4793,7 @@ Substitua: nomes reais → "Parte Autora / Parte Ré", CPF → "XXX.XXX.XXX-XX",
 
 | Semana | Ação | Responsável | Resultado |
 |--------|------|------------|-----------|
-| **1** | Criar contas Pro para todos os advogados | Gestão | Acesso configurado |
+| **1** | Criar contas Plus para todos os advogados | Gestão | Acesso configurado |
 | **1** | Personalizar perfil de cada advogado | Individual | Instruções base salvas |
 | **1** | Definir política interna de uso de IA | Sócio + compliance | Documento aprovado |
 | **2** | Criar Projetos por cliente/caso ativo | Cada advogado | Contexto organizado |
@@ -4878,7 +4883,7 @@ Substitua: nomes reais → "Parte Autora / Parte Ré", CPF → "XXX.XXX.XXX-XX",
 **Para advogados:** O Code Interpreter é extremamente útil para análise de dados, cálculos de indenizações, atualização de valores, análise de planilhas de custas e honorários.
 
 **Como ativar:**
-- Está disponível automaticamente no plano Plus e Pro
+- Está disponível automaticamente nos planos Go, Plus e Pro
 - Basta enviar um arquivo (Excel, CSV, PDF) e pedir para analisar
 - Ou peça para criar cálculos diretamente no chat`,
         tips: [
@@ -4972,7 +4977,7 @@ DocuSign acessa contrato pendente → Canvas analisa cláusula por cláusula →
 
 **Pré-requisitos:**
 - Code Interpreter instalado (npm, Node.js 18+)
-- Conta no plano Pro ou superior
+- Conta no plano Plus ou superior
 - Conhecimento básico de terminal (copiar e colar comandos)
 - Para APIs institucionais: credenciais obtidas via tribunal
 
