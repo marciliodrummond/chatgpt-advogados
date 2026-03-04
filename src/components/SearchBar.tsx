@@ -8,7 +8,7 @@ const levelColors: Record<string, { bg: string; text: string; label: string }> =
   iniciante: { bg: 'rgba(34,197,94,0.15)', text: '#22c55e', label: 'Iniciante' },
   intermediario: { bg: 'rgba(59,130,246,0.15)', text: '#3b82f6', label: 'Intermediário' },
   avancado: { bg: 'rgba(168,85,247,0.15)', text: '#a855f7', label: 'Avançado' },
-  expert: { bg: 'rgba(226,192,116,0.15)', text: '#e2c074', label: 'Expert' },
+  expert: { bg: 'rgba(168,85,247,0.15)', text: '#a855f7', label: 'Expert' },
 }
 
 const matchTypeLabels: Record<string, string> = {
@@ -104,7 +104,7 @@ export function SearchBar({ query, onQueryChange, results, onSelectResult, isFoc
           onBlur={onBlur}
           onKeyDown={handleKeyDown}
           placeholder="Buscar tutoriais, prompts, Skills, Plugins..."
-          className="w-full h-11 pl-10 pr-10 rounded-xl border text-sm font-sans outline-none transition-all duration-200 focus:border-[var(--border-focus)] focus:shadow-[var(--gold-glow-sm)]"
+          className="w-full h-11 pl-10 pr-10 rounded-xl border text-sm font-sans outline-none transition-all duration-200 focus:border-[var(--border-focus)] focus:shadow-[var(--accent-glow-sm)]"
           style={{
             background: 'var(--bg-surface)',
             borderColor: 'var(--border-line)',

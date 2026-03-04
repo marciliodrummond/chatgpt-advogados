@@ -2,7 +2,7 @@ const levels = [
   { id: 'todos', label: 'Todos', color: 'var(--fg-secondary)' },
   { id: 'iniciante', label: 'Iniciante', color: '#4ade80' },
   { id: 'intermediario', label: 'Intermediário', color: '#60a5fa' },
-  { id: 'avancado', label: 'Avançado', color: '#e2c074' },
+  { id: 'avancado', label: 'Avançado', color: '#f59e0b' },
   { id: 'expert', label: 'Expert', color: '#c084fc' },
 ]
 

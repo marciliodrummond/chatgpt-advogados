@@ -12,7 +12,7 @@ export function Hero({ onStart }: HeroProps) {
         background: 'radial-gradient(circle, rgba(16,163,127,0.1) 0%, transparent 70%)',
       }} />
       <div className="absolute bottom-[20%] left-[-5%] w-[300px] h-[300px] rounded-full pointer-events-none blur-[80px] animate-[orbFloat_12s_ease-in-out_infinite_-4s]" style={{
-        background: 'radial-gradient(circle, rgba(226,192,116,0.08) 0%, transparent 70%)',
+        background: 'radial-gradient(circle, rgba(16,163,127,0.08) 0%, transparent 70%)',
       }} />
 
       <div className="relative z-10">
@@ -30,7 +30,7 @@ export function Hero({ onStart }: HeroProps) {
           style={{ animation: 'fadeUp 0.8s ease 0.1s both' }}
         >
           ChatGPT para{' '}
-          <span className="bg-gradient-to-br from-gold-300 via-gold-500 to-gold-400 bg-clip-text text-transparent">
+          <span className="bg-gradient-to-br from-teal-300 via-teal-500 to-teal-400 bg-clip-text text-transparent">
             Advogados
           </span>
         </h1>
@@ -77,7 +77,7 @@ export function Hero({ onStart }: HeroProps) {
             style={{
               background: 'linear-gradient(135deg, var(--bg-accent), var(--bg-accent-hover))',
               color: 'var(--fg-on-accent)',
-              boxShadow: 'var(--gold-glow-sm)',
+              boxShadow: 'var(--accent-glow-sm)',
             }}
           >
             <Scale className="w-4 h-4" />

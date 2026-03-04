@@ -11,17 +11,6 @@
   --font-sans: 'DM Sans', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', 'SF Mono', 'Fira Code', monospace;
 
-  --color-gold-50: #fdf9f0;
-  --color-gold-100: #faf0d9;
-  --color-gold-200: #f3e0b3;
-  --color-gold-300: #ecce87;
-  --color-gold-400: #e2c074;
-  --color-gold-500: #d4a84e;
-  --color-gold-600: #b8883a;
-  --color-gold-700: #96692c;
-  --color-gold-800: #6e4d22;
-  --color-gold-900: #4a3318;
-
   --color-teal-50: #f0fdfa;
   --color-teal-100: #ccfbef;
   --color-teal-200: #99f6e0;
@@ -57,38 +46,31 @@
   --bg-card: rgba(14, 16, 23, 0.6);
   --bg-elevated: #1a1c26;
   --bg-overlay: rgba(0, 0, 0, 0.7);
-  --bg-accent: #e2c074;
-  --bg-accent-hover: #d4a84e;
-  --bg-accent-subtle: rgba(226, 192, 116, 0.08);
+  --bg-accent: #10a37f;
+  --bg-accent-hover: #0d8c6d;
+  --bg-accent-subtle: rgba(16, 163, 127, 0.08);
 
   /* ── Foreground ─── */
   --fg-primary: #edeef2;
   --fg-secondary: #8c90a0;
   --fg-muted: #555869;
-  --fg-accent: #e2c074;
-  --fg-accent-dim: #b8883a;
-  --fg-on-accent: #030409;
+  --fg-accent: #34d399;
+  --fg-accent-dim: #0d8c6d;
+  --fg-on-accent: #ffffff;
 
   /* ── Borders ─── */
   --border-line: rgba(255, 255, 255, 0.06);
   --border-strong: rgba(255, 255, 255, 0.1);
-  --border-accent: rgba(226, 192, 116, 0.15);
-  --border-focus: #e2c074;
+  --border-accent: rgba(16, 163, 127, 0.2);
+  --border-focus: #10a37f;
 
   /* ── Glows ─── */
-  --gold-glow-sm: 0 0 20px rgba(226, 192, 116, 0.06);
-  --gold-glow-md: 0 0 40px rgba(226, 192, 116, 0.08);
-  --teal-glow-sm: 0 0 20px rgba(16, 163, 127, 0.06);
-
-  /* ── Secondary accent (teal — ChatGPT identity) ─── */
-  --fg-accent-secondary: #10a37f;
-  --fg-accent-secondary-dim: #0d8c6d;
-  --border-accent-secondary: rgba(16, 163, 127, 0.15);
-  --bg-accent-secondary-subtle: rgba(16, 163, 127, 0.06);
+  --accent-glow-sm: 0 0 20px rgba(16, 163, 127, 0.08);
+  --accent-glow-md: 0 0 40px rgba(16, 163, 127, 0.1);
 
   /* ── Grid ─── */
   --grid-color: rgba(16, 163, 127, 0.025);
-  --grid-accent: rgba(226, 192, 116, 0.04);
+  --grid-accent: rgba(16, 163, 127, 0.04);
 }
 
 [data-theme="light"] {
@@ -98,33 +80,27 @@
   --bg-card: rgba(255, 255, 255, 0.7);
   --bg-elevated: #ffffff;
   --bg-overlay: rgba(0, 0, 0, 0.3);
-  --bg-accent: #e2c074;
-  --bg-accent-hover: #d4a84e;
-  --bg-accent-subtle: rgba(226, 192, 116, 0.1);
+  --bg-accent: #10a37f;
+  --bg-accent-hover: #0d8c6d;
+  --bg-accent-subtle: rgba(16, 163, 127, 0.08);
 
   --fg-primary: #1a1a1a;
   --fg-secondary: #6b6b6b;
   --fg-muted: #a0a0a0;
-  --fg-accent: #96692c;
-  --fg-accent-dim: #d4a84e;
-  --fg-on-accent: #030409;
+  --fg-accent: #0d8c6d;
+  --fg-accent-dim: #10a37f;
+  --fg-on-accent: #ffffff;
 
   --border-line: rgba(0, 0, 0, 0.07);
   --border-strong: rgba(0, 0, 0, 0.12);
-  --border-accent: rgba(150, 105, 44, 0.2);
-  --border-focus: #96692c;
+  --border-accent: rgba(16, 163, 127, 0.2);
+  --border-focus: #0d8c6d;
 
-  --gold-glow-sm: 0 0 20px rgba(226, 192, 116, 0.1);
-  --gold-glow-md: 0 0 40px rgba(226, 192, 116, 0.12);
-  --teal-glow-sm: 0 0 20px rgba(16, 163, 127, 0.08);
-
-  --fg-accent-secondary: #0d8c6d;
-  --fg-accent-secondary-dim: #10a37f;
-  --border-accent-secondary: rgba(13, 140, 109, 0.2);
-  --bg-accent-secondary-subtle: rgba(16, 163, 127, 0.06);
+  --accent-glow-sm: 0 0 20px rgba(16, 163, 127, 0.1);
+  --accent-glow-md: 0 0 40px rgba(16, 163, 127, 0.12);
 
   --grid-color: rgba(13, 140, 109, 0.035);
-  --grid-accent: rgba(150, 105, 44, 0.05);
+  --grid-accent: rgba(16, 163, 127, 0.05);
 }
 
 /* ── Global Base ─── */
@@ -148,7 +124,7 @@ body {
   overflow-x: hidden;
 }
 
-/* ── Gold Grid Background ─── */
+/* ── Teal Grid Background ─── */
 body::before {
   content: '';
   position: fixed;
