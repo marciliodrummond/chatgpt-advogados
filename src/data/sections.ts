@@ -422,6 +422,8 @@ Para o **ecossistema mais completo** e maduro, com GPTs, Canvas, Code Interprete
         },
         content: `O MCP (Model Context Protocol) é a tecnologia que permite ao ChatGPT se conectar com ferramentas externas. Você não precisa se preocupar com o MCP em si — basta ativar os conectores que precisa.
 
+**Origem:** O MCP foi criado pela **Anthropic** (fabricante do Claude) em novembro de 2024 e se tornou um **padrão aberto** adotado por toda a indústria. A OpenAI adotou o MCP em março de 2025, integrando-o ao ChatGPT Desktop, Agents SDK e Responses API. Em dezembro de 2025, o MCP foi doado à **Agentic AI Foundation** (Linux Foundation), co-fundada por Anthropic, OpenAI e Block. Hoje, é suportado nativamente por Claude, ChatGPT, Gemini, Cursor, VS Code e Microsoft Copilot.
+
 **Como ativar:** ChatGPT Desktop → Personalizar → Integrações → Escolha o serviço → Connect → Faça login.`,
         relationship: {
           title: 'MCP vs Integração vs GPT',
@@ -557,7 +559,7 @@ Para o **ecossistema mais completo** e maduro, com GPTs, Canvas, Code Interprete
         },
         content: `O ChatGPT se estende além do Desktop com extensões para navegador e Office.`,
         elementGrid: [
-          { icon: 'globe', name: 'ChatGPT Browsing', tech: 'O Boy que vai ao Fórum', description: 'Extensão do Chrome. O ChatGPT **navega na internet**, acessa sites, lê páginas e busca informações como parte da tarefa.', highlight: false },
+          { icon: 'globe', name: 'Agent Mode + ChatGPT Search', tech: 'O Boy que vai ao Fórum', description: 'O **ChatGPT Search** busca informações na web. O **Agent Mode** (Plus/Pro) navega em sites, clica e preenche formulários — com sua supervisão.', highlight: false },
           { icon: 'spreadsheet', name: 'ChatGPT in Excel', tech: 'Estagiário na Planilha', description: 'Suplemento que permite ao ChatGPT **trabalhar dentro do Excel** em tempo real — analisa dados, cria fórmulas, monta tabelas.', highlight: false },
           { icon: 'presentation', name: 'ChatGPT in PowerPoint', tech: 'Estagiário na Apresentação', description: 'Suplemento para PowerPoint. O ChatGPT **monta slides automaticamente** — e pode passar contexto do Excel direto.', highlight: false },
         ],
@@ -1478,54 +1480,51 @@ Classifique os riscos como: BAIXO, MÉDIO, ALTO, CRÍTICO.`,
       },
       {
         title: 'Organização de Documentos Processuais',
-        subtitle: 'Renomeie e classifique centenas de arquivos automaticamente',
+        subtitle: 'Classifique e catalogue documentos com ajuda da IA',
         level: 'intermediario',
         icon: 'folder-open',
         analogy: {
-          text: 'Sabe quando você baixa 47 documentos do PJe e vem tudo como "documento_1.pdf", "documento_2.pdf"? O Canvas é como ter um **estagiário organizador** que lê cada PDF, identifica o que é e renomeia com o padrão do escritório — em segundos.',
+          text: 'Sabe quando você baixa 47 documentos do PJe e vem tudo como "documento_1.pdf", "documento_2.pdf"? O ChatGPT funciona como um **estagiário organizador** que lê cada PDF, identifica o que é e sugere como renomear — você aplica as mudanças.',
         },
-        content: `Um dos maiores problemas da prática forense é a desorganização de documentos processuais. O Canvas resolve isso automaticamente.
+        content: `Um dos maiores problemas da prática forense é a desorganização de documentos processuais. O ChatGPT ajuda a classificar e catalogar — mas a organização das pastas é feita por você.
 
 **O problema:**
 Ao baixar documentos de processos (PJe, e-SAJ, PROJUDI), os arquivos vêm com nomes genéricos como "doc_12345.pdf" ou "evento_678.pdf". Encontrar algo específico vira pesadelo.
 
-**A solução com Canvas:**
-Coloque todos os documentos numa pasta e peça ao Canvas para ler, identificar e renomear cada um seguindo o padrão do escritório.
+**O que o ChatGPT PODE fazer:**
+- Ler PDFs que você faz upload (até 10 por mensagem)
+- Identificar o tipo de cada documento (petição, sentença, ata, etc.)
+- Sugerir um padrão de nomes e classificação
+- Gerar um índice em planilha via Code Interpreter
+- Gerar scripts Python para renomear arquivos em lote
 
-**Exemplo prático — Processo Trabalhista:**
+**O que o ChatGPT NÃO faz:**
+- Acessar pastas do seu computador diretamente
+- Renomear arquivos no seu disco automaticamente
+- Mover arquivos entre pastas
 
-Antes:
-- documento_1.pdf
-- documento_2.pdf
-- evento_45.pdf
-- peca_processual_3.pdf
+**Fluxo prático recomendado:**
 
-Depois:
+1. Faça upload dos PDFs no ChatGPT (até 10 por vez)
+2. Peça para identificar e classificar cada um
+3. Peça um script Python para renomear em lote (copie e execute no seu PC)
+4. OU use a tabela gerada para renomear manualmente
+
+**Padrão sugerido de nomes:**
 - 001_PETICAO-INICIAL_2024-03-15.pdf
 - 002_PROCURACAO_RECLAMANTE_2024-03-15.pdf
-- 003_CTPS_JOSE-SILVA.pdf
-- 004_HOLERITES_JAN-DEZ-2023.pdf
 - 005_CONTESTACAO_RECLAMADA_2024-05-10.pdf
-- 006_ATA-AUDIENCIA_2024-07-22.pdf
-- 007_SENTENCA_2024-09-30.pdf
-
-**O que o Canvas faz automaticamente:**
-1. Lê cada PDF e identifica o tipo de documento
-2. Extrai a data do documento
-3. Identifica as partes envolvidas
-4. Renomeia seguindo o padrão: NUMERO_TIPO_DETALHES_DATA
-5. Move para subpastas organizadas (opcional)
-6. Gera um índice em Excel com todos os documentos`,
-        prompt: `Leia TODOS os documentos PDF desta pasta. Para cada um:
+- 007_SENTENCA_2024-09-30.pdf`,
+        prompt: `Analisei estes documentos processuais. Para cada um:
 
 1. Identifique o tipo: petição inicial, contestação, réplica, sentença, acórdão, procuração, substabelecimento, ata de audiência, laudo pericial, certidão, alvará, mandado, CTPS, holerite, contrato, comprovante, recurso, contrarrazões, decisão interlocutória, despacho, outro.
 
 2. Extraia: data do documento, partes mencionadas, número do processo.
 
-3. Renomeie cada arquivo seguindo este padrão:
+3. Sugira um nome seguindo este padrão:
    [SEQUÊNCIA 3 dígitos]_[TIPO EM MAIÚSCULO]_[DETALHE RELEVANTE]_[DATA YYYY-MM-DD].pdf
 
-4. Crie as seguintes subpastas e mova os documentos:
+4. Sugira as seguintes subpastas:
    - /Peticoes (iniciais, contestações, réplicas, recursos)
    - /Decisoes (sentenças, acórdãos, despachos, decisões)
    - /Documentos (CTPS, holerites, contratos, comprovantes)
@@ -1533,19 +1532,21 @@ Depois:
    - /Procuracoes (procurações, substabelecimentos)
    - /Pericias (laudos, quesitos)
 
-5. Gere um arquivo "INDICE_PROCESSUAL.xlsx" com: sequência, nome original, nome novo, tipo, data, subpasta, resumo em 1 linha.`,
+5. Gere uma planilha com: sequência, nome original, nome sugerido, tipo, data, subpasta, resumo em 1 linha.
+
+6. Gere um script Python que eu possa executar no meu computador para renomear e organizar os arquivos automaticamente.`,
         tips: [
-          'Funciona com qualquer área: trabalhista, cível, criminal, tributário, familiar',
+          'Faça upload de até 10 PDFs por mensagem — para processos grandes, envie em lotes',
+          'Peça ao ChatGPT para gerar um script Python de renomeação — é mais rápido que fazer manualmente',
           'Customize o padrão de nomes editando o prompt — use o padrão do seu escritório',
-          'Para processos grandes (100+ documentos), processe em lotes de 30-40 por vez',
-          'Salve este prompt como Instrução para usar em todos os processos novos',
+          'Salve este prompt como Custom Instruction para usar em todos os processos novos',
         ],
         steps: [
           'Baixe todos os documentos do processo numa pasta (ex: "Processo_12345")',
-          'Abra o Canvas e aponte para essa pasta',
-          'Cole o prompt de organização acima',
-          'Aguarde o Canvas processar (2-5 minutos para ~50 documentos)',
-          'Confira o índice Excel gerado e os documentos renomeados',
+          'Faça upload dos PDFs no ChatGPT (até 10 por mensagem, envie em lotes)',
+          'Cole o prompt de classificação acima',
+          'Revise a classificação e ajuste se necessário',
+          'Use o script Python gerado para renomear os arquivos no seu computador',
         ],
       },
       {
@@ -2132,9 +2133,9 @@ DIRETRIZES:
         analogy: {
           text: 'Em vez de pedir ao ChatGPT para gerar dados e depois copiar para o Excel, agora ele **abre sua planilha e trabalha nela diretamente**. É como ter um assistente que senta na sua cadeira, abre o Excel e preenche tudo sozinho — incluindo fórmulas.',
         },
-        content: `O Canvas pode operar diretamente dentro do Microsoft Excel e PowerPoint, criando, editando e formatando arquivos sem que você precise copiar e colar nada.
+        content: `O ChatGPT pode gerar conteúdo para Excel e PowerPoint de duas formas: via **Code Interpreter** (gera arquivos .xlsx/.pptx para download) e via **Canvas** (edite texto/código e baixe como PDF/DOCX/MD).
 
-**No Excel — O que o ChatGPT faz:**
+**No Excel — Via Code Interpreter:**
 
 | Tarefa | Exemplo Prático |
 |--------|----------------|
@@ -2145,7 +2146,7 @@ DIRETRIZES:
 | **Análise de dados** | Tabela dinâmica de processos por status, comarca, valor |
 | **Correção monetária** | Planilha com IPCA-E, INPC ou SELIC aplicados automaticamente |
 
-**No PowerPoint — O que o ChatGPT faz:**
+**No PowerPoint — Via Code Interpreter:**
 
 | Tarefa | Exemplo Prático |
 |--------|----------------|
@@ -2155,7 +2156,9 @@ DIRETRIZES:
 | **Material de treinamento** | Slides para equipe sobre nova legislação |
 
 **Como funciona:**
-Basta pedir ao Canvas e ele cria ou edita o arquivo diretamente. O arquivo aparece na sua pasta como .xlsx ou .pptx pronto para uso.`,
+Peça ao ChatGPT para gerar o arquivo. O Code Interpreter usa Python (openpyxl, python-pptx) para criar o arquivo, que aparece como link de download na conversa. Baixe e abra no Office normalmente.
+
+**Limitação:** Os arquivos gerados têm formatação básica/funcional. Para design refinado, use como base e ajuste no Office.`,
         prompt: `Crie uma planilha Excel completa de controle de prazos processuais com as seguintes especificações:
 
 Colunas: Nº Processo | Cliente | Vara | Tipo de Prazo | Data Inicial | Prazo (dias) | Data Final | Status | Observações
@@ -2667,67 +2670,68 @@ APÓS O CARROSSEL, crie também:
         ],
       },
       {
-        title: 'Automação Recorrente e Agendada',
-        subtitle: 'Tarefas que o ChatGPT executa sozinho, toda semana',
+        title: 'Rotinas Recorrentes com ChatGPT',
+        subtitle: 'Crie templates reutilizáveis para tarefas semanais',
         level: 'avancado',
         icon: 'clock',
         analogy: {
-          text: 'Imagine um estagiário que **toda segunda-feira de manhã** já tem pronto na sua mesa: relatório de prazos da semana, alertas de publicações, e resumo de atualizações dos processos. Sem você pedir. A automação recorrente do Canvas faz exatamente isso.',
+          text: 'Imagine ter um **checklist pronto** para cada segunda-feira: gerar relatório de prazos, revisar publicações, atualizar processos. Você ainda precisa abrir o ChatGPT e pedir — mas com Custom Instructions e prompts salvos, leva 2 minutos em vez de 2 horas.',
         },
-        content: `O Canvas permite agendar tarefas que se repetem automaticamente em intervalos definidos. O ChatGPT executa, salva os resultados e notifica você quando termina.
+        content: `O ChatGPT **não agenda tarefas automaticamente** — ele não roda sozinho enquanto você dorme. Mas você pode criar uma rotina eficiente com prompts salvos e Custom Instructions que transformam tarefas manuais de horas em minutos.
 
-**Automações recorrentes para escritórios:**
+**Importante:** O Canvas e o ChatGPT não têm agendamento nativo (cron/scheduler). Para automação verdadeiramente agendada, você precisaria de ferramentas externas como Zapier, Make ou scripts com a API da OpenAI.
 
-| Frequência | Tarefa | Resultado |
+**Rotinas que você pode criar com prompts salvos:**
+
+| Frequência | Tarefa | Como fazer |
 |-----------|--------|-----------|
-| **Diária** | Verificar publicações no DJe | Relatório de intimações e prazos do dia |
-| **Diária** | Resumo de e-mails jurídicos | Destaques do inbox com prioridade |
-| **Semanal** | Relatório de prazos | Planilha com todos os prazos da semana |
-| **Semanal** | Atualização de processos | Status de cada caso com movimentações |
-| **Quinzenal** | Relatório para clientes | E-mail automático com andamento dos casos |
-| **Mensal** | Dashboard do escritório | Métricas: novos casos, encerrados, receita, prazos |
-| **Mensal** | Compliance check | Verificação de pendências administrativas |
+| **Diária** | Resumo de e-mails jurídicos | Integração Gmail + prompt de triagem |
+| **Semanal** | Relatório de prazos | Upload da planilha + prompt de análise |
+| **Semanal** | Resumo de movimentações | Cole os andamentos + prompt de síntese |
+| **Quinzenal** | Relatório para clientes | Prompt-template + dados dos processos |
+| **Mensal** | Dashboard do escritório | Upload de métricas + prompt de dashboard |
 
-**Como configurar:**
-No Canvas, peça ao ChatGPT para criar uma tarefa recorrente. Ele perguntará: frequência, horário, pasta de trabalho e formato de saída.
+**Como criar sua rotina:**
+1. Salve prompts-modelo como Custom Instructions ou num GPT personalizado
+2. Toda semana, abra o ChatGPT e execute o prompt com os dados atualizados
+3. O ChatGPT processa e gera o relatório em segundos
 
-**Exemplo de configuração:**
-"Execute toda segunda às 7h: leia a pasta 'Processos Ativos', gere um relatório Excel com prazos da semana ordenados por urgência, e salve na pasta 'Relatórios Semanais'."
-
-**Combinação poderosa:**
-Automação recorrente + Integrações = fluxo totalmente automático. Exemplo: ChatGPT verifica Gmail diariamente → identifica intimações → atualiza planilha de prazos → envia alerta no Slack.`,
+**Para automação real agendada:**
+Use a API do ChatGPT + ferramentas como Zapier ou Make para criar fluxos que rodam automaticamente em horários definidos. Isso requer configuração técnica inicial, mas depois funciona sem intervenção.`,
         tips: [
-          'Comece com 1 automação semanal (relatório de prazos) e vá adicionando gradualmente',
-          'Configure alertas por Slack ou e-mail para ser notificado quando a tarefa completar',
-          'Sempre revise os primeiros resultados — ajuste o prompt até a qualidade ficar consistente',
-          'Para escritórios com equipe: cada advogado pode ter suas automações personalizadas',
+          'Crie um GPT personalizado com as instruções de cada relatório — depois só envie os dados',
+          'Salve prompts-modelo no Projects do ChatGPT para acesso rápido',
+          'Para automação agendada real, combine API da OpenAI + Zapier/Make',
+          'Comece manual (prompts salvos) e evolua para automação conforme a necessidade',
         ],
       },
       {
-        title: 'Automação de Escritório com Canvas',
-        subtitle: 'Fluxos completos end-to-end',
+        title: 'Fluxos Completos com ChatGPT',
+        subtitle: 'Combinando Canvas, Code Interpreter e prompts encadeados',
         level: 'expert',
         icon: 'workflow',
-        content: `Para o nível Expert, o Canvas permite criar **fluxos completos de automação** que combinam múltiplas funcionalidades:
+        content: `Para o nível Expert, combine Canvas + Code Interpreter + prompts encadeados para criar **fluxos completos** de trabalho jurídico:
 
 **Fluxo 1 — Onboarding de Cliente:**
-Recebimento de documentos → Análise de viabilidade → Checklist de pendências → Minuta de procuração → Carta de boas-vindas
+Upload de documentos → ChatGPT analisa viabilidade → Canvas redige checklist → Code Interpreter gera planilha → Canvas redige procuração e carta
 
 **Fluxo 2 — Preparação de Audiência:**
-Leitura do processo completo → Timeline dos fatos → Roteiro de perguntas para testemunhas → Quadro de teses e contra-teses → Resumo de bolso
+Upload do processo → ChatGPT cria timeline → Canvas redige roteiro de perguntas → Quadro de teses e contra-teses → Resumo de bolso
 
-**Fluxo 3 — Gestão Mensal do Escritório:**
-Extração de prazos de todos os processos → Planilha consolidada → Relatórios individuais por cliente → Dashboard de métricas
+**Fluxo 3 — Relatório Mensal:**
+Upload de dados do escritório → Code Interpreter gera gráficos e métricas → Canvas redige o relatório narrativo
 
 **Como montar fluxos complexos:**
-1. Crie uma pasta com todas as entradas
+1. Faça upload dos documentos necessários no ChatGPT
 2. Escreva um prompt detalhado com TODAS as etapas
-3. O Canvas cria multi-tools para cada etapa
+3. O ChatGPT processa sequencialmente no Canvas
 4. Revise os resultados intermediários
-5. Ajuste e refine conforme necessário`,
-        prompt: `Execute o seguinte fluxo de onboarding para novo cliente:
+5. Baixe os documentos finais (Canvas permite download como PDF, DOCX ou Markdown)
 
-1. ANÁLISE INICIAL: Leia todos os documentos desta pasta e identifique: tipo de demanda, partes envolvidas, fatos principais, pedidos possíveis.
+**Importante:** O ChatGPT processa tudo dentro da conversa. Ele não cria pastas, não salva arquivos no seu computador e não acessa seu sistema de arquivos. Os resultados são baixados manualmente por você.`,
+        prompt: `Execute o seguinte fluxo de onboarding para novo cliente com base nos documentos que enviei:
+
+1. ANÁLISE INICIAL: Leia todos os documentos e identifique: tipo de demanda, partes envolvidas, fatos principais, pedidos possíveis.
 
 2. VIABILIDADE: Gere um parecer de viabilidade com: probabilidade de êxito (alta/média/baixa), fundamentos, riscos, valor estimado da causa.
 
@@ -2737,7 +2741,7 @@ Extração de prazos de todos os processos → Planilha consolidada → Relatór
 
 5. CARTA: Redija uma carta de boas-vindas ao cliente explicando os próximos passos.
 
-Salve cada documento em uma subpasta "Onboarding" dentro desta pasta.`,
+Apresente cada documento separadamente no Canvas para que eu possa baixar individualmente.`,
         flowSteps: [
           { title: 'Documentos', description: 'Cliente envia documentos na pasta' },
           { title: 'Análise', description: 'ChatGPT identifica tipo de demanda e viabilidade' },
@@ -4102,7 +4106,7 @@ Adicione nos documentos trechos como: "Se perguntarem sobre o prazo do art. 523 
           'Crie um GPT por área do direito — não misture tudo num só',
           'Teste com perguntas-sentinela ANTES de usar na prática',
           'Atualize a Knowledge Base mensalmente com nova jurisprudência',
-          'O limite do GPT é de 20 arquivos e 512 MB — priorize qualidade sobre quantidade',
+          'Cada arquivo pode ter até 512 MB — priorize qualidade sobre quantidade',
           'Legislação consolidada rende melhor que artigos isolados',
         ],
         steps: [
@@ -4519,36 +4523,42 @@ Para cada fluxo, documente no Custom Instructions do Projeto: quais conectores u
     icon: 'chrome',
     cards: [
       {
-        title: 'O que é o ChatGPT Browsing?',
-        subtitle: 'Seu agente no navegador',
+        title: 'ChatGPT na Web: Search, Extensão e Agent Mode',
+        subtitle: 'Três ferramentas diferentes — entenda cada uma',
         level: 'intermediario',
         icon: 'chrome',
         analogy: {
-          text: 'O **boy que vai ao fórum**. Extensão do Chrome onde o ChatGPT **navega na internet**, acessa sites, lê páginas e busca informações — como parte da sua tarefa.',
+          text: 'O ChatGPT tem **três formas** de interagir com a web — e muita gente confunde. Pense assim: o **ChatGPT Search** é como pedir ao estagiário para pesquisar no Google. A **extensão Chrome** é como ter o estagiário sentado ao seu lado lendo a tela. O **Agent Mode** é o boy que vai ao fórum — navega, clica e preenche por você.',
         },
-        content: `Uma extensão para Google Chrome (e Edge) que coloca o ChatGPT trabalhando **dentro do seu navegador**. Em vez de alternar entre abas, o ChatGPT aparece em um painel lateral e pode ver e interagir com os sites.
+        content: `Existem três recursos distintos que envolvem o ChatGPT e a navegação web. É fundamental entender a diferença:
 
-**O que ele pode fazer:**
-- Navegar por sites, clicar em botões, preencher formulários
-- Ler e resumir conteúdo de páginas
-- Automatizar tarefas repetitivas
-- Gravar fluxos de trabalho (faz uma vez, repete depois)
-- Agendar tarefas automáticas (diário, semanal, mensal)
-- Gerenciar múltiplas abas simultaneamente
+**1. ChatGPT Search (busca web integrada)**
+- Disponível para todos os planos (incluindo Free)
+- Busca informações atualizadas na internet durante a conversa
+- Funciona dentro do chat — não acessa sites autenticados
+- Não interage com páginas (não clica, não preenche formulários)
 
-**Modos de permissão:**
-- "Perguntar antes de agir" (recomendado para começar)
-- "Agir sem perguntar" (só quando estiver confortável)`,
+**2. Extensão ChatGPT Search para Chrome**
+- Extensão oficial da OpenAI na Chrome Web Store
+- Função principal: redireciona buscas da barra de endereço para o ChatGPT
+- NÃO é um agente que navega por você — apenas muda seu buscador padrão
+- Útil para pesquisas rápidas diretamente do navegador
+
+**3. Agent Mode (antigo Operator)**
+- Disponível em planos Plus, Pro, Business e Enterprise
+- IA que controla um navegador virtual: clica, digita, navega e preenche formulários
+- Pausa automaticamente quando encontra login ou ação sensível — você assume o controle
+- Lançado inicialmente como "Operator" (jan/2025), integrado ao ChatGPT como "Agent Mode" (jul/2025)
+- Disponível no Brasil desde fevereiro de 2025`,
         steps: [
-          'Tenha um plano pago do ChatGPT (Go, Plus, Pro, Team ou Enterprise)',
-          'Na Chrome Web Store, pesquise "ChatGPT" e instale a extensão oficial',
-          'Faça login com suas credenciais',
-          'Fixe a extensão: ícone de quebra-cabeça → alfinete ao lado de "ChatGPT"',
-          'Clique no ícone do ChatGPT na barra para abrir o painel lateral',
-          'No ChatGPT Desktop: Configurações → ative o conector "ChatGPT Browsing"',
+          'Para ChatGPT Search: já está ativo em qualquer conversa — basta perguntar algo atual',
+          'Para a extensão Chrome: pesquise "ChatGPT search" na Chrome Web Store e instale',
+          'Para Agent Mode: abra o ChatGPT → no seletor de modo (dropdown), escolha "Agent"',
+          'Agent Mode requer plano Plus ($20/mês) ou superior',
+          'No Agent Mode, supervisione as ações — ele pausa em sites com login',
         ],
         links: [
-          { label: 'Chrome Web Store', url: 'https://chromewebstore.google.com/' },
+          { label: 'Extensão ChatGPT Search', url: 'https://chromewebstore.google.com/detail/chatgpt-search/ejcfepkfckglbgocfkanmcdngdijcgld' },
         ],
       },
       {
@@ -4557,11 +4567,11 @@ Para cada fluxo, documente no Custom Instructions do Projeto: quais conectores u
         level: 'intermediario',
         icon: 'shield',
         analogy: {
-          text: 'O ChatGPT Browsing funciona como um **estagiário que só enxerga a folha que está na sua mesa**. Ele não abre gavetas, não lê documentos de outras mesas e só age quando você manda. Mas — como qualquer estagiário — você precisa supervisionar o que ele vê.',
+          text: 'O Agent Mode funciona como um **estagiário que só enxerga a folha que está na sua mesa**. Ele não abre gavetas, não lê documentos de outras mesas e só age quando você manda. Mas — como qualquer estagiário — você precisa supervisionar o que ele vê.',
         },
         content: `Todo advogado que usa IA deve entender a proteção de dados. Não usar por medo é tão arriscado quanto usar sem informação. O caminho inteligente é **configurar corretamente**.
 
-**O que o Chrome Agent pode fazer:**
+**O que o Agent Mode pode fazer:**
 
 | Capacidade | Detalhe |
 |-----------|---------|
@@ -4622,7 +4632,7 @@ Quando trabalhar com informações particularmente delicadas, use conversas inc�
 Para escritórios com mais de 1 pessoa: zero treinamento, controle administrativo e termos comerciais dedicados.`,
         steps: [
           'Configurações → Privacidade → desative "Ajudar a melhorar o ChatGPT" (planos individuais)',
-          'ChatGPT Browsing → revise permissões de site e remova domínios desnecessários',
+          'Agent Mode → revise permissões de site e remova domínios desnecessários',
           'Ative o modo "Pedir antes de agir" para supervisão de cada ação',
           'Use Chat Temporário para dados particularmente sensíveis de clientes',
           'Avalie migração para plano Team se lida regularmente com dados pessoais',
@@ -4670,278 +4680,274 @@ O ChatGPT pode errar a interpretação. Revise cuidadosamente antes de permitir 
       },
       {
         title: 'Pesquisa Jurisprudencial',
-        subtitle: 'Pesquise tribunais automaticamente',
+        subtitle: 'Duas formas de pesquisar: Search e Agent Mode',
         level: 'avancado',
         icon: 'search',
         analogy: {
-          text: 'O boy que vai ao fórum agora vai ao **STJ, TJ-SP, JusBrasil e PJe** — tudo ao mesmo tempo. Pesquisa ementas, extrai decisões e organiza num relatório. Você não abre nenhum site.',
+          text: 'Para pesquisa jurisprudencial, você tem dois caminhos: o **ChatGPT Search** (rápido, busca web geral — como pedir ao estagiário para pesquisar no Google) e o **Agent Mode** (mais lento, navega em sites específicos — como mandar o boy ir ao tribunal).',
         },
-        content: `O ChatGPT Browsing pode pesquisar jurisprudência **diretamente nos sites dos tribunais**:
+        content: `**Opção 1 — ChatGPT Search (mais simples, todos os planos):**
+Pesquise jurisprudência diretamente no chat. O ChatGPT busca na web e retorna resultados com fontes. Funciona bem para temas amplos e teses consolidadas.
 
-**STJ:** Acesse o site, pesquise por tese, extraia ementas e organize num relatório.
-**TJ-SP, TJ-RJ, TJ-MG:** Consulte jurisprudência local por tema.
-**JusBrasil:** Busque precedentes e doutrina.
-**PJe / PROJUDI:** Consulte andamentos processuais.
+**Opção 2 — Agent Mode (mais preciso, Plus/Pro):**
+O Agent Mode navega diretamente nos sites dos tribunais, acessando a ferramenta de busca de cada portal.
 
-**Exemplo prático:** "Acesse o site do STJ, pesquise jurisprudência sobre 'dano moral em relação de consumo com valor até 20 salários mínimos' dos últimos 2 anos, extraia as 10 decisões mais relevantes e organize num relatório com: número do processo, relator, ementa, tese fixada e data."`,
+**Sites de consulta pública (funcionam bem):**
+- STJ (jurisprudência por tese)
+- TJ-SP, TJ-RJ, TJ-MG (jurisprudência local)
+- JusBrasil (precedentes e doutrina)
+
+**Sites com login (limitações):**
+- PJe / PROJUDI: o Agent Mode **pausa** no login e pede que você entre com suas credenciais. Depois de logado, ele pode navegar.
+
+**Limitações importantes:**
+- Agent Mode é mais lento que pesquisa manual em sites que você já conhece
+- Nem todos os portais de tribunais são bem estruturados para navegação por IA
+- Sempre confira as decisões citadas — a IA pode interpretar ementas de forma incompleta`,
         tips: [
-          'Comece com sites de consulta pública antes de sites com login',
-          'O ChatGPT pode navegar em múltiplas abas simultaneamente',
-          'Para sites que exigem login (PJe), certifique-se de estar logado antes',
-          'Sempre supervisione as ações — a extensão está em evolução',
-          'Nunca use para transações financeiras ou operações bancárias',
+          'Para pesquisa rápida: use o ChatGPT Search direto no chat — funciona em todos os planos',
+          'Para pesquisa em site específico: use Agent Mode com supervisão',
+          'Sempre confira os resultados nos sites oficiais — a IA pode cometer erros',
+          'Para PJe e sites com login: o Agent Mode pausa para você se autenticar',
+          'Deep Research (Plus/Pro) é excelente para pesquisas jurisprudenciais profundas',
         ],
-        prompt: `Acesse o site do TJ-SP (esaj.tjsp.jus.br) e pesquise jurisprudência sobre "[seu tema]". Extraia as 10 decisões mais recentes e organize numa tabela com: Número do Processo, Câmara, Relator, Data, Ementa (resumida) e Resultado (procedente/improcedente). Salve os resultados.`,
+        prompt: `Pesquise jurisprudência sobre "[seu tema]" nos seguintes tribunais: STJ e TJ-SP. Extraia as 10 decisões mais recentes e relevantes e organize numa tabela com: Número do Processo, Tribunal, Câmara/Turma, Relator, Data, Ementa (resumida) e Resultado. Cite as fontes.`,
       },
       {
-        title: 'Automação de Consultas',
-        subtitle: 'Extraia dados de sites automaticamente',
+        title: 'Consultas com Agent Mode',
+        subtitle: 'Use o agente de browser para consultar sites',
         level: 'avancado',
         icon: 'bot',
         analogy: {
-          text: 'Consultar andamentos de 15 processos todo dia? **Automatize.** O ChatGPT navega, extrai dados e monta a planilha — igual um boy dedicado que faz a ronda nos tribunais todos os dias.',
+          text: 'O Agent Mode é como um **boy digital** que navega em sites por você — mas com ressalvas. Ele é ótimo para sites públicos. Para sites com login (PJe), ele pausa e pede que você se autentique.',
         },
-        content: `Automatize tarefas repetitivas de consulta:
+        content: `O Agent Mode (antigo Operator) pode navegar em sites e extrair informações. Veja o que funciona e o que tem limitações:
 
-**Consulta de Andamentos:**
-"Acesse o PJe com minha sessão logada e verifique os últimos andamentos dos processos: [lista de números]. Para cada um, registre: última movimentação, data e prazo pendente."
+**Funciona bem (sites públicos):**
+- Pesquisa de legislação no Planalto.gov.br
+- Consulta de jurisprudência em portais de tribunais (STJ, TJ-SP)
+- Busca em sites de consulta pública (Receita Federal - CNPJ)
 
-**Extração de Dados de Diários:**
-"Acesse o Diário de Justiça Eletrônico do TJ-MG, busque publicações em nome do escritório [nome] nos últimos 7 dias, e organize numa lista com: data, processo, conteúdo e prazo decorrente."
+**Funciona com limitações (sites com login):**
+- PJe, e-SAJ, PROJUDI: o Agent Mode **pausa no login** — você precisa autenticar manualmente, depois ele continua navegando
+- Sites com certificado digital: podem não funcionar com Agent Mode
+- Sites com captcha: o Agent Mode pausa para você resolver
 
-**Pesquisa de Legislação:**
-"Acesse o Planalto.gov.br, busque todas as alterações da CLT nos últimos 12 meses, e organize cronologicamente com: lei, data, artigos alterados e resumo da mudança."`,
+**Não funciona (restrições técnicas):**
+- Sites que bloqueiam automação (alguns sistemas de tribunais)
+- Downloads de múltiplos arquivos automaticamente
+- Navegação em sistemas muito antigos ou com Java/Flash
+
+**Pesquisa de Legislação (funciona bem):**
+"Acesse o Planalto.gov.br, busque todas as alterações da CLT nos últimos 12 meses, e organize cronologicamente com: lei, data, artigos alterados e resumo da mudança."
+
+**Importante:** Agent Mode requer plano Plus ($20/mês) ou superior. Disponível no Brasil.`,
         tips: [
-          'Grave fluxos repetitivos para reutilizar depois',
-          'Agende consultas diárias de andamentos processuais',
-          'Combine Chrome (pesquisa) + Canvas (relatório formatado)',
+          'Use Agent Mode para sites públicos — funciona muito bem',
+          'Para PJe/e-SAJ: esteja preparado para fazer login manualmente quando o Agent pausar',
+          'Para consultas diárias de andamentos: considere usar a API da OpenAI + scripts automatizados',
+          'ChatGPT Search (sem Agent Mode) já resolve muitas pesquisas de legislação e jurisprudência',
         ],
         flowSteps: [
-          { title: 'Chrome Pesquisa', description: 'Navega nos sites e extrai dados' },
-          { title: 'Dados Coletados', description: 'Informações brutas de múltiplas fontes' },
-          { title: 'Canvas Processa', description: 'Organiza e formata em Word/Excel' },
-          { title: 'Relatório Final', description: 'Documento pronto na sua pasta' },
+          { title: 'Você pede', description: 'Descreve a consulta no Agent Mode' },
+          { title: 'Agent navega', description: 'Acessa o site e busca informações' },
+          { title: 'Pausa se necessário', description: 'Você faz login ou resolve captcha' },
+          { title: 'Resultado', description: 'Dados extraídos organizados no chat' },
         ],
       },
       {
-        title: 'Download de Processos no PJe/e-SAJ',
-        subtitle: 'Baixe e organize todos os documentos automaticamente',
+        title: 'Acesso a Processos no PJe/e-SAJ',
+        subtitle: 'O que o Agent Mode pode e não pode fazer nos tribunais',
         level: 'avancado',
         icon: 'download',
         analogy: {
-          text: 'Baixar documentos do PJe é como ir ao cartório: você espera, clica várias vezes, e os arquivos vêm com nomes sem sentido. O Chrome faz essa **ronda no cartório digital** — baixa tudo e ainda organiza os nomes para você.',
+          text: 'Baixar documentos do PJe é como ir ao cartório: você espera, clica várias vezes, e os arquivos vêm com nomes sem sentido. O Agent Mode ajuda a **navegar** no sistema — mas o download e a organização dos arquivos ainda dependem de você.',
         },
-        content: `Um dos fluxos mais úteis para advogados: acessar o PJe ou e-SAJ, baixar TODOS os documentos de um processo e receber tudo organizado.
+        content: `Acessar sistemas de tribunais com IA é uma das tarefas mais desejadas por advogados. Veja o que realmente funciona hoje:
 
-**O problema real:**
-Abrir o PJe, clicar em cada documento, baixar um por um, renomear manualmente... Para um processo com 50+ documentos, isso leva horas.
+**O que o Agent Mode PODE fazer:**
+- Navegar no PJe/e-SAJ após você fazer login manualmente
+- Ler informações de andamentos e movimentações na tela
+- Extrair dados visíveis (datas, partes, movimentações) para o chat
+- Copiar texto de decisões e despachos que estejam visíveis
 
-**A solução com Chrome + Canvas:**
+**O que o Agent Mode NÃO consegue fazer:**
+- Fazer login com certificado digital (A1/A3) — você precisa autenticar
+- Baixar múltiplos PDFs automaticamente para o seu computador
+- Contornar captchas ou verificações de segurança sozinho
+- Acessar processos sigilosos sem sua autenticação prévia
 
-**Passo 1 — Chrome acessa e baixa:**
-O Chrome navega no PJe (com sua sessão logada), acessa o processo e baixa todos os documentos disponíveis.
+**Limitações técnicas dos sistemas judiciais brasileiros:**
+- PJe usa autenticação por certificado digital — Agent Mode pausa no login
+- e-SAJ tem captchas frequentes — Agent Mode pausa para você resolver
+- Alguns tribunais bloqueiam acesso automatizado por detecção de bots
+- Sistemas mais antigos (PROJUDI) podem ter interfaces incompatíveis
 
-**Passo 2 — Canvas organiza:**
-O Canvas lê cada PDF baixado, identifica o tipo (petição, sentença, ata, documento) e renomeia com o padrão do escritório.
+**Fluxo realista para hoje:**
+1. Você faz login no PJe/e-SAJ manualmente
+2. Agent Mode navega e extrai informações visíveis
+3. Você baixa os documentos manualmente (ou usa a funcionalidade de download do próprio PJe)
+4. Faz upload dos PDFs no ChatGPT para classificação e organização (veja o card "Organização de Documentos")
 
-**Resultado final na sua pasta:**
-- /Processo_1234567-89.2024.8.26.0100/
-  - /Peticoes/
-    - 001_PETICAO-INICIAL_2024-01-15.pdf
-    - 005_CONTESTACAO_2024-03-20.pdf
-  - /Decisoes/
-    - 008_DESPACHO-CITACAO_2024-02-10.pdf
-    - 015_SENTENCA_2024-08-05.pdf
-  - /Documentos/
-    - 002_RG-AUTOR.pdf
-    - 003_CONTRATO-LOCACAO.pdf
-  - INDICE_PROCESSUAL.xlsx
-
-**Sites compatíveis:**
-- PJe (todos os tribunais)
-- e-SAJ (SP)
-- PROJUDI (vários estados)
-- e-Proc (Justiça Federal 4ª Região)
-- Qualquer portal de tribunal com acesso web`,
-        prompt: `Acesse o sistema [PJe/e-SAJ/PROJUDI] com minha sessão logada e:
-
-1. Navegue até o processo número [NÚMERO DO PROCESSO]
-2. Acesse a seção de documentos/autos digitais
-3. Baixe TODOS os documentos disponíveis no processo
-4. Para cada documento baixado, identifique:
-   - Tipo (petição, contestação, sentença, despacho, etc.)
-   - Data do documento
-   - Partes mencionadas
-5. Renomeie seguindo o padrão: [SEQUÊNCIA]_[TIPO]_[DATA].pdf
-6. Organize em subpastas: Peticoes, Decisoes, Documentos, Audiencias
-7. Gere um INDICE_PROCESSUAL.xlsx com todos os documentos listados
-
-Salve tudo na pasta "Processo_[NÚMERO]".`,
+**Alternativa mais eficiente:** Para download em lote, use as ferramentas nativas do PJe (download de autos completos) e depois faça upload no ChatGPT para classificação e indexação.`,
         tips: [
-          'Certifique-se de estar logado no PJe/e-SAJ ANTES de iniciar o fluxo',
-          'Para processos com sigilo, verifique se sua permissão permite acesso',
-          'Combine este fluxo com a Análise de Contratos ou Auditoria Processual do Canvas',
-          'Funciona melhor em processos digitais — processos físicos digitalizados podem ter OCR limitado',
+          'O PJe já tem funcionalidade de download de autos completos — use isso primeiro',
+          'Após baixar, faça upload dos PDFs no ChatGPT para classificar e catalogar',
+          'Agent Mode funciona melhor para consultar andamentos do que para baixar documentos',
+          'Para automação real de consultas, considere usar a API do PJe/MNI com MCPs (seção Avançado)',
         ],
         flowSteps: [
-          { title: 'Login', description: 'Certifique-se de estar logado no sistema do tribunal' },
-          { title: 'Chrome Navega', description: 'Acessa o processo e baixa todos os documentos' },
-          { title: 'Canvas Organiza', description: 'Identifica, renomeia e classifica cada arquivo' },
-          { title: 'Pasta Pronta', description: 'Documentos organizados com índice em Excel' },
+          { title: 'Você faz login', description: 'Autentique-se no PJe/e-SAJ com suas credenciais' },
+          { title: 'Agent navega', description: 'Extrai andamentos e informações visíveis na tela' },
+          { title: 'Você baixa', description: 'Use o download de autos do próprio tribunal' },
+          { title: 'ChatGPT organiza', description: 'Upload dos PDFs → classificação → índice' },
         ],
       },
       {
         title: 'Monitoramento de Diários Oficiais',
-        subtitle: 'Receba alertas de publicações sem abrir o DJe',
+        subtitle: 'O que o ChatGPT pode fazer e alternativas reais',
         level: 'avancado',
         icon: 'eye',
         analogy: {
-          text: 'Ler o Diário de Justiça todo dia é como procurar agulha no palheiro. O Chrome funciona como um **clipping jurídico automático**: varre o DJe, encontra publicações do seu escritório e monta o resumo do dia.',
+          text: 'Ler o Diário de Justiça todo dia é como procurar agulha no palheiro. O ChatGPT pode ajudar a **analisar** publicações — mas o monitoramento diário automatizado precisa de ferramentas especializadas.',
         },
-        content: `O monitoramento diário de publicações é uma obrigação de todo escritório. O Chrome automatiza essa tarefa completamente.
+        content: `O monitoramento diário de publicações é obrigação de todo escritório. Veja como o ChatGPT pode ajudar e o que requer outras ferramentas:
 
-**O que o Chrome faz:**
-1. Acessa o Diário de Justiça Eletrônico (DJe) do tribunal
-2. Busca publicações por nome do escritório, advogado ou número de processo
-3. Extrai: data, processo, teor da publicação e prazo decorrente
-4. Organiza tudo numa planilha ou envia para o Canvas
+**O que o ChatGPT PODE fazer:**
+- Analisar textos de publicações que você cola no chat
+- Identificar prazos, tipos de intimação e urgências
+- Calcular datas-limite considerando dias úteis
+- Gerar relatórios organizados a partir dos dados
+- Via Agent Mode: acessar o DJe e buscar publicações pontuais
 
-**Diários compatíveis:**
-- DJe de todos os TJs estaduais
-- Diários da Justiça Federal
-- Diários da Justiça do Trabalho
-- DOU (Diário Oficial da União)
-- Diários municipais
+**O que o ChatGPT NÃO faz automaticamente:**
+- Monitoramento agendado (rodar sozinho toda manhã)
+- Alertas automáticos por e-mail ou Slack
+- Varredura contínua de diários oficiais
 
-**Exemplo prático — Monitoramento no TJ-SP:**
-"Acesse o DJe do TJ-SP, busque publicações nos últimos 3 dias com o nome 'Silva & Associados Advogados', e extraia: data da publicação, número do processo, tipo (intimação/citação/sentença), resumo do conteúdo e prazo decorrente."
+**Fluxo realista com ChatGPT:**
+1. Acesse o DJe do tribunal e busque as publicações do dia
+2. Copie/cole os resultados no ChatGPT (ou use Agent Mode para navegar)
+3. Peça para classificar por urgência e calcular prazos
+4. Baixe o relatório gerado
 
-**Fluxo automatizado com Canvas:**
-Após a extração, o Canvas pode:
-- Classificar por urgência (prazo vencendo em 1-5 dias / 6-15 dias / 15+ dias)
-- Atualizar a planilha de controle de prazos
-- Gerar um e-mail resumo para a equipe
-- Disparar alertas para os advogados responsáveis`,
-        prompt: `Acesse o Diário de Justiça Eletrônico do [TRIBUNAL] e:
+**Para monitoramento automático real, use ferramentas especializadas:**
+- **Jusbrasil Pro**: monitoramento de processos e publicações com alertas
+- **Escavador**: busca e monitoramento de publicações em diários
+- **PROJURIS / Legal One**: softwares jurídicos com monitoramento integrado
+- **API MNI + MCP personalizado**: para escritórios com equipe técnica (veja seção Avançado)
 
-1. Busque todas as publicações dos últimos [N] dias contendo:
-   - Nome do escritório: "[NOME DO ESCRITÓRIO]"
-   - Nome dos advogados: "[LISTA DE ADVOGADOS]"
-   - OU os números dos processos: [LISTA DE PROCESSOS]
+**Combinação inteligente:**
+Use uma ferramenta de monitoramento para capturar as publicações → alimente o ChatGPT com os dados para análise e classificação por urgência → gere relatórios para a equipe.`,
+        prompt: `Analise as seguintes publicações do Diário de Justiça e para cada uma extraia:
 
-2. Para cada publicação encontrada, extraia:
-   - Data da publicação
-   - Número do processo
-   - Tipo: intimação, citação, sentença, despacho, edital
-   - Resumo do conteúdo (2-3 linhas)
-   - Prazo decorrente (se houver)
-   - Data limite do prazo (calculando dias úteis)
+1. Número do processo
+2. Tipo: intimação, citação, sentença, despacho, edital
+3. Resumo do conteúdo (2-3 linhas)
+4. Prazo decorrente (se houver)
+5. Data limite do prazo (calculando dias úteis a partir da data de publicação)
+6. Classificação de urgência: CRÍTICO (< 5 dias), URGENTE (5-10 dias), NORMAL (> 10 dias)
 
-3. Organize numa planilha Excel com:
-   - Aba "PUBLICAÇÕES" — todas as encontradas
-   - Aba "PRAZOS URGENTES" — apenas as com prazo < 15 dias úteis
-   - Formatação: vermelho (< 5 dias), amarelo (5-10 dias), verde (> 10 dias)
+Organize numa tabela ordenada por urgência (mais urgente primeiro).
 
-4. Gere um resumo em texto (formato de e-mail) listando as publicações do dia por urgência.`,
+Publicações:
+[COLE AQUI AS PUBLICAÇÕES DO DJe]`,
         tips: [
-          'Configure esse fluxo para rodar toda manhã como rotina do escritório',
-          'Inclua todos os nomes pelos quais o escritório pode ser encontrado (razão social, nome fantasia, advogados)',
-          'Combine com o card "Controle de Prazos" do Canvas para atualizar a planilha automaticamente',
-          'Para escritórios maiores, separe os resultados por equipe/advogado responsável',
+          'Para monitoramento diário automático, invista numa ferramenta especializada (JusBrasil Pro, Escavador)',
+          'Use o ChatGPT para ANALISAR as publicações já capturadas — é onde ele brilha',
+          'Combine: ferramenta de monitoramento (captura) + ChatGPT (análise e classificação)',
+          'Para escritórios com equipe técnica: crie um MCP com a API MNI do PJe (seção Avançado)',
         ],
       },
       {
         title: 'Consulta de Certidões e Cadastros',
-        subtitle: 'Receita Federal, CNPJ, certidões negativas em lote',
+        subtitle: 'O que o Agent Mode consegue e onde ele trava',
         level: 'intermediario',
         icon: 'shield',
         analogy: {
-          text: 'Precisar de 10 certidões negativas para uma due diligence? O Chrome vai em **cada site oficial**, consulta o CNPJ/CPF e baixa as certidões — enquanto você toma café.',
+          text: 'Precisar de 10 certidões para uma due diligence? O Agent Mode pode ajudar em **alguns** sites — mas muitos sites governamentais usam captcha e bloqueios que exigem sua intervenção.',
         },
-        content: `Consultas repetitivas em sites governamentais são perfeitas para automação com Chrome.
+        content: `Consultas em sites governamentais com Agent Mode têm resultados mistos. Veja o que funciona:
 
-**Consultas que o Chrome automatiza:**
-
-**Receita Federal (CNPJ/CPF):**
-- Consulta de situação cadastral
-- Download de comprovante de inscrição
+**Funciona bem (sites sem captcha complexo):**
+- Consulta de CNPJ na Receita Federal (consulta pública)
 - Consulta de QSA (quadro societário)
-- Certidão de regularidade fiscal
+- CNDT do TST (Certidão Negativa de Débitos Trabalhistas)
 
-**Certidões Negativas em Lote:**
-- CND Federal (Receita + PGFN)
-- CND Estadual (SEFAZ)
-- CND Municipal (Prefeitura)
-- CND Trabalhista (TST)
-- Certidão do FGTS (CEF)
-- Certidão de distribuição cível e criminal
+**Funciona com limitações (sites com captcha):**
+- Receita Federal (certidões): Agent Mode pausa no captcha — você resolve
+- PGFN: mesma situação
+- Alguns TJs: captchas ou verificações extras
 
-**Consulta de Processos em Lote:**
-- Verificar existência de processos contra um CPF/CNPJ em múltiplos tribunais simultaneamente
+**Não funciona bem:**
+- Sites que exigem certificado digital
+- Sites com verificação em duas etapas
+- Portais que detectam e bloqueiam acesso automatizado
 
-**Exemplo prático — Due Diligence de empresa:**
-"Consulte o CNPJ 12.345.678/0001-90 nos seguintes sites: Receita Federal (situação cadastral), PGFN (certidão negativa), TST (certidão trabalhista), TJ-SP (distribuição cível), TJ-SP (distribuição criminal). Baixe todas as certidões e salve com o nome do órgão emissor."
+**Fluxo realista para due diligence:**
+1. Use Agent Mode para consultas públicas (CNPJ, QSA, CNDT)
+2. Para sites com captcha: Agent Mode navega e pausa — você resolve o captcha e ele continua
+3. Para certidões que exigem certificado digital: acesse manualmente
+4. Faça upload de todas as certidões obtidas no ChatGPT para gerar um relatório consolidado
 
-**Consultas em lote:**
-Forneça uma lista de CNPJs/CPFs e o Chrome consulta todos sequencialmente, salvando os resultados organizados.`,
-        prompt: `Acesse os seguintes sites e faça consultas para o [CPF/CNPJ]:
+**Exemplo prático:**
+"No Agent Mode, consulte o CNPJ 12.345.678/0001-90 na Receita Federal e extraia: situação cadastral, razão social, data de abertura, quadro societário, e atividade principal."
 
-1. Receita Federal (solucoes.receita.fazenda.gov.br):
-   - Consulta de situação cadastral
-   - Baixe o comprovante de inscrição em PDF
+**Dica:** Para due diligence em lote (vários CNPJs), é mais eficiente usar a API da Receita Federal via MCP personalizado (veja seção Avançado) do que consultar site por site.`,
+        prompt: `Consulte o CNPJ [NÚMERO] nos seguintes sites e extraia as informações:
 
-2. PGFN (servicos.receita.fazenda.gov.br):
-   - Emita Certidão Negativa de Débitos Federais
-   - Salve em PDF
+1. Receita Federal (consulta pública de CNPJ):
+   - Situação cadastral, razão social, data de abertura
+   - Quadro societário completo
+   - Atividades econômicas (principal e secundárias)
 
-3. TST (cndt-certidao.tst.jus.br):
-   - Emita Certidão Negativa de Débitos Trabalhistas
-   - Salve em PDF
+2. TST (cndt-certidao.tst.jus.br):
+   - Emita a Certidão Negativa de Débitos Trabalhistas
 
-4. TJ-[ESTADO] (portal do tribunal):
-   - Consulta de distribuição cível
-   - Consulta de distribuição criminal
-   - Salve os resultados
+3. Para cada resultado, informe:
+   - Status: regular/irregular/pendente
+   - Data da consulta
+   - Observações relevantes
 
-5. Organize tudo numa pasta "[NOME/CNPJ]_CERTIDOES_[DATA]" com:
-   - Cada certidão nomeada: [ORGAO]_[TIPO]_[DATA].pdf
-   - Um resumo em texto: situação de cada certidão (positiva/negativa)`,
+Organize num relatório de due diligence com todos os resultados.`,
         tips: [
-          'Alguns sites exigem captcha — o Chrome pode pausar para você resolver manualmente',
-          'Certidões têm validade: anote a data de emissão e de vencimento',
-          'Para due diligence completa, combine com a busca de processos nos tribunais',
-          'Salve o fluxo para reutilizar com outros CPFs/CNPJs',
+          'Alguns sites exigem captcha — o Agent Mode pausa para você resolver',
+          'Certidões têm validade: anote a data de emissão e vencimento no relatório',
+          'Para due diligence em lote: considere usar a API da Receita Federal via MCP (seção Avançado)',
+          'Sempre confirme as certidões nos sites oficiais — use o ChatGPT para organizar, não como fonte única',
         ],
       },
       {
-        title: 'Fluxos Avançados Chrome + Canvas',
-        subtitle: 'O poder da combinação',
+        title: 'Fluxos Avançados: Agent Mode + Canvas + Code Interpreter',
+        subtitle: 'Combinando as ferramentas certas para cada etapa',
         level: 'expert',
         icon: 'sparkles',
         analogy: {
-          text: 'Chrome **coleta informações** (pesquisa, navega, extrai). Canvas **processa e entrega** (relatórios, planilhas, documentos). Juntos: pesquisa jurisprudencial completa sem abrir um único site manualmente.',
+          text: 'Cada ferramenta do ChatGPT tem uma especialidade. **Agent Mode** coleta dados de sites. **Canvas** redige e edita documentos. **Code Interpreter** processa planilhas e gera gráficos. A maestria está em combiná-los.',
         },
-        content: `Combine Chrome e Canvas para fluxos end-to-end:
+        content: `Combine as diferentes ferramentas do ChatGPT para fluxos completos:
 
 **Fluxo "Pesquisa Jurisprudencial Completa":**
-1. Chrome pesquisa em STJ, TJ-SP, TJ-RJ sobre o tema
-2. Extrai ementas e decisões relevantes
-3. Canvas organiza num relatório analítico em Word
+1. ChatGPT Search ou Agent Mode pesquisa em STJ, TJ-SP sobre o tema
+2. Resultados são organizados no chat
+3. Canvas redige relatório analítico (baixe como PDF/DOCX)
 4. Inclui: tabela resumo, análise de tendências, teses dominantes
 
-**Fluxo "Monitoramento de Processos":**
-1. Chrome acessa PJe/PROJUDI diariamente
-2. Extrai novos andamentos de todos os processos ativos
-3. Canvas atualiza planilha de controle
-4. Identifica prazos e gera alertas
+**Fluxo "Análise Processual":**
+1. Baixe os documentos do processo (manualmente no PJe)
+2. Faça upload no ChatGPT (até 10 por vez)
+3. Code Interpreter gera planilha-índice com classificação
+4. Canvas redige parecer/memorial com base nos documentos
 
-**Fluxo "Due Diligence Online":**
-1. Chrome pesquisa CNPJs na Receita Federal
-2. Consulta certidões negativas online
-3. Busca processos nos tribunais
-4. Canvas consolida tudo num relatório de riscos
+**Fluxo "Due Diligence":**
+1. Agent Mode consulta CNPJ na Receita Federal e TST
+2. Você baixa certidões de sites com captcha manualmente
+3. Upload de tudo no ChatGPT
+4. Canvas consolida num relatório de riscos com Code Interpreter gerando gráficos
 
-**Dica Expert:** Crie um Custom Instructions com instruções de cada fluxo. Depois, basta dizer: "Execute o fluxo de monitoramento" e o ChatGPT sabe exatamente o que fazer.`,
+**Dica Expert:** Crie um GPT personalizado com as instruções de cada fluxo. Depois, basta enviar os dados e ele já sabe o formato esperado.
+
+**Importante:** Nenhum desses fluxos roda sozinho de forma agendada. Você inicia cada etapa — mas o ChatGPT reduz o tempo de execução de horas para minutos.`,
       },
     ],
   },
@@ -5142,13 +5148,24 @@ Elabore petição inicial de reclamação trabalhista requerendo:
       },
       {
         title: 'Monitore seu Uso',
-        subtitle: 'O limite reseta a cada 5 horas',
+        subtitle: 'Entenda os limites do seu plano',
         level: 'iniciante',
         icon: 'bar-chart',
         analogy: {
-          text: 'Planeje seu dia como um advogado planeja audiências: **tarefas pesadas de manhã** (quando o limite está cheio), **consultas rápidas à tarde** (quando está quase no limite). O reset de 5h é seu "próximo expediente".',
+          text: 'Planeje seu dia como um advogado planeja audiências: **tarefas pesadas de manhã** (quando o limite está cheio), **consultas rápidas à tarde** (quando está quase no limite). Os limites variam por plano e modelo.',
         },
-        content: `O ChatGPT tem um painel de uso que mostra quanto do limite foi consumido e quando reseta.`,
+        content: `O ChatGPT tem um painel de uso que mostra quanto do limite foi consumido. Os limites variam por plano:
+
+**Limites por plano (aproximados):**
+
+| Plano | Modelo padrão | Modelos avançados | Reset |
+|-------|--------------|-------------------|-------|
+| **Free** | ~10 msgs/período | Limitado | Algumas horas |
+| **Go** ($8/mês) | Generoso | Limitado | Rolling |
+| **Plus** ($20/mês) | ~80 msgs/3h | o3: ~100/semana | 3h rolling / semanal |
+| **Pro** ($200/mês) | Ilimitado | Ilimitado | Sem limite |
+
+**Importante:** Os limites mudam com frequência. Consulte o painel de uso do ChatGPT para os valores atuais do seu plano. O Pro ($200/mês) é o único plano verdadeiramente ilimitado.`,
         relationship: {
           title: 'Estratégia por Nível de Uso',
           items: [
@@ -5456,7 +5473,7 @@ Substitua: nomes reais → "Parte Autora / Parte Ré", CPF → "XXX.XXX.XXX-XX",
 | **7** | Ativar GPT Jurídico para contratos | GPTs | Revisão automatizada |
 | **7** | Implementar Custom Instructions contenciosos (Réplica, Contrarrazões) | Custom Instructions | Workflow processual completo |
 | **8** | Configurar automações recorrentes | Canvas | Relatórios semanais automáticos |
-| **9** | Integrar ChatGPT Browsing para PJe/tribunais | Chrome | Pesquisa automatizada |
+| **9** | Usar Agent Mode para consultas em tribunais | Agent Mode | Pesquisa assistida |
 | **10** | Medir resultados: tempo economizado, qualidade, satisfação | Gestão | Relatório de ROI |
 
 **Fase 4 — Maturidade (Dias 76-90+):**
@@ -5569,7 +5586,7 @@ Substitua: nomes reais → "Parte Autora / Parte Ré", CPF → "XXX.XXX.XXX-XX",
 Google Drive acessa documentos → Canvas extrai fatos e analisa → ChatGPT gera parecer formatado → Salvo na pasta do cliente
 
 **Fluxo 2 — Pesquisa + Relatório:**
-Chrome pesquisa jurisprudência em tribunais → Canvas organiza resultados → Word gera relatório analítico
+ChatGPT Search ou Agent Mode pesquisa jurisprudência → Canvas organiza resultados → Download como PDF/DOCX
 
 **Fluxo 3 — Controle de Prazos:**
 Gmail identifica intimações → Calendar cria eventos com alertas → Canvas gera planilha de prazos atualizada
