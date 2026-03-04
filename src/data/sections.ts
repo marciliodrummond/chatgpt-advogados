@@ -529,7 +529,7 @@ Para o **ecossistema mais completo** e maduro, com GPTs, Canvas, Code Interprete
         content: `Existem duas formas de dar contexto permanente ao ChatGPT:`,
         elementGrid: [
           { icon: 'folder-open', name: 'Projetos (chatgpt.com)', tech: 'A Pasta do Caso — Web', description: 'Espaço no chatgpt.com com documentos de referência e instruções. O ChatGPT **usa em todas as conversas** daquele projeto.', highlight: false },
-          { icon: 'file-text', name: 'Custom Instructions', tech: 'A Capa com Regras — Canvas', description: 'Arquivo **Custom Instructions** na raiz da pasta. O ChatGPT lê automaticamente toda vez que trabalha naquela pasta.', highlight: true },
+          { icon: 'file-text', name: 'Custom Instructions', tech: 'A Capa com Regras', description: 'Instruções personalizadas que o ChatGPT **aplica automaticamente** em todas as conversas. Configure em Configurações → Personalização.', highlight: true },
         ],
       },
       {
@@ -1270,10 +1270,10 @@ Para dominar um assunto transversal (ex: LGPD em clínicas, liminar para medicam
 **Arquivo Custom Instructions:** Crie na raiz de cada pasta com instruções como:
 "Esta pasta contém o processo trabalhista nº 0001234-56.2025.5.03.0001. Reclamante: Maria Silva. Reclamada: Empresa ABC. Tese principal: rescisão indireta (art. 483, 'd', CLT)."`,
         tips: [
-          'Crie uma pasta específica para trabalhar com o Canvas (nunca use pastas com dados bancários)',
-          'Use subpastas organizadas: Legislação, Jurisprudência, Modelos, Provas',
-          'Adicione um arquivo Custom Instructions na raiz da pasta com instruções específicas do caso',
-          'O Custom Instructions funciona como instruções automáticas para aquela pasta',
+          'Use Projetos no chatgpt.com para organizar conversas por caso ou área do direito',
+          'Faça upload de documentos relevantes em cada Projeto para contexto permanente',
+          'Configure Custom Instructions específicas em cada Projeto com os dados do caso',
+          'Nunca faça upload de documentos com dados bancários ou senhas',
         ],
       },
       {
@@ -1284,7 +1284,7 @@ Para dominar um assunto transversal (ex: LGPD em clínicas, liminar para medicam
         analogy: {
           text: 'Como ter um advogado revisor que lê **cada cláusula com marca-texto colorido**: verde (ok), amarelo (atenção) e vermelho (risco). Em 3 minutos no lugar de 3 horas.',
         },
-        content: `Uma das tarefas mais poderosas do Canvas. Coloque o contrato (PDF ou Word) na pasta e peça a análise.
+        content: `Uma das tarefas mais poderosas do ChatGPT. Faça upload do contrato (PDF ou Word) e peça a análise.
 
 O ChatGPT classifica cada cláusula como:
 - **VERDE** — Padrão de mercado, sem risco
@@ -1306,7 +1306,7 @@ Ao final, faça um resumo executivo com: partes, objeto, valor, prazo, cláusula
 
 Salve como documento Word.`,
         flowSteps: [
-          { title: 'Upload', description: 'Coloque o contrato na pasta do Canvas' },
+          { title: 'Upload', description: 'Faça upload do contrato no ChatGPT' },
           { title: 'Análise', description: 'ChatGPT lê e classifica cada cláusula (Verde/Amarelo/Vermelho)' },
           { title: 'Sugestões', description: 'Redações alternativas para cláusulas de risco' },
           { title: 'Relatório', description: 'Resumo executivo em Word com recomendação final' },
@@ -1320,15 +1320,15 @@ Salve como documento Word.`,
         analogy: {
           text: 'O estagiário mais dedicado do escritório: lê todos os documentos, **pesquisa legislação, monta a fundamentação e entrega o parecer formatado**. Você revisa e assina.',
         },
-        content: `Com base nos documentos da pasta, o ChatGPT elabora pareceres jurídicos completos com estrutura profissional.
+        content: `Com base nos documentos enviados, o ChatGPT elabora pareceres jurídicos completos com estrutura profissional.
 
-**Exemplo prático:** Advogada de direito imobiliário precisa de parecer sobre usucapião especial urbana. Coloca na pasta: matrícula do imóvel, IPTU, contas de luz, declarações de vizinhos. O Canvas gera parecer completo com análise de cada requisito legal (art. 183 CF e art. 1.240 CC).`,
-        prompt: `Com base nos documentos desta pasta, elabore um parecer jurídico completo com a seguinte estrutura:
+**Exemplo prático:** Advogada de direito imobiliário precisa de parecer sobre usucapião especial urbana. Faz upload no ChatGPT: matrícula do imóvel, IPTU, contas de luz, declarações de vizinhos. O ChatGPT gera parecer completo no Canvas com análise de cada requisito legal (art. 183 CF e art. 1.240 CC).`,
+        prompt: `Com base nos documentos enviados, elabore um parecer jurídico completo com a seguinte estrutura:
 
 I. Consulta (resumo do que foi perguntado)
 II. Fatos Relevantes (extraídos dos documentos)
 III. Questão Jurídica
-IV. Fundamentação (com referência aos documentos da pasta, legislação e jurisprudência)
+IV. Fundamentação (com referência aos documentos enviados, legislação e jurisprudência)
 V. Teses Favoráveis e Contrárias
 VI. Análise de Riscos (probabilidade e impacto)
 VII. Conclusão e Recomendações
@@ -1351,7 +1351,7 @@ Salve como documento Word com formatação profissional.`,
         },
         content: `O ChatGPT lê todas as peças e decisões e cria uma cronologia completa com datas, atos processuais, documentos de referência e observações estratégicas.
 
-**Exemplo prático:** Advogado assume um processo já em andamento com 47 peças. Em vez de ler tudo manualmente, o Canvas cria uma timeline completa em Excel com links para cada documento de referência.`,
+**Exemplo prático:** Advogado assume um processo já em andamento com 47 peças. Em vez de ler tudo manualmente, faz upload no ChatGPT e recebe uma timeline completa (via Code Interpreter pode gerar em Excel).`,
         prompt: `Leia todas as peças e decisões deste processo. Crie uma planilha Excel com a linha do tempo completa contendo: Data, Ato Processual, Parte que praticou, Documento de Referência, Observações Estratégicas e Impacto no Caso. Ordene por data. Destaque em amarelo decisões interlocutórias e em vermelho prazos.`,
       },
       {
@@ -1412,8 +1412,8 @@ REGRAS:
         },
         content: `O ChatGPT lê decisões e intimações e cria planilhas com controle completo de prazos: processo, data da intimação, prazo em dias úteis, data limite, providência necessária e status.
 
-**Exemplo prático:** Escritório recebe 15 intimações na semana. O Canvas lê todas e gera uma planilha única com prazos calculados automaticamente, destacando em vermelho os que vencem nos próximos 5 dias úteis.`,
-        prompt: `Leia as decisões e intimações desta pasta. Crie uma planilha Excel com:
+**Exemplo prático:** Escritório recebe 15 intimações na semana. Faça upload de todas no ChatGPT e peça uma planilha única com prazos calculados, destacando em vermelho os que vencem nos próximos 5 dias úteis (Code Interpreter gera a planilha Excel).`,
+        prompt: `Leia as decisões e intimações enviadas. Crie uma planilha Excel com:
 - Número do Processo
 - Data da Publicação/Intimação
 - Tipo de Prazo (recurso, manifestação, cumprimento)
@@ -1440,7 +1440,7 @@ Ordene por data limite (mais urgente primeiro).`,
         },
         content: `Copie e use estes prompts diretamente no Canvas ou Chat. Cada um ativa um "modo de trabalho" diferente do ChatGPT:`,
         commandList: [
-          { command: 'Modo Especialista', description: '"Atue como advogado especialista em [área]. Analise o caso dos documentos desta pasta considerando legislação, jurisprudência e doutrina. Apresente: tese principal, fundamentos, riscos e recomendações."' },
+          { command: 'Modo Especialista', description: '"Atue como advogado especialista em [área]. Analise o caso dos documentos enviados considerando legislação, jurisprudência e doutrina. Apresente: tese principal, fundamentos, riscos e recomendações."' },
           { command: 'Modo Auditor', description: '"Faça uma auditoria processual completa. Verifique: competência, citação, prazos, legitimidade, provas, recursos cabíveis. Para cada falha: norma violada, impacto e correção."' },
           { command: 'Modo Timeline', description: '"Leia todas as peças e crie uma linha do tempo em Excel com: Data, Ato, Parte, Documento, Observação Estratégica. Destaque decisões em amarelo e prazos em vermelho."' },
           { command: 'Modo Relatório', description: '"Crie um relatório para o cliente em linguagem simples. Estrutura: Resumo, O que aconteceu, Próximos passos, Prazos, Riscos e Recomendações. Sem juridiquês."' },
@@ -1578,7 +1578,7 @@ Uma página A4 com as informações essenciais para consulta rápida durante a a
 
 **Exemplo prático — Audiência de Instrução Trabalhista:**
 O advogado coloca na pasta: petição inicial, contestação, réplica, atas de audiências anteriores, laudos e todos os documentos probatórios. Em 5 minutos, recebe os 5 documentos acima prontos.`,
-        prompt: `Analise TODOS os documentos desta pasta referentes ao processo judicial e prepare um dossiê completo para audiência:
+        prompt: `Analise TODOS os documentos enviados referentes ao processo judicial e prepare um dossiê completo para audiência:
 
 DOCUMENTO 1 — CRONOLOGIA DOS FATOS:
 - Tabela em Excel com colunas: Data, Fato, Documento Comprobatório, Relevância (Alta/Média/Baixa)
@@ -1622,7 +1622,7 @@ Salve tudo em uma subpasta "AUDIENCIA_[DATA]".`,
         ],
         flowSteps: [
           { title: 'Documentos', description: 'Coloque todo o processo digitalizado na pasta' },
-          { title: 'Análise', description: 'O Canvas lê e cruza todas as informações' },
+          { title: 'Análise', description: 'O ChatGPT lê e cruza todas as informações' },
           { title: 'Dossiê', description: '5 documentos gerados: cronologia, perguntas, teses, alertas, resumo' },
           { title: 'Audiência', description: 'Vá preparado com o dossiê completo' },
         ],
@@ -1635,7 +1635,7 @@ Salve tudo em uma subpasta "AUDIENCIA_[DATA]".`,
         analogy: {
           text: 'Imagine que cada processo do escritório é um paciente num hospital. O Canvas funciona como o **painel de controle da UTI**: mostra status de cada um, alertas de urgência e o que precisa de atenção imediata.',
         },
-        content: `Advogados que gerenciam dezenas ou centenas de processos precisam de uma visão consolidada. O Canvas cria dashboards completos a partir dos seus dados.
+        content: `Advogados que gerenciam dezenas ou centenas de processos precisam de uma visão consolidada. O ChatGPT cria dashboards completos a partir dos seus dados (via Code Interpreter para gráficos e planilhas, ou no Canvas para relatórios narrativos).
 
 **O que você obtém:**
 
@@ -1653,10 +1653,10 @@ Um escritório com 80 processos ativos. Em vez de checar cada um individualmente
 
 **Como funciona na prática:**
 1. Exporte os dados do seu sistema de gestão (ou monte uma planilha simples)
-2. Coloque na pasta do Canvas
+2. Faça upload dos dados no ChatGPT
 3. Peça a consolidação
 4. Receba o dashboard pronto`,
-        prompt: `Analise os dados processuais desta pasta e gere um dashboard completo de gestão:
+        prompt: `Analise os dados processuais enviados e gere um dashboard completo de gestão:
 
 PLANILHA 1 — DASHBOARD GERAL (Excel):
 - Colunas: Nº Processo, Cliente, Parte Adversa, Tipo de Ação, Vara/Tribunal, Status, Fase Atual, Último Andamento, Data Último Andamento, Próximo Prazo, Dias Restantes, Valor da Causa, Honorários, Prioridade
@@ -1738,7 +1738,7 @@ Regras:
         analogy: {
           text: 'O Canvas não escreve petições do zero — ele funciona como um **assistente de redação jurídica** que monta a estrutura, pesquisa fundamentação e formata segundo as normas do tribunal. Você revisa, ajusta e assina.',
         },
-        content: `O Canvas pode gerar rascunhos completos de peças processuais a partir dos documentos do processo. O advogado sempre revisa e ajusta antes de protocolar.
+        content: `O ChatGPT pode gerar rascunhos completos de peças processuais a partir dos documentos enviados. O Canvas permite editar e refinar o texto colaborativamente. O advogado sempre revisa e ajusta antes de protocolar.
 
 **Tipos de peças que o Canvas gera:**
 - Petição inicial (todas as áreas)
@@ -1750,8 +1750,8 @@ Regras:
 - Memoriais de julgamento
 
 **Como funciona:**
-1. Coloque na pasta: documentos do caso + petição da parte adversa (se for contestação/recurso)
-2. O Canvas lê tudo e identifica os pontos relevantes
+1. Faça upload no ChatGPT: documentos do caso + petição da parte adversa (se for contestação/recurso)
+2. O ChatGPT lê tudo e identifica os pontos relevantes
 3. Gera a peça com: qualificação, fatos, direito, pedidos e documentos
 4. Formata segundo as normas do tribunal
 
@@ -1760,14 +1760,14 @@ Advogado coloca na pasta: petição inicial do reclamante, contrato de trabalho,
 
 **Qualidade da fundamentação:**
 O Canvas busca na base de conhecimento: legislação aplicável, súmulas, OJs e orientações jurisprudenciais. Você deve sempre verificar se as citações estão corretas e atualizadas.`,
-        prompt: `Analise os documentos desta pasta e gere uma [TIPO DE PEÇA: contestação/recurso/petição inicial] completa:
+        prompt: `Analise os documentos enviados e gere uma [TIPO DE PEÇA: contestação/recurso/petição inicial] completa:
 
 ESTRUTURA:
 1. ENDEREÇAMENTO — Juízo competente (extrair dos autos)
 2. QUALIFICAÇÃO — Das partes (extrair dos documentos)
 3. TEMPESTIVIDADE — Demonstrar que está no prazo (se aplicável)
 4. BREVE RESUMO — Síntese do caso em 1 parágrafo
-5. DOS FATOS — Narrativa fática baseada nos documentos da pasta
+5. DOS FATOS — Narrativa fática baseada nos documentos enviados
 6. DO DIREITO — Fundamentação jurídica com:
    - Legislação aplicável (artigos específicos)
    - Jurisprudência (citar tribunal, número, relator, ano)
@@ -1828,7 +1828,7 @@ Diagrama mostrando os cenários possíveis e suas consequências jurídicas.
 
 **Impacto comprovado:**
 Juízes relatam redução de **30-50% no tempo de análise** de petições com Visual Law bem aplicado.`,
-        prompt: `Analise os documentos desta pasta e gere uma [TIPO DE PEÇA] aplicando técnicas de Visual Law / Legal Design:
+        prompt: `Analise os documentos enviados e gere uma [TIPO DE PEÇA] aplicando técnicas de Visual Law / Legal Design:
 
 ESTRUTURA VISUAL OBRIGATÓRIA:
 
@@ -1879,7 +1879,7 @@ Formato: Word (.docx), Times New Roman 12, espaçamento 1,5.`,
         flowSteps: [
           { title: 'Documentos', description: 'Coloque os documentos do caso na pasta' },
           { title: 'Prompt Visual Law', description: 'Cole o prompt com a estrutura visual' },
-          { title: 'Geração', description: 'O Canvas cria a peça com todos os elementos visuais' },
+          { title: 'Geração', description: 'O ChatGPT cria a peça no Canvas com elementos visuais' },
           { title: 'Revisão', description: 'Revise o conteúdo jurídico e ajuste os visuais' },
         ],
       },
@@ -1978,9 +1978,9 @@ Formatação: profissional, com tabelas limpas, títulos claros e espaçamento a
         level: 'intermediario',
         icon: 'folder-open',
         analogy: {
-          text: 'Quando um novo cliente chega, o escritório precisa montar toda a estrutura: pasta de documentos, ficha cadastral, procuração, contrato de honorários, carta de boas-vindas. O Canvas faz tudo isso de uma vez — como um **kit de boas-vindas automatizado**.',
+          text: 'Quando um novo cliente chega, o escritório precisa gerar vários documentos: ficha cadastral, procuração, contrato de honorários, carta de boas-vindas. O ChatGPT gera tudo isso de uma vez no Canvas — como um **kit de boas-vindas automatizado**.',
         },
-        content: `O Canvas monta toda a estrutura de pastas e documentos para um novo cliente em uma única execução.
+        content: `O ChatGPT gera todos os documentos de onboarding de uma vez. Você organiza as pastas no seu computador — o ChatGPT cuida do conteúdo.
 
 **O que sai pronto:**
 
@@ -2052,7 +2052,7 @@ Crie uma estrutura de subpastas organizada e salve cada documento na pasta corre
         ],
         flowSteps: [
           { title: 'Dados', description: 'Preencha os dados do cliente no prompt' },
-          { title: 'Geração', description: 'Canvas cria 5+ documentos de uma vez' },
+          { title: 'Geração', description: 'ChatGPT gera 5+ documentos no Canvas' },
           { title: 'Revisão', description: 'Confira os documentos gerados' },
           { title: 'Entrega', description: 'Envie ao cliente para assinatura' },
         ],
@@ -2178,7 +2178,7 @@ Preencha com 10 linhas de exemplo realistas de processos trabalhistas.`,
           'Peça planilhas com fórmulas prontas — o ChatGPT insere WORKDAY, DATEDIF, SUMPRODUCT corretamente',
           'Para apresentações de sustentação oral: peça "crie slides com máximo 5 bullets por slide"',
           'Combine com dados do DataJud: o ChatGPT pode buscar dados e já jogar na planilha',
-          'Arquivos são salvos na pasta do Canvas — arraste para onde quiser depois',
+          'Baixe os arquivos gerados pelo Canvas (PDF, DOCX ou Markdown) para o seu computador',
         ],
       },
       {
@@ -2229,7 +2229,7 @@ ANÁLISE SOLICITADA:
 
 Seja específico: cite números de cláusulas, artigos de lei e trechos exatos dos documentos.`,
         tips: [
-          'Coloque todos os documentos na mesma pasta do Canvas para análise conjunta',
+          'Faça upload de todos os documentos na mesma conversa para análise conjunta',
           'Para contratos: peça comparação cláusula a cláusula com referência ao CC/CDC/CLT',
           'Para due diligence: analise todos os contratos de uma empresa em uma única sessão',
           'O ChatGPT consegue processar até ~640 páginas em uma única conversa (256K tokens)',
@@ -4378,7 +4378,7 @@ Não crie todos de uma vez. Comece pelo GPT que resolve o maior gargalo do escri
 
 **Exemplo prático:** "Leia o contrato de locação que está na pasta 'Cliente João Silva' no Drive e identifique as cláusulas de rescisão antecipada, multas e garantias." O ChatGPT vai direto no arquivo.
 
-**Outro exemplo:** "Compare o contrato 'v1' com o 'v2' na pasta do Drive e liste todas as alterações feitas entre as versões."`,
+**Outro exemplo:** "Compare o contrato 'v1' com o 'v2' que enviei e liste todas as alterações feitas entre as versões."`,
         steps: [
           'Acesse chatgpt.com → avatar/iniciais → Configurações → Integrações',
           'Encontre Google Drive e clique em Conectar',
@@ -5583,7 +5583,7 @@ Substitua: nomes reais → "Parte Autora / Parte Ré", CPF → "XXX.XXX.XXX-XX",
         content: `O verdadeiro poder aparece quando você **combina** ferramentas:
 
 **Fluxo 1 — Análise Completa de Processo:**
-Google Drive acessa documentos → Canvas extrai fatos e analisa → ChatGPT gera parecer formatado → Salvo na pasta do cliente
+Google Drive acessa documentos → ChatGPT analisa no Canvas → Gera parecer formatado → Download como PDF/DOCX
 
 **Fluxo 2 — Pesquisa + Relatório:**
 ChatGPT Search ou Agent Mode pesquisa jurisprudência → Canvas organiza resultados → Download como PDF/DOCX
