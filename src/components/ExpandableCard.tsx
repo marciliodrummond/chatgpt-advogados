@@ -354,7 +354,7 @@ export function ExpandableCard({ card, isOpen, onToggle }: ExpandableCardProps) 
       style={{
         background: isOpen ? 'var(--bg-elevated)' : 'var(--bg-card)',
         borderColor: isOpen ? 'var(--border-accent)' : 'var(--border-line)',
-        boxShadow: isOpen ? 'var(--gold-glow-sm)' : 'none',
+        boxShadow: isOpen ? 'var(--accent-glow-sm)' : 'none',
       }}
     >
       {/* ── Card header (always visible) ── */}
@@ -389,7 +389,7 @@ export function ExpandableCard({ card, isOpen, onToggle }: ExpandableCardProps) 
             {/* ── Analogy callout ── */}
             {card.analogy && (
               <div className="mb-4 rounded-lg overflow-hidden border" style={{ borderColor: 'var(--border-accent)', borderLeftWidth: '3px', borderLeftColor: 'var(--fg-accent)' }}>
-                <div className="p-3.5" style={{ background: 'rgba(226,192,116,0.05)' }}>
+                <div className="p-3.5" style={{ background: 'rgba(16,163,127,0.05)' }}>
                   <div className="flex items-center gap-2 mb-2">
                     <Lightbulb className="w-3.5 h-3.5 text-[var(--fg-accent)]" />
                     <span className="text-[10px] font-bold text-[var(--fg-accent)] uppercase tracking-[0.08em] font-mono">
@@ -414,7 +414,7 @@ export function ExpandableCard({ card, isOpen, onToggle }: ExpandableCardProps) 
                     key={i}
                     className="rounded-lg border p-3 transition-all duration-200 hover:border-[var(--border-accent)]"
                     style={{
-                      background: item.highlight ? 'rgba(226,192,116,0.06)' : 'var(--bg-surface)',
+                      background: item.highlight ? 'rgba(16,163,127,0.06)' : 'var(--bg-surface)',
                       borderColor: item.highlight ? 'var(--border-accent)' : 'var(--border-line)',
                       borderLeftWidth: item.highlight ? '3px' : '1px',
                       borderLeftColor: item.highlight ? 'var(--fg-accent)' : undefined,
@@ -461,7 +461,7 @@ export function ExpandableCard({ card, isOpen, onToggle }: ExpandableCardProps) 
                         style={{
                           flex: item.flex || 1,
                           minWidth: '80px',
-                          background: item.highlight ? 'rgba(226,192,116,0.06)' : 'var(--bg-card)',
+                          background: item.highlight ? 'rgba(16,163,127,0.06)' : 'var(--bg-card)',
                           borderColor: item.highlight ? 'var(--fg-accent)' : 'var(--border-line)',
                         }}
                       >
@@ -540,7 +540,7 @@ export function ExpandableCard({ card, isOpen, onToggle }: ExpandableCardProps) 
                         <td className="px-3 py-2 text-[var(--fg-secondary)] text-xs">{row.analogy}</td>
                         <td className="px-3 py-2">
                           <span className="inline-block text-[10px] font-bold px-2 py-0.5 rounded-full" style={{
-                            background: row.config === 'nao' ? 'rgba(34,197,94,0.1)' : row.config === 'auto' ? 'rgba(59,130,246,0.1)' : 'rgba(226,192,116,0.1)',
+                            background: row.config === 'nao' ? 'rgba(34,197,94,0.1)' : row.config === 'auto' ? 'rgba(59,130,246,0.1)' : 'rgba(16,163,127,0.1)',
                             color: row.config === 'nao' ? '#22c55e' : row.config === 'auto' ? '#3b82f6' : 'var(--fg-accent)',
                           }}>
                             {row.configLabel}
@@ -578,7 +578,7 @@ export function ExpandableCard({ card, isOpen, onToggle }: ExpandableCardProps) 
 
             {/* ── Tips ── */}
             {card.tips && card.tips.length > 0 && (
-              <div className="mt-4 rounded-lg p-3.5 border" style={{ background: 'rgba(226,192,116,0.04)', borderColor: 'var(--border-accent)' }}>
+              <div className="mt-4 rounded-lg p-3.5 border" style={{ background: 'rgba(16,163,127,0.04)', borderColor: 'var(--border-accent)' }}>
                 <h4 className="text-[11px] font-bold text-[var(--fg-accent)] uppercase tracking-[0.08em] mb-2.5 font-mono flex items-center gap-1.5">
                   <Lightbulb className="w-3 h-3" />
                   Dicas
@@ -605,7 +605,7 @@ export function ExpandableCard({ card, isOpen, onToggle }: ExpandableCardProps) 
                         <div className="w-7 h-7 rounded-full flex items-center justify-center text-[10px] font-bold shrink-0" style={{
                           background: 'linear-gradient(135deg, var(--bg-accent), var(--bg-accent-hover))',
                           color: 'var(--fg-on-accent)',
-                          boxShadow: '0 0 12px rgba(226,192,116,0.15)',
+                          boxShadow: '0 0 12px rgba(16,163,127,0.15)',
                         }}>
                           {i + 1}
                         </div>

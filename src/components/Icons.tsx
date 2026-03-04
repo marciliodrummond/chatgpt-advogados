@@ -99,7 +99,7 @@ export function Icon({ name, className = '', size = 18 }: IconProps) {
   return <LucideIcon className={className} size={size} />
 }
 
-// Styled section icon with gold gradient background
+// Styled section icon with teal gradient background
 export function SectionIcon({ name, size = 20 }: { name: string; size?: number }) {
   return (
     <div
@@ -108,7 +108,7 @@ export function SectionIcon({ name, size = 20 }: { name: string; size?: number }
         width: size + 16,
         height: size + 16,
         background: 'linear-gradient(135deg, var(--bg-accent), var(--bg-accent-hover))',
-        boxShadow: 'var(--gold-glow-sm)',
+        boxShadow: 'var(--accent-glow-sm)',
       }}
     >
       <Icon name={name} size={size} className="text-[var(--fg-on-accent)]" />

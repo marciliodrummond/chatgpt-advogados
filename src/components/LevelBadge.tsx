@@ -5,7 +5,7 @@ interface LevelBadgeProps {
 const config = {
   iniciante: { label: 'Iniciante', bg: 'rgba(34,197,94,0.12)', color: '#4ade80', border: 'rgba(34,197,94,0.2)' },
   intermediario: { label: 'Intermediário', bg: 'rgba(59,130,246,0.12)', color: '#60a5fa', border: 'rgba(59,130,246,0.2)' },
-  avancado: { label: 'Avançado', bg: 'rgba(226,192,116,0.12)', color: '#e2c074', border: 'rgba(226,192,116,0.2)' },
+  avancado: { label: 'Avançado', bg: 'rgba(245,158,11,0.12)', color: '#f59e0b', border: 'rgba(245,158,11,0.2)' },
   expert: { label: 'Expert', bg: 'rgba(168,85,247,0.12)', color: '#c084fc', border: 'rgba(168,85,247,0.2)' },
 }
 
