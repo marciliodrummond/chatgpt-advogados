@@ -130,6 +130,12 @@ const synonyms: Record<string, string[]> = {
   'imobiliario': ['imobiliario', 'usucapiao', 'locacao', 'imovel'],
   'tributario': ['tributario', 'imposto', 'carf', 'fiscal', 'tributaria'],
   'familia': ['familia', 'divorcio', 'guarda', 'alimentos', 'pensao'],
+  'penal': ['penal', 'criminal', 'crime', 'habeas corpus', 'dosimetria', 'pena', 'prisao'],
+  'criminal': ['criminal', 'penal', 'crime', 'defesa', 'reu', 'flagrante', 'preventiva'],
+  'habeas corpus': ['habeas corpus', 'liberdade', 'prisao', 'preventiva', 'flagrante', 'hc'],
+  'dosimetria': ['dosimetria', 'pena', 'sentenca', 'regime', 'agravante', 'atenuante'],
+  'prisao': ['prisao', 'preventiva', 'flagrante', 'liberdade', 'habeas corpus', 'cautelar'],
+  'deep research': ['deep research', 'pesquisa', 'autonoma', 'relatorio', 'fontes'],
 
   // Ecossistema ChatGPT
   'ia': ['chatgpt', 'inteligencia artificial', 'ai', 'modelo'],
@@ -288,7 +294,17 @@ const intentMap: Record<string, string[]> = {
   // Jurídico
   'revisar contrato': ['Analise de Contratos', 'Plugin Legal', 'Comparacao Multi documentos'],
   'fazer peticao': ['Peticoes', 'Visual Law', 'Criando Skills'],
-  'pesquisar jurisprudencia': ['Pesquisa Juridica', 'Jurisprudencia Estrategica', 'Chrome'],
+  'pesquisar jurisprudencia': ['Pesquisa Juridica', 'Jurisprudencia Estrategica', 'Deep Research', 'Chrome'],
+  'deep research': ['Deep Research'],
+  'pesquisa autonoma': ['Deep Research'],
+  'habeas corpus': ['Habeas Corpus e Liberdade Provisoria'],
+  'dosimetria': ['Dosimetria da Pena e Memoriais Criminais'],
+  'memoriais': ['Dosimetria da Pena e Memoriais Criminais'],
+  'alegacoes finais': ['Dosimetria da Pena e Memoriais Criminais'],
+  'direito penal': ['Habeas Corpus e Liberdade Provisoria', 'Dosimetria da Pena e Memoriais Criminais'],
+  'criminal': ['Habeas Corpus e Liberdade Provisoria', 'Dosimetria da Pena e Memoriais Criminais'],
+  'preso': ['Habeas Corpus e Liberdade Provisoria'],
+  'prisao preventiva': ['Habeas Corpus e Liberdade Provisoria'],
   'controle prazo': ['Controle de Prazos', 'Calendario', 'Automacao Recorrente'],
   'parecer': ['Parecer Juridico'],
   'relatorio': ['Relatorio para Cliente'],
@@ -653,6 +669,10 @@ const relatedMap: Record<string, string[]> = {
   'Custom Instructions de Comunicação com Cliente': ['E-mails Jurídicos Profissionais', 'Criando Custom Instructions Jurídicas'],
   'Custom Instructions de Marketing Jurídico': ['Marketing Jurídico Ético com ChatGPT', 'Criando Custom Instructions Jurídicas'],
   'Anti-Alucinação: Blindagem do Advogado': ['Ética e IA na Advocacia', 'Pesquisa Jurídica Avançada'],
+  'Deep Research: Pesquisa Autônoma': ['Pesquisa Jurídica Avançada no Chat', 'Anti-Alucinação: Blindagem do Advogado', 'Instrução de Jurisprudência Estratégica'],
+  'Habeas Corpus e Liberdade Provisória': ['Dosimetria da Pena e Memoriais Criminais', 'Instrução de Estratégia de Caso'],
+  'Dosimetria da Pena e Memoriais Criminais': ['Habeas Corpus e Liberdade Provisória', 'Code Interpreter Jurídico'],
+  'Pesquisa Jurídica Avançada no Chat': ['Deep Research: Pesquisa Autônoma', 'Instrução de Jurisprudência Estratégica'],
 }
 
 export function getRelatedCards(cardTitle: string): string[] {

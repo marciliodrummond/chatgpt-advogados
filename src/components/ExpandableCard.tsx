@@ -1,8 +1,9 @@
 import { useState, useRef, useEffect } from 'react'
-import { ChevronDown, Copy, Check, ExternalLink, ArrowRight, Lightbulb, Terminal } from 'lucide-react'
+import { ChevronDown, Copy, Check, ExternalLink, ArrowRight, Lightbulb, Terminal, MessageSquare } from 'lucide-react'
 import { LevelBadge } from './LevelBadge'
 import { CardIcon, Icon } from './Icons'
 import type { Card } from '../data/sections'
+import { getRelatedCards } from '../hooks/useSearch'
 
 interface ExpandableCardProps {
   card: Card
@@ -310,6 +311,29 @@ function CopyButton({ text }: { text: string }) {
   )
 }
 
+/* ── Open in ChatGPT button ── */
+function OpenInChatGPTButton({ text }: { text: string }) {
+  const handleOpen = () => {
+    const encoded = encodeURIComponent(text)
+    window.open(`https://chatgpt.com/?q=${encoded}`, '_blank', 'noopener,noreferrer')
+  }
+
+  return (
+    <button
+      onClick={handleOpen}
+      className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-all duration-200 cursor-pointer border hover:border-[#10a37f] hover:text-[#10a37f] hover:bg-[rgba(16,163,127,0.06)]"
+      style={{
+        background: 'var(--bg-surface)',
+        borderColor: 'var(--border-line)',
+        color: 'var(--fg-secondary)',
+      }}
+    >
+      <MessageSquare className="w-3 h-3" />
+      Abrir no ChatGPT
+    </button>
+  )
+}
+
 /* ══════════════════════════════════════
    MAIN COMPONENT
    ══════════════════════════════════════ */
@@ -607,7 +631,10 @@ export function ExpandableCard({ card, isOpen, onToggle }: ExpandableCardProps) 
                     <Terminal className="w-3 h-3" />
                     Prompt Pronto
                   </h4>
-                  <CopyButton text={card.prompt} />
+                  <div className="flex items-center gap-2">
+                    <CopyButton text={card.prompt} />
+                    <OpenInChatGPTButton text={card.prompt} />
+                  </div>
                 </div>
                 <pre className="px-3.5 py-3 text-[12px] text-[var(--fg-secondary)] whitespace-pre-wrap font-mono leading-relaxed overflow-x-auto" style={{
                   background: 'var(--bg-page)',
@@ -640,6 +667,35 @@ export function ExpandableCard({ card, isOpen, onToggle }: ExpandableCardProps) 
                 ))}
               </div>
             )}
+
+            {/* ── Related content ── */}
+            {(() => {
+              const related = getRelatedCards(card.title)
+              if (related.length === 0) return null
+              return (
+                <div className="mt-5 pt-4 border-t" style={{ borderColor: 'var(--border-line)' }}>
+                  <h4 className="text-[11px] font-bold text-[var(--fg-muted)] uppercase tracking-[0.08em] mb-2.5 font-mono flex items-center gap-1.5">
+                    <ArrowRight className="w-3 h-3" />
+                    Veja também
+                  </h4>
+                  <div className="flex flex-wrap gap-2">
+                    {related.map((title, i) => (
+                      <span
+                        key={i}
+                        className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium border transition-colors"
+                        style={{
+                          borderColor: 'var(--border-line)',
+                          color: 'var(--fg-secondary)',
+                          background: 'var(--bg-surface)',
+                        }}
+                      >
+                        {title}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )
+            })()}
           </div>
         </div>
       </div>
