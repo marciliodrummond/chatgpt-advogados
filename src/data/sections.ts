@@ -1136,6 +1136,74 @@ Para cada perspectiva:
 
 Ao final, recomende a linha argumentativa mais robusta e explique por quê.`,
       },
+      {
+        title: 'Deep Research: Pesquisa Autônoma',
+        subtitle: 'O ChatGPT pesquisa por até 30 minutos sozinho e entrega um relatório completo',
+        level: 'avancado',
+        icon: 'search',
+        analogy: {
+          tag: 'Analogia',
+          text: 'Imagine um **estagiário de pesquisa** que você manda buscar tudo sobre um tema: ele vai à biblioteca, consulta bases de dados, cruza fontes, verifica contradições e volta com um relatório de 15 páginas com citações — tudo em 30 minutos. Esse é o **Deep Research**.',
+        },
+        content: `O Deep Research é uma das funcionalidades mais poderosas do ChatGPT para advogados. Disponível nos planos **Plus** ($20/mês) e **Pro** ($200/mês), ele permite que o ChatGPT realize pesquisas autônomas extensas, navegando em dezenas de fontes online.
+
+**Como funciona:**
+- Você faz uma pergunta complexa
+- O ChatGPT navega autonomamente por **dezenas de sites** em tempo real
+- Analisa, cruza e sintetiza as informações encontradas
+- Entrega um **relatório estruturado** com fontes citadas
+- Pode levar de 5 a 30 minutos dependendo da complexidade
+
+**Por que é revolucionário para advogados:**
+- Pesquisa jurisprudencial atualizada em tempo real
+- Cruza informações de múltiplos tribunais simultaneamente
+- Analisa doutrina, artigos acadêmicos e legislação
+- Identifica tendências jurisprudenciais recentes
+- Cita fontes verificáveis com links diretos
+
+**Limitações importantes:**
+- Disponível apenas nos planos Plus e Pro (não está no Go ou Free)
+- Limite de pesquisas por mês (Plus: 10/mês, Pro: ilimitado)
+- Não acessa sistemas fechados (PJe, eSAJ, JusBrasil Pro)
+- **SEMPRE** verifique as decisões citadas nos sites oficiais dos tribunais
+- Pode citar decisões que existem mas com detalhes imprecisos (número do processo, data, relator)
+
+**Dica de ouro:** Use Deep Research para o levantamento inicial amplo. Depois, confirme cada citação nos portais oficiais (STJ, STF, TST) antes de usar em peças processuais.`,
+        steps: [
+          'Abra o ChatGPT e selecione o modelo **GPT-5** (ícone de pesquisa ou menu de modelos)',
+          'Clique no ícone de **Deep Research** (lupa com "+") ou digite sua pergunta e selecione "Pesquisar a fundo"',
+          'Formule uma pergunta específica e detalhada (quanto mais contexto, melhor o resultado)',
+          'Aguarde a pesquisa (5-30 min) — você pode fechar a aba e voltar depois',
+          'Revise o relatório: verifique fontes, confira citações e valide nos sites oficiais',
+        ],
+        tips: [
+          'Seja específico: "Jurisprudência do TST sobre reversão de justa causa por embriaguez habitual nos últimos 2 anos" funciona melhor que "justa causa embriaguez"',
+          'Peça comparação: "Compare o entendimento do STJ e do STF sobre responsabilidade civil de plataformas digitais"',
+          'Use para montar a fundamentação inicial de pareceres — depois refine com suas fontes',
+          'Combine com o Framework CONTEXTO: forneça o contexto do caso antes de pedir a pesquisa',
+          '**Nunca** cite Deep Research como fonte na peça — cite a decisão original encontrada por ele',
+        ],
+        prompt: `Realize uma pesquisa jurídica aprofundada sobre o seguinte tema:
+
+TEMA: [descreva o tema jurídico]
+
+CONTEXTO DO CASO: [descreva brevemente os fatos]
+
+JURISDIÇÃO: [tribunal/instância relevante]
+
+Pesquise e me entregue:
+1. Legislação aplicável (artigos específicos com redação)
+2. Jurisprudência recente (últimos 3 anos) — cite número do processo, relator, data e ementa
+3. Divergências entre tribunais (se houver)
+4. Doutrina relevante (autores e obras)
+5. Tendência atual da jurisprudência
+6. Análise de aplicabilidade ao meu caso
+
+Organize em formato de relatório com seções claras. Marque com [VERIFICAR] qualquer informação que não conseguiu confirmar em múltiplas fontes.`,
+        links: [
+          { label: 'Sobre Deep Research', url: 'https://openai.com/index/introducing-deep-research/' },
+        ],
+      },
     ],
   },
 
@@ -2251,6 +2319,158 @@ GERE OS SEGUINTES DOCUMENTOS:
           { title: 'Roteiro', description: 'Gera estratégia de concessões e contra-argumentos' },
           { title: 'Preparação', description: 'Documento consolidado pronto para levar à mesa' },
         ],
+      },
+      {
+        title: 'Habeas Corpus e Liberdade Provisória',
+        subtitle: 'Peças de urgência criminal com fundamentação sólida',
+        level: 'avancado',
+        icon: 'shield',
+        analogy: {
+          tag: 'Direito Penal',
+          text: 'Um habeas corpus é como um **alarme de incêndio**: precisa ser acionado rápido, com precisão, e seguir um protocolo claro. O ChatGPT ajuda a montar a peça com velocidade sem sacrificar a qualidade da fundamentação.',
+        },
+        content: `O ChatGPT pode acelerar drasticamente a elaboração de peças criminais de urgência, desde que o advogado forneça os fatos e supervisione o resultado.
+
+**Peças que o ChatGPT auxilia:**
+- Habeas corpus (preventivo, liberatório, trancativo)
+- Pedido de liberdade provisória (com ou sem fiança)
+- Pedido de revogação de prisão preventiva
+- Relaxamento de prisão em flagrante
+- Pedido de medidas cautelares diversas (art. 319 CPP)
+
+**Elementos que o ChatGPT estrutura automaticamente:**
+- Qualificação das partes e autoridade coatora
+- Síntese dos fatos e do constrangimento ilegal
+- Fundamentação legal (art. 5º LXVIII CF, art. 647 CPP, art. 312/313 CPP)
+- Jurisprudência do STF e STJ sobre excesso de prazo, fundamentação idônea, proporcionalidade
+- Pedido liminar e final
+
+**Atenção especial:**
+- **Sempre** verifique os números de precedentes citados — o ChatGPT pode fabricar HCs
+- Inclua dados concretos do caso: tempo de prisão, primariedade, residência fixa, ocupação lícita
+- Personalize a fundamentação: habeas corpus genéricos são facilmente indeferidos
+- Revise a adequação da via eleita (HC vs. Revisão Criminal vs. Recurso)`,
+        steps: [
+          'Reúna: auto de prisão em flagrante, decisão de conversão/decretação, denúncia e FAC do cliente',
+          'Cole os documentos no ChatGPT e peça uma análise das circunstâncias da prisão',
+          'Use o prompt abaixo para gerar o rascunho da peça',
+          'Revise a fundamentação, confirme os precedentes nos sites oficiais (STF, STJ)',
+          'Personalize com dados concretos do cliente e ajuste a argumentação',
+          'Formate a peça e protocole com urgência',
+        ],
+        tips: [
+          'Para HCs de urgência, comece pelo pedido liminar — peça ao ChatGPT para separar os argumentos mais fortes para a liminar',
+          'Peça ao ChatGPT para analisar se a prisão preenche os requisitos do art. 312 CPP — isso estrutura a argumentação',
+          'Use o Deep Research para buscar jurisprudência atualizada do STF sobre o tema específico (tráfico privilegiado, furto qualificado, etc.)',
+          'Combine com o Instrução de Jurisprudência Estratégica para montar um bloco de precedentes vinculantes',
+        ],
+        prompt: `Atue como advogado criminalista experiente. Elabore um HABEAS CORPUS com base nos seguintes dados:
+
+<caso>
+PACIENTE: [nome, qualificação]
+AUTORIDADE COATORA: [juízo que decretou a prisão]
+TIPO DE PRISÃO: [flagrante convertida em preventiva / preventiva decretada / temporária]
+DATA DA PRISÃO: [data]
+FATOS: [resuma os fatos que levaram à prisão]
+ANTECEDENTES: [primário/reincidente, FAC]
+CONDIÇÕES PESSOAIS: [residência fixa, trabalho, família, saúde]
+</caso>
+
+<tarefa>
+Elabore a peça com a seguinte estrutura:
+1. Endereçamento ao Tribunal competente
+2. Qualificação do paciente e autoridade coatora
+3. DOS FATOS — síntese objetiva
+4. DO CONSTRANGIMENTO ILEGAL — demonstre:
+   a) Ausência dos requisitos do art. 312 CPP
+   b) Possibilidade de medidas cautelares diversas (art. 319 CPP)
+   c) Desproporcionalidade da prisão
+   d) Condições pessoais favoráveis
+5. DA JURISPRUDÊNCIA — cite precedentes do STF e STJ sobre o tema
+6. DO PEDIDO LIMINAR — argumentos mais urgentes
+7. DO PEDIDO FINAL — liberdade provisória com ou sem medidas
+
+Marque com [VERIFICAR] toda jurisprudência citada.
+Use linguagem formal e técnica.
+</tarefa>`,
+      },
+      {
+        title: 'Dosimetria da Pena e Memoriais Criminais',
+        subtitle: 'Análise de dosimetria e peças argumentativas para o processo penal',
+        level: 'avancado',
+        icon: 'calculator',
+        analogy: {
+          tag: 'Direito Penal',
+          text: 'A dosimetria é como uma **planilha de cálculos** com 3 fases. Cada agravante, atenuante ou causa de aumento precisa ser aplicada na ordem certa, com fundamentação específica. O ChatGPT funciona como um **revisor de cálculos**: analisa cada fase e identifica erros que podem ser explorados em recurso.',
+        },
+        content: `O ChatGPT é uma ferramenta poderosa para analisar dosimetria e elaborar memoriais criminais, especialmente quando combinado com o texto da sentença e a legislação aplicável.
+
+**Análise de Dosimetria (art. 68 CP — Sistema Trifásico):**
+
+| Fase | Elementos | O que o ChatGPT analisa |
+| 1ª Fase | Circunstâncias judiciais (art. 59 CP) | Fundamentação de cada circunstância negativa |
+| 2ª Fase | Agravantes e atenuantes | Aplicação correta, compensação, precedentes |
+| 3ª Fase | Causas de aumento e diminuição | Fração aplicada, cumulação, limites |
+
+**Memoriais Criminais — O ChatGPT ajuda a estruturar:**
+- Síntese dos fatos e do processo
+- Análise das provas produzidas em audiência
+- Teses defensivas com fundamentação legal
+- Pedidos (absolvição, desclassificação, atenuantes, regime)
+- Questões preliminares (nulidades, prescrição)
+
+**Alegações Finais — Estrutura completa:**
+- Preliminares (nulidades, incompetência, prescrição)
+- Mérito (insuficiência probatória, excludentes, atipicidade)
+- Dosimetria (caso condenação: regime, substituição, sursis)
+- Pedidos subsidiários escalonados
+
+**Atenção:**
+- O ChatGPT não substitui a análise do advogado sobre as provas — ele não assistiu à audiência
+- Forneça transcrições ou resumos detalhados dos depoimentos
+- Verifique SEMPRE os cálculos de pena e os percentuais aplicados`,
+        steps: [
+          'Para dosimetria: cole a sentença completa e peça análise fase por fase',
+          'Para memoriais: forneça denúncia, interrogatório, depoimentos e documentos relevantes',
+          'Use o prompt abaixo adaptando para o tipo penal específico',
+          'Revise a peça conferindo cada citação legal e jurisprudencial',
+          'Ajuste a estratégia argumentativa: teses mais fortes primeiro',
+        ],
+        tips: [
+          'Para recursos contra dosimetria: peça ao ChatGPT para comparar a fundamentação da sentença com a jurisprudência do STJ sobre cada circunstância judicial — muitas vezes falta fundamentação concreta (Súmula 444 STJ)',
+          'Em memoriais, peça para o ChatGPT organizar as provas em "favoráveis" e "desfavoráveis" antes de redigir — isso ajuda a montar a estratégia',
+          'Para alegações finais, forneça o tipo penal exato e peça teses de defesa específicas para aquele crime',
+          'Use o Code Interpreter para calcular prescrição: forneça data do fato, idade do réu e pena em abstrato',
+        ],
+        prompt: `Atue como advogado criminalista experiente. Analise a dosimetria da pena aplicada na sentença abaixo e elabore memoriais/alegações finais:
+
+<sentença>
+[Cole a sentença condenatória ou o trecho relevante da dosimetria]
+</sentença>
+
+<dados_do_caso>
+TIPO PENAL: [ex: art. 155 §4º CP — furto qualificado]
+RÉU: [qualificação básica, primário/reincidente]
+PROVAS PRODUZIDAS: [resuma depoimentos e documentos relevantes]
+TESES DA DEFESA: [quais teses quer sustentar]
+</dados_do_caso>
+
+<tarefa>
+1. ANÁLISE DA DOSIMETRIA:
+   - 1ª Fase: Analise cada circunstância judicial valorada negativamente. Há fundamentação concreta ou genérica?
+   - 2ª Fase: As agravantes/atenuantes foram corretamente aplicadas? Há compensação devida?
+   - 3ª Fase: As causas de aumento/diminuição estão corretas? As frações são adequadas?
+   - Regime: O regime fixado é compatível com a pena e as circunstâncias?
+   - Substituição: Cabe substituição por restritiva de direitos (art. 44 CP)?
+
+2. MEMORIAIS/ALEGAÇÕES FINAIS:
+   - Preliminares (nulidades, prescrição, se aplicável)
+   - Mérito: desenvolva as teses defensivas com fundamentação
+   - Subsidiário: caso condenação, argumente por pena mínima e regime mais brando
+   - Pedidos escalonados
+
+Cite jurisprudência do STF e STJ. Marque com [VERIFICAR] toda decisão citada.
+</tarefa>`,
       },
       {
         title: 'Fluxo: Do Cliente à Petição em 10 Passos',
