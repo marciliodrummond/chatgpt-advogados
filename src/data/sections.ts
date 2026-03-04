@@ -1252,31 +1252,6 @@ Organize em formato de relatório com seções claras. Marque com [VERIFICAR] qu
         ],
       },
       {
-        title: 'Organizando suas Pastas',
-        subtitle: 'A lógica dos "Cérebros"',
-        level: 'intermediario',
-        icon: 'layers',
-        content: `Quanto mais organizados estiverem seus arquivos, melhor será o resultado do Canvas. Use a lógica dos 3 tipos de "Cérebros":
-
-**Tipo 1 — Pasta por Área do Direito:**
-Base de conhecimento organizada sobre uma área específica. Contém legislação, jurisprudência, doutrina, modelos e súmulas.
-
-**Tipo 2 — Pasta por Processo/Cliente:**
-Todos os documentos de um processo específico. Contém peças, decisões, provas, prazos e notas estratégicas.
-
-**Tipo 3 — Pasta por Tema Específico:**
-Para dominar um assunto transversal (ex: LGPD em clínicas, liminar para medicamento off-label). Cruza documentos de várias áreas.
-
-**Arquivo Custom Instructions:** Crie na raiz de cada pasta com instruções como:
-"Esta pasta contém o processo trabalhista nº 0001234-56.2025.5.03.0001. Reclamante: Maria Silva. Reclamada: Empresa ABC. Tese principal: rescisão indireta (art. 483, 'd', CLT)."`,
-        tips: [
-          'Use Projetos no chatgpt.com para organizar conversas por caso ou área do direito',
-          'Faça upload de documentos relevantes em cada Projeto para contexto permanente',
-          'Configure Custom Instructions específicas em cada Projeto com os dados do caso',
-          'Nunca faça upload de documentos com dados bancários ou senhas',
-        ],
-      },
-      {
         title: 'Análise de Contratos',
         subtitle: 'Revisão cláusula por cláusula',
         level: 'intermediario',
