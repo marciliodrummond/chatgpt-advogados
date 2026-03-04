@@ -12,11 +12,11 @@ export function Header({ theme, onToggleTheme }: HeaderProps) {
       borderColor: 'var(--border-line)',
     }}>
       <a href="#" className="flex items-center gap-2.5 no-underline text-[var(--fg-primary)]">
-        <div className="w-7 h-7 rounded-md flex items-center justify-center" style={{
-          background: 'linear-gradient(135deg, var(--bg-accent), var(--bg-accent-hover))',
-          boxShadow: 'var(--gold-glow-sm)',
+        <div className="w-7 h-7 rounded-lg flex items-center justify-center" style={{
+          background: 'linear-gradient(135deg, #10a37f, #0d8c6d)',
+          boxShadow: '0 0 16px rgba(16, 163, 127, 0.15)',
         }}>
-          <Scale className="w-4 h-4 text-[var(--fg-on-accent)]" />
+          <Scale className="w-4 h-4 text-white" />
         </div>
         <span className="font-display text-sm font-bold tracking-tight">
           ChatGPT<span className="text-[var(--fg-accent)]"> para Advogados</span>

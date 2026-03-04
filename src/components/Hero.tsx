@@ -9,7 +9,7 @@ export function Hero({ onStart }: HeroProps) {
     <section className="relative min-h-[85vh] flex flex-col justify-center py-24 sm:py-32">
       {/* Animated orbs */}
       <div className="absolute top-[10%] right-[-10%] w-[400px] h-[400px] rounded-full pointer-events-none blur-[80px] animate-[orbFloat_12s_ease-in-out_infinite]" style={{
-        background: 'radial-gradient(circle, rgba(226,192,116,0.12) 0%, transparent 70%)',
+        background: 'radial-gradient(circle, rgba(16,163,127,0.1) 0%, transparent 70%)',
       }} />
       <div className="absolute bottom-[20%] left-[-5%] w-[300px] h-[300px] rounded-full pointer-events-none blur-[80px] animate-[orbFloat_12s_ease-in-out_infinite_-4s]" style={{
         background: 'radial-gradient(circle, rgba(226,192,116,0.08) 0%, transparent 70%)',
@@ -50,8 +50,8 @@ export function Hero({ onStart }: HeroProps) {
         >
           {[
             { icon: Layers, value: '10', label: 'Seções' },
-            { icon: BookOpen, value: '110', label: 'Tutoriais' },
-            { icon: Zap, value: '31', label: 'Prompts Prontos' },
+            { icon: BookOpen, value: '116', label: 'Tutoriais' },
+            { icon: Zap, value: '32', label: 'Prompts Prontos' },
             { icon: Scale, value: '4', label: 'Níveis' },
           ].map((m, i) => (
             <div key={i} className="flex items-center gap-3">
