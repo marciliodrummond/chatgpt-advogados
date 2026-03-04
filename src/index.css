@@ -22,6 +22,17 @@
   --color-gold-800: #6e4d22;
   --color-gold-900: #4a3318;
 
+  --color-teal-50: #f0fdfa;
+  --color-teal-100: #ccfbef;
+  --color-teal-200: #99f6e0;
+  --color-teal-300: #5eead4;
+  --color-teal-400: #2dd4bf;
+  --color-teal-500: #10a37f;
+  --color-teal-600: #0d8c6d;
+  --color-teal-700: #0a6e56;
+  --color-teal-800: #075240;
+  --color-teal-900: #04352a;
+
   --color-si-black: #030409;
   --color-gray-950: #0a0c12;
   --color-gray-900: #12141c;
@@ -67,10 +78,17 @@
   /* ── Glows ─── */
   --gold-glow-sm: 0 0 20px rgba(226, 192, 116, 0.06);
   --gold-glow-md: 0 0 40px rgba(226, 192, 116, 0.08);
+  --teal-glow-sm: 0 0 20px rgba(16, 163, 127, 0.06);
+
+  /* ── Secondary accent (teal — ChatGPT identity) ─── */
+  --fg-accent-secondary: #10a37f;
+  --fg-accent-secondary-dim: #0d8c6d;
+  --border-accent-secondary: rgba(16, 163, 127, 0.15);
+  --bg-accent-secondary-subtle: rgba(16, 163, 127, 0.06);
 
   /* ── Grid ─── */
-  --grid-color: rgba(226, 192, 116, 0.03);
-  --grid-accent: rgba(226, 192, 116, 0.06);
+  --grid-color: rgba(16, 163, 127, 0.025);
+  --grid-accent: rgba(226, 192, 116, 0.04);
 }
 
 [data-theme="light"] {
@@ -98,14 +116,20 @@
 
   --gold-glow-sm: 0 0 20px rgba(226, 192, 116, 0.1);
   --gold-glow-md: 0 0 40px rgba(226, 192, 116, 0.12);
+  --teal-glow-sm: 0 0 20px rgba(16, 163, 127, 0.08);
 
-  --grid-color: rgba(150, 105, 44, 0.04);
-  --grid-accent: rgba(150, 105, 44, 0.07);
+  --fg-accent-secondary: #0d8c6d;
+  --fg-accent-secondary-dim: #10a37f;
+  --border-accent-secondary: rgba(13, 140, 109, 0.2);
+  --bg-accent-secondary-subtle: rgba(16, 163, 127, 0.06);
+
+  --grid-color: rgba(13, 140, 109, 0.035);
+  --grid-accent: rgba(150, 105, 44, 0.05);
 }
 
 /* ── Global Base ─── */
 ::selection {
-  background: rgba(226, 192, 116, 0.25);
+  background: rgba(16, 163, 127, 0.2);
 }
 
 html {
@@ -136,9 +160,9 @@ body::before {
     linear-gradient(90deg, var(--grid-color) 1px, transparent 1px),
     linear-gradient(var(--grid-accent) 1px, transparent 1px),
     linear-gradient(90deg, var(--grid-accent) 1px, transparent 1px);
-  background-size: 60px 60px, 60px 60px, 300px 300px, 300px 300px;
-  mask-image: radial-gradient(ellipse 80% 60% at 50% 30%, black 20%, transparent 70%);
-  -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 30%, black 20%, transparent 70%);
+  background-size: 48px 48px, 48px 48px, 240px 240px, 240px 240px;
+  mask-image: radial-gradient(ellipse 70% 55% at 50% 25%, black 15%, transparent 65%);
+  -webkit-mask-image: radial-gradient(ellipse 70% 55% at 50% 25%, black 15%, transparent 65%);
 }
 
 /* ── Scrollbar ─── */
@@ -151,10 +175,10 @@ body::before {
 }
 ::-webkit-scrollbar-thumb {
   background: var(--border-strong);
-  border-radius: 3px;
+  border-radius: 6px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--fg-muted);
+  background: rgba(16, 163, 127, 0.3);
 }
 
 /* ── Animations ─── */
