@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react'
 import { Lock, AlertCircle, Eye, EyeOff, ArrowRight, MessageSquare } from 'lucide-react'
 
-const ACCESS_KEY = '6114Adv104ChatGPT'
+const ACCESS_KEY = '11632GPTchat'
 const STORAGE_KEY = 'si-chatgpt-advogados-auth'
 
 // ChatGPT-inspired teal/green palette (distinct from Claude gold)
