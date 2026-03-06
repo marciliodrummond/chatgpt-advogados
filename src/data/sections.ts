@@ -92,7 +92,7 @@ export const sections: Section[] = [
         icon: 'lightbulb',
         analogy: {
           tag: 'Analogia Central',
-          text: 'O ChatGPT é um **escritório de advocacia completo**. Tem recepção (Chat), sala de edição (Canvas), assistentes especializados (GPTs), integrações (Actions), instruções personalizadas (Custom Instructions), caderno de anotações (Memory) e até pesquisa na web (Browsing).',
+          text: 'O ChatGPT é um **escritório de advocacia completo**. Tem recepção (Chat), sala de edição (Canvas), assistentes especializados (GPTs), fluxos automatizados (Skills), integrações (Actions), instruções personalizadas (Custom Instructions), caderno de anotações (Memory) e até pesquisa na web (Browsing).',
         },
         content: `O ChatGPT não é só um chat. É um **ecossistema inteiro** de ferramentas que, quando conectadas, transformam seu escritório numa operação integrada — pesquisa, redação, revisão, análise de dados, geração de imagens e até navegação automatizada na web.
 
@@ -121,14 +121,14 @@ Cada ferramenta do ChatGPT traduzida para a linguagem do seu escritório. Sem te
 
 | Plano | Preço | Para quem? |
 |-------|-------|------------|
-| **Free** | Grátis | Experimentar — acesso ao GPT-5.2 com limite de 10 msgs/5h |
-| **Go** | US$ 8/mês (~R$ 48) | Uso leve — mais mensagens com GPT-5.2 |
-| **Plus** | US$ 20/mês (~R$ 120) | Advogado que usa regularmente — GPT-5.2 generoso + GPT-5 |
-| **Pro** | US$ 200/mês (~R$ 1.200) | Uso ilimitado, acesso total ao GPT-5 e ferramentas avançadas |
+| **Free** | Grátis | Experimentar — acesso ao GPT-5.3 Instant com limite de 10 msgs/5h |
+| **Go** | US$ 8/mês (~R$ 48) | Uso leve — mais mensagens com GPT-5.3 Instant |
+| **Plus** | US$ 20/mês (~R$ 120) | Advogado que usa regularmente — GPT-5.3 + GPT-5.4 Thinking (80 msgs/3h) |
+| **Pro** | US$ 200/mês (~R$ 1.200) | Uso ilimitado, acesso total ao GPT-5.4 Pro e ferramentas avançadas |
 | **Team** | US$ 25–30/usuário/mês | Equipes de advogados com controle centralizado |
 | **Enterprise** | Sob consulta | Escritórios grandes com compliance e SLA dedicado |
 
-**Recomendação para começar:** O plano Plus (US$ 20/mês) já dá acesso ao Canvas, GPTs, Code Interpreter, DALL-E, Memory, Browsing e uso generoso do GPT-5.2. É suficiente para a maioria dos advogados. Se quiser apenas testar, o plano Go (US$ 8/mês) é uma boa porta de entrada.
+**Recomendação para começar:** O plano Plus (US$ 20/mês) já dá acesso ao Canvas, GPTs, Skills, Code Interpreter, DALL-E, Memory, Browsing, GPT-5.4 Thinking e uso generoso do GPT-5.3 Instant. É suficiente para a maioria dos advogados. Se quiser apenas testar, o plano Go (US$ 8/mês) é uma boa porta de entrada.
 
 **Exemplo prático:** Um advogado trabalhista que faz 3-4 petições por semana, analisa 2-3 contratos e precisa de pesquisa jurisprudencial consegue trabalhar confortavelmente com o plano Plus.`,
         tips: [
@@ -136,6 +136,7 @@ Cada ferramenta do ChatGPT traduzida para a linguagem do seu escritório. Sem te
           'O plano Go (US$ 8/mês) é ideal para quem quer começar gastando pouco',
           'O plano Free já permite testar o ChatGPT antes de assinar',
           'Para escritórios: Team tem administração centralizada e controles de segurança',
+          'Novidade março/2026: GPT-5.4 Thinking disponível para Plus, Team e Pro',
         ],
         links: [
           { label: 'Ver Planos e Preços', url: 'https://openai.com/chatgpt/pricing' },
@@ -217,59 +218,60 @@ Canvas é perfeito para: escrever e revisar documentos longos lado a lado com o 
 | **Memory** | Memória entre conversas — o ChatGPT lembra suas preferências |
 | **Browsing** | Capacidade de pesquisar na web em tempo real |
 | **DALL-E** | Geração de imagens integrada ao ChatGPT |
-| **GPT-5 (Raciocínio)** | Modelo premium que "pensa mais" antes de responder |`,
+| **GPT-5.4 Thinking** | Modelo premium que "pensa mais" antes de responder — com plano de raciocínio ajustável |`,
         tips: [
           'Não precisa decorar tudo — use este glossário como referência rápida',
           'Os termos mais usados no dia a dia são: Token, GPT, Custom Instructions e Canvas',
         ],
       },
       {
-        title: 'Qual Modelo Usar? GPT-5.2 e GPT-5',
+        title: 'Qual Modelo Usar? GPT-5.3, GPT-5.4 e GPT-5',
         subtitle: 'Cada modelo tem um papel no seu escritório',
         level: 'iniciante',
         icon: 'layers',
         analogy: {
-          text: 'Pense no escritório: o **sócio sênior** (GPT-5) resolve casos complexos e toma decisões estratégicas. O **associado pleno** (GPT-5.2) faz de tudo com competência e rapidez. **Você não escala o sócio para fotocopiar — e não manda o estagiário fazer sustentação oral.**',
+          text: 'Pense no escritório: o **sócio sênior** (GPT-5.4 Thinking) resolve casos complexos com raciocínio profundo. O **associado pleno** (GPT-5.3 Instant) faz de tudo com competência e rapidez. O **especialista** (GPT-5.4 Pro) é o melhor em tudo, mas cobra caro. **Você não escala o sócio para fotocopiar — e não manda o estagiário fazer sustentação oral.**',
         },
         content: `O ChatGPT possui diferentes modelos. Escolher o modelo certo para cada tarefa é tão importante quanto escolher o advogado certo para cada caso.
 
 **Modelos disponíveis (março 2026):**
 
-| Característica | **GPT-5** | **GPT-5.2** |
-|---------------|-----------|------------|
-| **Perfil** | Sócio sênior (raciocínio premium) | Associado pleno (rápido e versátil) |
-| **Inteligência** | Máxima | Muito alta |
-| **Velocidade** | Moderada | Rápida |
-| **Contexto** | 256K tokens | 256K tokens |
-| **Disponibilidade** | Plus, Pro, Team, Enterprise | Todos os planos (Free com limite) |
-| **Melhor para** | Raciocínio complexo, estratégia, pareceres | Uso diário, redação, pesquisa, triagem |
+| Característica | **GPT-5.4 Thinking** | **GPT-5.3 Instant** | **GPT-5.4 Pro** |
+|---------------|-----------|------------|------------|
+| **Perfil** | Sócio sênior (raciocínio profundo) | Associado pleno (rápido e natural) | Especialista máximo (desempenho total) |
+| **Inteligência** | Máxima | Muito alta | Elite |
+| **Velocidade** | Moderada (pensa antes) | Muito rápida | Moderada |
+| **Contexto** | Até 1M tokens (~3.000 páginas) | 256K tokens (~800 páginas) | Até 1M tokens (~3.000 páginas) |
+| **Disponibilidade** | Plus, Team, Pro | Todos os planos (Free com limite) | Apenas Pro e Enterprise |
+| **Melhor para** | Raciocínio complexo, estratégia, pareceres | Uso diário, redação, pesquisa, triagem | Tarefas críticas que exigem máxima qualidade |
 
-> **Nota:** Os modelos GPT-4o, GPT-4.1 e o4-mini foram aposentados. O GPT-5.2 é o modelo padrão desde fevereiro de 2026.
+> **Nota:** O GPT-5.3 Instant substituiu o GPT-5.2 como modelo padrão em março de 2026 — **inventa 26,8% menos informações** e tem tom mais natural. O GPT-5.4 Thinking substituiu o GPT-5.2 Thinking.
 
 **Quando usar cada modelo:**
 
 | Tarefa Jurídica | Modelo Ideal | Por quê |
 |----------------|-------------|---------|
-| Parecer jurídico complexo | **GPT-5** | Raciocínio profundo e multifatorial |
-| Análise de contrato M&A | **GPT-5** | Detecta nuances e riscos ocultos |
-| Estratégia de caso | **GPT-5** | Avaliação de cenários e probabilidades |
-| Redação de petição | **GPT-5.2** | Equilíbrio entre qualidade e velocidade |
-| Pesquisa de jurisprudência | **GPT-5.2** | Rápido e preciso na busca |
-| Revisão de contratos simples | **GPT-5.2** | Suficiente para riscos padrão |
-| Triagem de e-mails | **GPT-5.2** | Volume alto, decisão binária — rápido |
-| Classificação de documentos | **GPT-5.2** | Repetitivo e previsível |
-| Resumo de decisões | **GPT-5.2** | Extrair pontos-chave rapidamente |
+| Parecer jurídico complexo | **GPT-5.4 Thinking** | Raciocínio profundo com plano de pensamento |
+| Análise de contrato M&A | **GPT-5.4 Thinking** | Detecta nuances e riscos ocultos |
+| Análise de processo com centenas de páginas | **GPT-5.4 Pro** | Lê até ~3.000 páginas de uma vez, máxima precisão |
+| Estratégia de caso | **GPT-5.4 Thinking** | Avaliação de cenários e probabilidades |
+| Redação de petição | **GPT-5.3 Instant** | Rápido, natural e menos alucinações |
+| Pesquisa de jurisprudência | **GPT-5.3 Instant** | Rápido e preciso na busca |
+| Revisão de contratos simples | **GPT-5.3 Instant** | Suficiente para riscos padrão |
+| Triagem de e-mails | **GPT-5.3 Instant** | Volume alto, decisão binária — rápido |
+| Resumo de decisões | **GPT-5.3 Instant** | Extrair pontos-chave rapidamente |
 
 **No chatgpt.com:**
-Você pode alternar entre os modelos no seletor de modelo (canto superior). O ChatGPT seleciona automaticamente o melhor modelo (GPT-5.2 por padrão), mas você pode escolher GPT-5 manualmente para análises complexas.
+Você pode alternar entre os modelos no seletor de modelo (canto superior). O ChatGPT usa GPT-5.3 Instant por padrão. Para análises complexas, selecione GPT-5.4 Thinking manualmente.
 
 **Dica de ouro:**
-Use GPT-5.2 para o trabalho diário (redação, triagem, pesquisa) e reserve o GPT-5 para decisões estratégicas e pareceres que exigem raciocínio profundo. Esse uso inteligente economiza tokens sem perder qualidade.`,
+Use GPT-5.3 Instant para o trabalho diário (redação, triagem, pesquisa) e reserve o GPT-5.4 Thinking para decisões estratégicas e pareceres que exigem raciocínio profundo. Esse uso inteligente economiza tokens sem perder qualidade.`,
         tips: [
           'No Chat: alterne entre modelos conforme a complexidade da tarefa',
-          'Para redação diária (petições, contratos, e-mails): GPT-5.2 é rápido e excelente',
-          'Para análises que exigem raciocínio profundo: selecione GPT-5 manualmente',
-          'O GPT-5.2 está disponível até no plano Free (com limite de 10 msgs a cada 5h)',
+          'Para redação diária (petições, contratos, e-mails): GPT-5.3 Instant é rápido e excelente',
+          'Para análises que exigem raciocínio profundo: selecione GPT-5.4 Thinking manualmente',
+          'O GPT-5.3 Instant está disponível até no plano Free (com limite de 10 msgs a cada 5h)',
+          'Novidade: GPT-5.3 Instant inventa 26,8% menos informações e recusa menos pedidos legítimos',
         ],
       },
       {
@@ -287,9 +289,9 @@ Use GPT-5.2 para o trabalho diário (redação, triagem, pesquisa) e reserve o G
 | Critério | **ChatGPT** | **Claude** | **Gemini** |
 |----------|------------|-----------|-----------|
 | **Qualidade de redação** | Excelente | Excelente | Boa |
-| **Raciocínio jurídico** | Excelente (GPT-5) | Muito bom (Opus) | Bom |
+| **Raciocínio jurídico** | Excelente (GPT-5.4 Thinking) | Muito bom (Opus) | Bom |
 | **Instrução longa (>5 págs)** | Bom | Excelente | Bom |
-| **Janela de contexto** | 256K tokens | 1M tokens | 2M tokens |
+| **Janela de contexto** | Até 1M tokens (GPT-5.4) | 1M tokens | 2M tokens |
 | **Análise de PDFs** | Sim | Nativa, até 32MB | Sim |
 | **Segurança de dados** | Team/Enterprise seguro | Alta | Variável |
 | **Pesquisa na web** | Integrada + Browsing | Integrada | Nativa (Google) |
@@ -603,7 +605,7 @@ Para o **ecossistema mais completo** e maduro, com GPTs, Canvas, Code Interprete
               'Configurar Custom Instructions para sua área',
               'Criar um Project para um caso real',
               'Testar o Browsing para pesquisa jurídica',
-              'Experimentar o modelo GPT-5 para raciocínio complexo',
+              'Experimentar o modelo GPT-5.4 Thinking para raciocínio complexo',
             ],
           },
         ],
@@ -1072,36 +1074,40 @@ Basta pedir! O ChatGPT decide automaticamente quando criar um artefato. Para for
         ],
       },
       {
-        title: 'Raciocínio Avançado (GPT-5)',
-        subtitle: 'Quando o ChatGPT precisa pensar mais',
+        title: 'Raciocínio Avançado (GPT-5.4 Thinking)',
+        subtitle: 'Quando o ChatGPT precisa pensar mais — agora com plano de raciocínio',
         level: 'avancado',
         icon: 'brain',
         analogy: {
-          text: 'Em questões simples, o advogado responde rápido. Mas para teses complexas com jurisprudência conflitante, ele **para, estuda, pondera e só então responde**. O GPT-5 é esse "modo estudo" do ChatGPT.',
+          text: 'Em questões simples, o advogado responde rápido. Mas para teses complexas com jurisprudência conflitante, ele **para, estuda, monta um plano de ataque, pondera e só então responde**. O GPT-5.4 Thinking é esse "modo estudo" do ChatGPT — agora com a capacidade de **corrigir o próprio raciocínio no meio do caminho**.',
         },
-        content: `O GPT-5 (modelo de raciocínio premium) faz o ChatGPT "pensar mais tempo" antes de responder. Ao selecioná-lo, ele:
+        content: `O GPT-5.4 Thinking (modelo de raciocínio premium, lançado em março de 2026) faz o ChatGPT "pensar profundamente" antes de responder. É a evolução do GPT-5.2 Thinking, com melhorias significativas:
 
-- Analisa o problema de múltiplos ângulos
-- Considera contra-argumentos
-- Verifica a consistência da própria resposta
-- Produz respostas mais fundamentadas
+**O que mudou no GPT-5.4 Thinking:**
+- Cria um **plano de raciocínio** antes de responder e ajusta no caminho
+- **Deep web research** mais poderosa — pesquisa em mais fontes simultaneamente
+- Melhor **retenção de contexto** em tarefas longas
+- Suporta até **1M tokens de contexto** — analise documentos enormes de uma vez
+- Primeiro modelo com **computer use nativo** — pode operar aplicativos por você
 
 **Quando usar:**
 - Análise de teses jurídicas complexas com múltiplas correntes
 - Pareceres sobre questões controvertidas
 - Comparação de jurisprudência conflitante
 - Questões de direito constitucional com ponderação de princípios
+- Análise de grandes volumes documentais (contratos, autos)
 
 **Quando NÃO usar:**
 - Consultas simples e diretas
 - Redação de peças com estrutura já definida
 - Tarefas mecânicas (extração de dados, organização)
 
-**Atenção:** Consome significativamente mais tokens. Use apenas quando a complexidade justificar.`,
+**Disponibilidade:** Plus (80 msgs/3h), Team e Pro (ilimitado). Substitui o GPT-5.2 Thinking.`,
         tips: [
           'Ative na conversa quando precisar de análise profunda',
           'Ideal para teses jurídicas inovadoras ou controversas',
-          'Desative para tarefas simples — economize tokens',
+          'Desative para tarefas simples — GPT-5.3 Instant resolve e economiza tokens',
+          'Use o contexto de 1M tokens para analisar processos inteiros de uma vez',
         ],
       },
       {
@@ -1172,7 +1178,7 @@ Ao final, recomende a linha argumentativa mais robusta e explique por quê.`,
 
 **Dica de ouro:** Use Deep Research para o levantamento inicial amplo. Depois, confirme cada citação nos portais oficiais (STJ, STF, TST) antes de usar em peças processuais.`,
         steps: [
-          'Abra o ChatGPT e selecione o modelo **GPT-5** (ícone de pesquisa ou menu de modelos)',
+          'Abra o ChatGPT e selecione o modelo **GPT-5.4 Thinking** (ícone de pesquisa ou menu de modelos)',
           'Clique no ícone de **Deep Research** (lupa com "+") ou digite sua pergunta e selecione "Pesquisar a fundo"',
           'Formule uma pergunta específica e detalhada (quanto mais contexto, melhor o resultado)',
           'Aguarde a pesquisa (5-30 min) — você pode fechar a aba e voltar depois',
@@ -3770,6 +3776,89 @@ Ambos são especialmente úteis para:
 - Compliance financeiro`,
       },
       {
+        title: 'Skills: Fluxos Reutilizáveis no ChatGPT',
+        subtitle: 'Automatize tarefas repetitivas com fluxos prontos',
+        level: 'intermediario',
+        icon: 'zap',
+        analogy: {
+          tag: 'Novidade Março 2026',
+          text: 'Se os GPTs são **escritórios especializados**, as Skills são **procedimentos operacionais padronizados (POPs)**. Um GPT é um advogado especialista. Uma Skill é o **checklist que qualquer advogado segue** para executar uma tarefa com consistência — revisão de contrato, triagem de petição, análise de risco. Você cria uma vez e reutiliza para sempre.',
+        },
+        content: `**Skills** são fluxos de trabalho reutilizáveis que ensinam o ChatGPT a executar uma tarefa específica de forma consistente. Diferente dos GPTs, as Skills são **modulares** — você pode combinar várias numa mesma conversa.
+
+**O que uma Skill pode conter:**
+- **Instruções:** Passo a passo de como executar a tarefa
+- **Exemplos:** Modelos de entrada e saída para calibrar a qualidade
+- **Código:** Scripts e automações embutidos
+- **Contexto:** Documentos e referências que a Skill consulta
+
+**Skills vs GPTs — quando usar cada um:**
+
+| Aspecto | **Skills** | **GPTs** |
+|---------|-----------|---------|
+| **Escopo** | Uma tarefa específica | Assistente completo com múltiplas funções |
+| **Combinação** | Várias Skills na mesma conversa | Um GPT por vez |
+| **Criação** | No chat ou no editor visual | No GPT Builder |
+| **Ativação** | Digite / no chat ou automática | Menu lateral ou link direto |
+| **Compartilhamento** | Link, workspace, ou busca | GPT Store ou link |
+| **Portabilidade** | Web, mobile, API, apps terceiros | Web e mobile |
+
+**Exemplos práticos para advogados:**
+- **/revisao-contrato** — Analisa cláusulas, classifica riscos (verde/amarelo/vermelho), sugere alterações
+- **/triagem-peticao** — Identifica tipo de ação, prazo, competência e gera checklist documental
+- **/parecer-rapido** — Estrutura parecer com fundamentação legal a partir de uma pergunta
+- **/calculo-trabalhista** — Calcula verbas rescisórias com correção monetária
+
+**Onde encontrar e gerenciar Skills:**
+Acesse **chatgpt.com → menu lateral → Skills** ou digite **/** no campo de mensagem para ver as Skills disponíveis.`,
+        flowSteps: [
+          { title: 'Criar a Skill', description: 'No chat: peça "Crie uma Skill para [tarefa]". Ou acesse o editor visual na página de Skills.' },
+          { title: 'Configurar instruções', description: 'Defina o passo a passo, exemplos de entrada/saída e documentos de referência.' },
+          { title: 'Testar na conversa', description: 'Digite / e selecione a Skill, ou o ChatGPT a identifica automaticamente pelo contexto.' },
+          { title: 'Compartilhar', description: 'Envie por link, compartilhe no workspace da equipe ou publique para a comunidade.' },
+          { title: 'Combinar Skills', description: 'Use várias Skills na mesma conversa: ex. /triagem-peticao + /parecer-rapido em sequência.' },
+        ],
+        prompt: `Crie uma Skill chamada "Revisão de Contrato Jurídico" com as seguintes especificações:
+
+OBJETIVO: Analisar contratos e identificar riscos jurídicos com classificação por cores.
+
+INSTRUÇÕES:
+1. Receba o contrato (texto colado ou arquivo anexo)
+2. Identifique as partes, objeto e vigência
+3. Analise CADA cláusula com semáforo:
+   🟢 Verde = cláusula padrão, sem risco
+   🟡 Amarelo = atenção necessária, risco moderado
+   🔴 Vermelho = risco alto, requer alteração
+4. Para cada cláusula amarela/vermelha, sugira redação alternativa
+5. Gere um RESUMO EXECUTIVO com: total de cláusulas, distribuição de riscos, top 3 pontos críticos
+6. Finalize com checklist de ações recomendadas
+
+FORMATO DE SAÍDA: Tabela de análise + resumo executivo + checklist.
+LEGISLAÇÃO BASE: Código Civil brasileiro, CDC quando aplicável, LGPD para cláusulas de dados.`,
+        tips: [
+          'Skills são carregadas sob demanda — não consomem tokens quando não estão ativas',
+          'Converta seus GPTs favoritos em Skills com um clique (opção disponível no GPT Builder)',
+          'Combine Skills: "/triagem-peticao" para classificar e depois "/parecer-rapido" para fundamentar',
+          'Compartilhe Skills com sua equipe — padronize a qualidade das entregas do escritório',
+          'Skills funcionam em web, mobile, API e apps de terceiros — verdadeiramente portáteis',
+        ],
+        checklist: [
+          {
+            title: 'Minha Primeira Skill Jurídica',
+            items: [
+              'Abrir chatgpt.com e ir em Skills no menu lateral',
+              'Criar uma Skill de revisão de contrato com o prompt acima',
+              'Testar com um contrato real (ou modelo)',
+              'Compartilhar com um colega do escritório',
+              'Criar uma segunda Skill para outra tarefa repetitiva',
+            ],
+          },
+        ],
+        links: [
+          { label: 'Página de Skills no ChatGPT', url: 'https://chatgpt.com/skills' },
+        ],
+      },
+      {
         title: 'Criando GPTs Personalizados',
         subtitle: 'Sem precisar programar',
         level: 'avancado',
@@ -5133,12 +5222,12 @@ Elabore petição inicial de reclamação trabalhista requerendo:
 
 **Limites por plano (aproximados):**
 
-| Plano | Modelo padrão | Modelos avançados | Reset |
+| Plano | GPT-5.3 Instant | GPT-5.4 Thinking | Reset |
 |-------|--------------|-------------------|-------|
-| **Free** | ~10 msgs/período | Limitado | Algumas horas |
+| **Free** | ~10 msgs/5h | Não disponível | Algumas horas |
 | **Go** ($8/mês) | Generoso | Limitado | Rolling |
-| **Plus** ($20/mês) | ~80 msgs/3h | o3: ~100/semana | 3h rolling / semanal |
-| **Pro** ($200/mês) | Ilimitado | Ilimitado | Sem limite |
+| **Plus** ($20/mês) | Generoso | ~80 msgs/3h | 3h rolling |
+| **Pro** ($200/mês) | Ilimitado | Ilimitado (+ GPT-5.4 Pro) | Sem limite |
 
 **Importante:** Os limites mudam com frequência. Consulte o painel de uso do ChatGPT para os valores atuais do seu plano. O Pro ($200/mês) é o único plano verdadeiramente ilimitado.`,
         relationship: {
@@ -5181,7 +5270,7 @@ Elabore petição inicial de reclamação trabalhista requerendo:
               'NÃO use uma conversa única para tudo — abra uma nova para cada tarefa',
               'NÃO deixe conectores e busca web ligados quando não precisa — consomem tokens em silêncio',
               'NÃO faça prompts vagos como "faça uma petição" — use o padrão C-T-F-R',
-              'NÃO use GPT-5 para tarefas simples — reserve para análises complexas (GPT-5.2 resolve o resto)',
+              'NÃO use GPT-5.4 Thinking para tarefas simples — reserve para análises complexas (GPT-5.3 Instant resolve o resto)',
             ],
           },
         ],
@@ -5207,7 +5296,7 @@ Para documentos muito grandes, divida em pedaços temáticos. Em vez de enviar o
 **2. Templates no Projeto:**
 Crie Projetos com templates pré-configurados. Nas instruções: "Quando eu disser 'petição', use o template X. Quando disser 'parecer', use o template Y." Economiza explicação a cada nova conversa.
 
-**3. GPT-5 Seletivo (Raciocínio Premium):**
+**3. GPT-5.4 Thinking Seletivo (Raciocínio Premium):**
 Só ative para análises que realmente precisam de profundidade. Para redação com estrutura definida, o modo normal é suficiente e consome menos.
 
 **4. Pipeline de Processamento:**
@@ -5494,6 +5583,57 @@ Substitua: nomes reais → "Parte Autora / Parte Ré", CPF → "XXX.XXX.XXX-XX",
     description: 'Ferramentas avançadas e o caminho do advogado de IA',
     icon: 'wrench',
     cards: [
+      {
+        title: 'Novidades Março 2026',
+        subtitle: 'GPT-5.3 Instant, GPT-5.4, Skills e mais',
+        level: 'iniciante',
+        icon: 'sparkles',
+        analogy: {
+          tag: 'Atualização Importante',
+          text: 'O ChatGPT passou por uma **renovação completa** em março de 2026. Novos modelos, novo recurso de Skills, upload expandido e tom mais natural. É como se o escritório tivesse feito uma **reforma geral** — mesma estrutura, mas tudo mais eficiente.',
+        },
+        content: `Resumo das principais mudanças de março de 2026:
+
+**Novos Modelos:**
+
+| Modelo | O que é | Destaques |
+|--------|---------|-----------|
+| **GPT-5.3 Instant** | Novo modelo padrão (substitui GPT-5.2) | Inventa 26,8% menos informações, tom mais natural, recusa menos pedidos legítimos |
+| **GPT-5.4 Thinking** | Novo modelo de raciocínio (substitui GPT-5.2 Thinking) | Pensa antes de responder com plano ajustável, pesquisa profunda melhorada, lê até ~3.000 páginas |
+| **GPT-5.4 Pro** | Modelo máximo (Pro e Enterprise) | Pode operar apps no seu computador, lê ~3.000 páginas, encontra ferramentas sozinho |
+
+**Skills (Novo recurso):**
+Fluxos de trabalho reutilizáveis que você cria uma vez e reutiliza sempre. Combine várias Skills numa conversa, compartilhe com a equipe, ative com barra /. Veja o card completo na seção GPTs.
+
+**Outras melhorias:**
+- **Upload expandido:** Agora aceita até **20 arquivos** por mensagem (antes era 10)
+- **Tom mais natural:** GPT-5.3 Instant tem respostas menos "robotizadas" e menos paternalistas
+- **Menos recusas:** Prompts legítimos são recusados com menos frequência
+- **Projects aprimorado:** Knowledge base viva — cole links do Slack, Drive, salve respostas do ChatGPT
+- **Windows Codex:** App desktop para programadores rodarem múltiplos assistentes de código
+- **Operação de apps:** GPT-5.4 Pro pode navegar e operar aplicativos no seu computador por você`,
+        checklist: [
+          {
+            title: 'O que fazer agora',
+            items: [
+              'Testar o GPT-5.3 Instant — note o tom mais natural nas respostas',
+              'Experimentar GPT-5.4 Thinking para uma análise jurídica complexa',
+              'Criar sua primeira Skill (ex: revisão de contrato)',
+              'Testar upload de múltiplos arquivos (até 20) numa única mensagem',
+              'Atualizar suas Custom Instructions para mencionar os novos modelos',
+            ],
+          },
+        ],
+        tips: [
+          'O GPT-5.3 Instant já está ativo por padrão — você não precisa fazer nada',
+          'O GPT-5.4 Thinking substitui o GPT-5.2 Thinking — selecione no menu de modelos',
+          'Skills são o futuro dos workflows — comece a migrar seus GPTs repetitivos para Skills',
+          'Upload de 20 arquivos é perfeito para análise de processos com muitas peças',
+        ],
+        links: [
+          { label: 'Release Notes Oficiais', url: 'https://help.openai.com/en/articles/6825453-chatgpt-release-notes' },
+        ],
+      },
       {
         title: 'O que é o Code Interpreter?',
         subtitle: 'A versão "engenheiro" do ChatGPT',
