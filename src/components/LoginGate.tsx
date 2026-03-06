@@ -4,12 +4,6 @@ import { Lock, AlertCircle, Eye, EyeOff, ArrowRight, MessageSquare } from 'lucid
 const ACCESS_KEY = '11632GPTchat'
 const STORAGE_KEY = 'si-chatgpt-advogados-auth'
 
-const FREE_SECTIONS = new Set(['primeiros-passos', 'ecossistema'])
-
-export function isFreeSection(sectionId: string): boolean {
-  return FREE_SECTIONS.has(sectionId)
-}
-
 // ChatGPT-inspired teal/green palette (distinct from Claude gold)
 const TEAL = {
   primary: '#10a37f',

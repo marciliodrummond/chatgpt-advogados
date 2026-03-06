@@ -6,9 +6,8 @@ import { TabNav } from './components/TabNav'
 import { LevelFilter } from './components/LevelFilter'
 import { SectionContent } from './components/SectionContent'
 import { Footer } from './components/Footer'
-import { LoginGate, useAuth, isFreeSection } from './components/LoginGate'
+import { LoginGate, useAuth } from './components/LoginGate'
 import { OnboardingModal, shouldShowOnboarding } from './components/OnboardingModal'
-import { LockedOverlay } from './components/LockedOverlay'
 import { useTheme } from './hooks/useTheme'
 import { useSearch } from './hooks/useSearch'
 import { useProgress } from './hooks/useProgress'
@@ -26,7 +25,6 @@ function App() {
   const [openCardIndex, setOpenCardIndex] = useState<number | null>(null)
   const [levelFilter, setLevelFilter] = useState('todos')
   const [showGuide, setShowGuide] = useState(false)
-  const [showLogin, setShowLogin] = useState(false)
   const [showOnboarding, setShowOnboarding] = useState(false)
   const [showFavorites, setShowFavorites] = useState(false)
   const { favorites, removeFavorite, favoritesCount } = useFavorites()
@@ -62,47 +60,18 @@ function App() {
     }, 100)
   }, [])
 
-  const handleTabChange = useCallback((sectionId: string) => {
-    if (!isAuthenticated && !isFreeSection(sectionId)) {
-      setActiveTab(sectionId)
-      setShowGuide(true)
-      return
-    }
-    setActiveTab(sectionId)
-  }, [isAuthenticated])
-
   const handleSelectResult = useCallback((sectionId: string, cardIndex: number) => {
-    if (!isAuthenticated && !isFreeSection(sectionId)) {
-      setActiveTab(sectionId)
-      setShowGuide(true)
-      setTimeout(() => {
-        document.getElementById('guide-content')?.scrollIntoView({ behavior: 'smooth' })
-      }, 100)
-      return
-    }
     setActiveTab(sectionId)
     setOpenCardIndex(cardIndex)
     setShowGuide(true)
     setTimeout(() => {
       document.getElementById('guide-content')?.scrollIntoView({ behavior: 'smooth' })
     }, 100)
-  }, [isAuthenticated])
-
-  const handleRequestLogin = useCallback(() => {
-    setShowLogin(true)
   }, [])
 
-  const handleAuthenticated = useCallback(() => {
-    authenticate()
-    setShowLogin(false)
-  }, [authenticate])
-
-  // Full login gate: only when no free preview available (showLogin triggered)
-  if (!isAuthenticated && showLogin) {
-    return <LoginGate onAuthenticated={handleAuthenticated} />
+  if (!isAuthenticated) {
+    return <LoginGate onAuthenticated={authenticate} />
   }
-
-  const isLockedTab = !isAuthenticated && !isFreeSection(activeTab)
 
   return (
     <div className="relative z-10 min-h-screen">
@@ -149,7 +118,7 @@ function App() {
 
           {/* Tabs */}
           <div className="mb-4">
-            <TabNav activeTab={activeTab} onTabChange={handleTabChange} isAuthenticated={isAuthenticated} />
+            <TabNav activeTab={activeTab} onTabChange={setActiveTab} />
           </div>
 
           {/* Level Filter + Favorites Button */}
@@ -178,17 +147,13 @@ function App() {
             )}
           </div>
 
-          {/* Section Content or Locked Overlay */}
-          {isLockedTab ? (
-            <LockedOverlay onRequestLogin={handleRequestLogin} />
-          ) : (
-            <SectionContent
-              activeTab={activeTab}
-              openCardIndex={openCardIndex}
-              onCardToggle={setOpenCardIndex}
-              levelFilter={levelFilter}
-            />
-          )}
+          {/* Section Content */}
+          <SectionContent
+            activeTab={activeTab}
+            openCardIndex={openCardIndex}
+            onCardToggle={setOpenCardIndex}
+            levelFilter={levelFilter}
+          />
 
           <Footer />
         </div>
