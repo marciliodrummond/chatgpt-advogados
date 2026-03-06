@@ -1452,6 +1452,285 @@ Peça minha confirmação antes de renomear ou mover qualquer arquivo.`,
         ],
       },
       {
+        title: 'Pesquisa de Jurisprudência Automatizada',
+        subtitle: 'O Agent Mode pesquisa tribunais e monta tabela comparativa',
+        level: 'intermediario',
+        icon: 'search',
+        analogy: {
+          text: 'Imagine pedir ao estagiário: **"pesquise nos últimos 3 anos de jurisprudência do TJ-SP sobre dano moral em plano de saúde, monte uma tabela e me diga a tendência"**. Ele levaria 2 dias. O Agent Mode faz em 10 minutos — navega nos sites dos tribunais, lê as decisões e organiza tudo.',
+        },
+        content: `A pesquisa de jurisprudência é uma das tarefas mais demoradas da advocacia. O Agent Mode transforma horas de trabalho em minutos ao navegar automaticamente nos sites dos tribunais.
+
+**O que o Agent Mode faz sozinho:**
+1. Acessa o site do tribunal (STJ, TST, TJ-SP, TRFs, etc.)
+2. Pesquisa pelo tema com os filtros que você definir
+3. Lê cada decisão encontrada e extrai os dados relevantes
+4. Monta uma tabela comparativa organizada
+5. Identifica a tendência jurisprudencial predominante
+
+**Exemplo prático — Advogado Trabalhista:**
+Precisa saber o entendimento do TRT-2 sobre dano moral por assédio em home office. Pede ao Agent Mode: pesquise as decisões de 2024-2026. Em 10 minutos, recebe: 15 decisões encontradas, 73% favoráveis ao empregado, valor médio de condenação R$ 15.000, argumentos mais aceitos pelo tribunal.
+
+**Exemplo prático — Advogado Consumerista:**
+Quer saber o valor médio de indenização por negativação indevida no TJ-MG. Agent Mode pesquisa 30 decisões e entrega: faixa de R$ 5.000 a R$ 20.000, média de R$ 8.500, fatores que aumentam o valor (reincidência, tempo de negativação).`,
+        prompt: `Use o Agent Mode para pesquisar jurisprudência sobre [TEMA JURÍDICO].
+
+INSTRUÇÕES DETALHADAS:
+1. Acesse o site do [TRIBUNAL: STJ/TST/TJ-SP/TRF-3/etc.]
+2. Pesquise decisões dos últimos [PERÍODO: 2 anos] sobre [TEMA]
+3. Para cada decisão encontrada, extraia:
+   - Número do processo
+   - Relator(a)
+   - Data do julgamento
+   - Turma/Câmara
+   - Resultado (provido/desprovido/parcial)
+   - Valor da condenação (se houver)
+   - Ementa resumida (máximo 3 linhas)
+   - Tese jurídica central
+
+4. Monte uma TABELA COMPARATIVA com todos os dados
+
+5. Ao final, apresente uma ANÁLISE CONSOLIDADA:
+   - Total de decisões encontradas
+   - Porcentagem favorável vs. desfavorável
+   - Valor médio de condenação (se aplicável)
+   - Argumentos mais aceitos pelo tribunal
+   - Tendência jurisprudencial identificada
+   - Tese mais forte para fundamentação
+
+IMPORTANTE: Marque com [VERIFICAR] qualquer dado que não conseguir confirmar diretamente no site do tribunal.`,
+        flowSteps: [
+          { title: 'Comando', description: 'Defina: tribunal, tema, período e formato desejado' },
+          { title: 'Navegação', description: 'Agent Mode acessa o site do tribunal e pesquisa' },
+          { title: 'Extração', description: 'Lê cada decisão e extrai dados estruturados' },
+          { title: 'Análise', description: 'Tabela comparativa + tendência jurisprudencial' },
+        ],
+        tips: [
+          'Seja específico no tribunal e no tema — "dano moral por atraso de voo no TJ-RJ 2024-2026" funciona melhor que "jurisprudência sobre dano moral"',
+          'O Agent Mode funciona melhor com sites públicos de tribunais — sites com login podem não funcionar',
+          'Sempre VERIFIQUE as decisões encontradas nos sites oficiais antes de citar em petições',
+          'Use o modelo GPT-5.4 Thinking para análises mais profundas da tendência jurisprudencial',
+          'Combine com uma Skill de Jurisprudência Estratégica para integrar os resultados à petição',
+        ],
+      },
+      {
+        title: 'Organização de Documentos Processuais',
+        subtitle: 'Renomeie e classifique centenas de arquivos automaticamente',
+        level: 'intermediario',
+        icon: 'folder-open',
+        analogy: {
+          text: 'Sabe quando você baixa 47 documentos do PJe e vem tudo como "documento_1.pdf", "documento_2.pdf"? O Agent Mode no Desktop é como ter um **estagiário organizador** que lê cada PDF, identifica o que é e renomeia com o padrão do escritório — em segundos.',
+        },
+        content: `Um dos maiores problemas da prática forense é a desorganização de documentos processuais. O Agent Mode no Desktop resolve isso automaticamente.
+
+**O problema:**
+Ao baixar documentos de processos (PJe, e-SAJ, PROJUDI), os arquivos vêm com nomes genéricos como "doc_12345.pdf" ou "evento_678.pdf". Encontrar algo específico vira pesadelo.
+
+**A solução com Agent Mode Desktop:**
+Peça ao ChatGPT Desktop para ler, identificar e renomear cada documento seguindo o padrão do escritório.
+
+**Exemplo prático — Processo Trabalhista:**
+
+Antes:
+- documento_1.pdf
+- documento_2.pdf
+- evento_45.pdf
+- peca_processual_3.pdf
+
+Depois:
+- 001_PETICAO-INICIAL_2024-03-15.pdf
+- 002_PROCURACAO_RECLAMANTE_2024-03-15.pdf
+- 003_CTPS_JOSE-SILVA.pdf
+- 004_HOLERITES_JAN-DEZ-2023.pdf
+- 005_CONTESTACAO_RECLAMADA_2024-05-10.pdf
+- 006_ATA-AUDIENCIA_2024-07-22.pdf
+- 007_SENTENCA_2024-09-30.pdf
+
+**O que o Agent Mode faz automaticamente:**
+1. Lê cada PDF e identifica o tipo de documento
+2. Extrai a data do documento
+3. Identifica as partes envolvidas
+4. Renomeia seguindo o padrão: NUMERO_TIPO_DETALHES_DATA
+5. Move para subpastas organizadas (opcional)
+6. Gera um índice em Excel com todos os documentos`,
+        prompt: `No meu computador, organize os documentos processuais da pasta [CAMINHO DA PASTA]:
+
+1. Leia TODOS os documentos PDF desta pasta. Para cada um, identifique o tipo:
+   petição inicial, contestação, réplica, sentença, acórdão, procuração, substabelecimento, ata de audiência, laudo pericial, certidão, alvará, mandado, CTPS, holerite, contrato, comprovante, recurso, contrarrazões, decisão interlocutória, despacho, outro.
+
+2. Extraia: data do documento, partes mencionadas, número do processo.
+
+3. Renomeie cada arquivo seguindo este padrão:
+   [SEQUÊNCIA 3 dígitos]_[TIPO EM MAIÚSCULO]_[DETALHE RELEVANTE]_[DATA YYYY-MM-DD].pdf
+
+4. Crie as seguintes subpastas e mova os documentos:
+   - /Peticoes (iniciais, contestações, réplicas, recursos)
+   - /Decisoes (sentenças, acórdãos, despachos, decisões)
+   - /Documentos (CTPS, holerites, contratos, comprovantes)
+   - /Audiencias (atas, termos)
+   - /Procuracoes (procurações, substabelecimentos)
+   - /Pericias (laudos, quesitos)
+
+5. Gere um arquivo "INDICE_PROCESSUAL.xlsx" com colunas:
+   Sequência | Nome Original | Nome Novo | Tipo | Data | Subpasta | Resumo em 1 linha
+
+IMPORTANTE: Peça minha confirmação antes de renomear ou mover qualquer arquivo.`,
+        flowSteps: [
+          { title: 'Apontar', description: 'Indique a pasta com os documentos do processo' },
+          { title: 'Leitura', description: 'Agent Mode lê cada PDF e identifica tipo e data' },
+          { title: 'Organização', description: 'Renomeia, cria subpastas e move os arquivos' },
+          { title: 'Índice', description: 'Gera planilha Excel com inventário completo' },
+        ],
+        tips: [
+          'Funciona com qualquer área: trabalhista, cível, criminal, tributário, familiar',
+          'Customize o padrão de nomes editando o prompt — use o padrão do seu escritório',
+          'Para processos grandes (100+ documentos), processe em lotes de 30-40 por vez',
+          'Sempre peça confirmação antes de ações destrutivas — comece com uma pasta de teste',
+          'Salve este prompt como Skill para usar em todos os processos novos',
+        ],
+        steps: [
+          'Baixe todos os documentos do processo numa pasta (ex: "Processo_12345")',
+          'Abra o ChatGPT Desktop e inicie uma conversa com Agent Mode',
+          'Cole o prompt de organização acima, ajustando o caminho da pasta',
+          'Aguarde o Agent Mode processar (2-5 minutos para ~50 documentos)',
+          'Confira o índice Excel gerado e os documentos renomeados',
+        ],
+      },
+      {
+        title: 'Preparação Completa para Audiências',
+        subtitle: 'Do processo à sala de audiência, tudo preparado',
+        level: 'avancado',
+        icon: 'briefcase',
+        analogy: {
+          text: 'Imagine chegar na audiência com um **dossiê completo**: cronologia dos fatos, roteiro de perguntas, teses e contra-teses, pontos fracos do adversário e um resumo de bolso. O Agent Mode prepara tudo isso a partir dos documentos do processo — em minutos, não em horas.',
+        },
+        content: `A preparação de audiências é uma das tarefas mais críticas e demoradas. O Agent Mode transforma horas de preparação em minutos.
+
+**O que o Agent Mode gera automaticamente:**
+
+**1. Cronologia dos Fatos**
+Timeline completa com datas, eventos e documentos que comprovam cada fato. Formato de tabela para consulta rápida.
+
+**2. Roteiro de Perguntas para Testemunhas**
+Perguntas organizadas por testemunha, com objetivo de cada pergunta e documento de suporte. Inclui perguntas de contradita.
+
+**3. Quadro de Teses**
+Teses do autor vs. teses do réu, lado a lado, com fundamentos legais e jurisprudência de apoio para cada uma.
+
+**4. Pontos de Atenção**
+Fragilidades do seu caso, argumentos fortes do adversário e sugestões de como contornar.
+
+**5. Resumo de Bolso**
+Uma página A4 com as informações essenciais para consulta rápida durante a audiência.
+
+**Exemplo prático — Audiência de Instrução Trabalhista:**
+O advogado faz upload de: petição inicial, contestação, réplica, atas de audiências anteriores, laudos e todos os documentos probatórios. Em 5 minutos, recebe os 5 documentos acima prontos para imprimir.`,
+        prompt: `Analise TODOS os documentos enviados referentes ao processo judicial e prepare um dossiê completo para audiência:
+
+DOCUMENTO 1 — CRONOLOGIA DOS FATOS:
+- Tabela com colunas: Data | Fato | Documento Comprobatório | Relevância (Alta/Média/Baixa)
+- Ordem cronológica
+- Destaque os fatos controversos
+
+DOCUMENTO 2 — ROTEIRO DE PERGUNTAS:
+- Para cada testemunha listada no processo:
+  a) Perguntas de qualificação
+  b) Perguntas sobre os fatos (vincular a cada fato da cronologia)
+  c) Perguntas de contradita (se testemunha da parte adversa)
+  d) Objetivo de cada pergunta (o que se pretende provar)
+- Organizado por testemunha
+
+DOCUMENTO 3 — QUADRO DE TESES:
+- Tabela comparativa: Tese do Autor | Tese do Réu
+- Para cada ponto: fundamento legal, jurisprudência citada, força do argumento (forte/médio/fraco)
+- Identifique os pontos pacíficos e os controversos
+
+DOCUMENTO 4 — PONTOS DE ATENÇÃO:
+- Lista das fragilidades do nosso caso
+- Argumentos mais fortes da parte adversa
+- Sugestão de como contornar cada ponto fraco
+- Possíveis perguntas que o juiz pode fazer
+
+DOCUMENTO 5 — RESUMO DE BOLSO (1 página):
+- Número do processo, vara, juiz
+- Partes e advogados
+- Objeto da ação em 2 linhas
+- 5 fatos-chave
+- 3 teses principais
+- 3 pontos de atenção
+- Pedidos`,
+        flowSteps: [
+          { title: 'Documentos', description: 'Faça upload de todo o processo digitalizado no ChatGPT' },
+          { title: 'Análise', description: 'O ChatGPT lê e cruza todas as informações do caso' },
+          { title: 'Dossiê', description: '5 documentos gerados: cronologia, perguntas, teses, alertas, resumo' },
+          { title: 'Audiência', description: 'Imprima o resumo de bolso e vá preparado' },
+        ],
+        tips: [
+          'Envie o máximo de documentos do processo — quanto mais contexto, melhor a preparação',
+          'Adapte o prompt para o tipo de audiência: instrução, conciliação, una, custódia',
+          'O "Resumo de Bolso" é ideal para imprimir e levar à audiência',
+          'Use o modelo GPT-5.4 Thinking para análises estratégicas mais profundas',
+          'Combine com o roteiro de perguntas para não esquecer nenhum ponto importante',
+        ],
+      },
+      {
+        title: 'Relatório para Cliente',
+        subtitle: 'Comunicação clara sem juridiquês, gerada automaticamente',
+        level: 'intermediario',
+        icon: 'bar-chart',
+        analogy: {
+          text: 'Cliente empresário não quer ler 20 páginas de juridiquês. Quer saber: **o que aconteceu, quanto custa e o que precisa fazer**. O Agent Mode pesquisa o andamento do processo online e gera o relatório em linguagem que o cliente entende — pronto para enviar por e-mail.',
+        },
+        content: `Crie relatórios executivos sobre o andamento do caso em linguagem simples e acessível, sem juridiquês desnecessário. O Agent Mode pode até pesquisar o andamento processual online antes de gerar o relatório.
+
+**Exemplo prático — Relatório Mensal:**
+Cliente empresário quer saber o status de 3 processos trabalhistas. O ChatGPT gera um relatório único com: resumo por processo, próximos passos, riscos financeiros e prazos importantes — tudo em linguagem que o cliente entende.
+
+**Exemplo prático — Comunicação de Decisão:**
+Saiu uma sentença desfavorável. Em vez de enviar a decisão de 15 páginas, o Agent Mode gera: resumo do que foi decidido, impacto financeiro, opções de recurso, prazo para recorrer e recomendação — em 1 página, linguagem acessível.
+
+**Fluxo completo com Agent Mode:**
+1. Agent Mode pesquisa o andamento no site do tribunal (via navegador)
+2. Lê as últimas movimentações e decisões
+3. Gera o relatório em linguagem simples
+4. Pode criar o documento Word formatado (via Desktop)`,
+        prompt: `Crie um relatório de andamento processual para enviar ao cliente.
+
+DADOS DO PROCESSO:
+[Cole aqui: número do processo, partes, vara, tipo de ação]
+
+ÚLTIMAS MOVIMENTAÇÕES:
+[Cole aqui as últimas movimentações ou peça ao Agent Mode para pesquisar online]
+
+REGRAS OBRIGATÓRIAS:
+- Linguagem simples e clara (sem termos técnicos desnecessários)
+- Quando usar termos jurídicos, explique entre parênteses
+  Exemplo: "Foi proferida sentença (decisão do juiz sobre o caso)"
+- Tom profissional mas acessível — o cliente deve entender TUDO sem precisar pesquisar
+
+ESTRUTURA:
+1. RESUMO EXECUTIVO (3 linhas: o que está acontecendo no processo)
+2. O QUE ACONTECEU (últimos 30 dias — cada evento em linguagem simples)
+3. PRÓXIMOS PASSOS (o que vai acontecer e quando)
+4. PRAZOS IMPORTANTES (tabela: Prazo | Data | O que precisa fazer)
+5. RISCOS E OPORTUNIDADES (cenário atual honesto)
+6. RECOMENDAÇÕES (o que sugerimos e por quê)
+
+FORMATO: Documento pronto para enviar por e-mail, com formatação profissional.`,
+        flowSteps: [
+          { title: 'Dados', description: 'Informe o processo ou peça pesquisa online ao Agent Mode' },
+          { title: 'Análise', description: 'ChatGPT processa movimentações e identifica pontos relevantes' },
+          { title: 'Relatório', description: 'Gera documento em linguagem simples, sem juridiquês' },
+          { title: 'Envio', description: 'Pronto para enviar ao cliente por e-mail' },
+        ],
+        tips: [
+          'Crie um modelo padrão e salve como Skill — todo relatório sai no mesmo formato',
+          'Para más notícias: sempre termine com próximos passos e alternativas, nunca deixe o cliente sem direção',
+          'Peça ao ChatGPT para adaptar o tom: "mais formal para cliente corporativo" ou "mais acolhedor para pessoa física"',
+          'Combine relatório mensal + controle de prazos para uma prestação de contas completa',
+        ],
+      },
+      {
         title: 'Automações Avançadas com Agent Mode',
         subtitle: 'Fluxos complexos que combinam navegador e computador',
         level: 'avancado',
@@ -1705,6 +1984,425 @@ Para cada Skill, defina instruções claras, formato de saída e legislação ba
           'Combine Skills: /triagem-peticao → /parecer-rapido em sequência',
           'Compartilhe Skills com a equipe para padronizar entregas',
           'Mantenha as Skills atualizadas quando houver mudanças legislativas',
+        ],
+      },
+      {
+        title: 'Skill de Petição Universal',
+        subtitle: 'Template de Skill que funciona para qualquer área do direito',
+        level: 'intermediario',
+        icon: 'file-text',
+        analogy: {
+          tag: 'Formulário Mestre',
+          text: 'Imagine um **formulário inteligente** que se adapta sozinho: você preenche os dados do caso e ele gera a petição na estrutura correta, com a legislação certa, no formato do tribunal. A Skill de Petição Universal faz exatamente isso — é o modelo que gera todos os outros.',
+        },
+        content: `Skill pronta para usar que transforma qualquer briefing de caso em petição profissional. Funciona para todas as áreas do direito — basta fornecer os dados.
+
+**Por que criar esta Skill:**
+- Toda petição sua sai no mesmo padrão de qualidade
+- Estagiários e associados produzem no seu nível
+- Elimina o "branco" diante da página vazia
+- Jurisprudência é marcada com nível de confiança
+
+**Como criar no ChatGPT:**
+Acesse chatgpt.com → menu lateral → Skills → Criar Skill. Cole as instruções abaixo no campo de instruções. A partir de agora, toda vez que digitar **/peticao** no chat, o ChatGPT seguirá automaticamente o padrão.
+
+**Estrutura que a Skill segue:**
+
+| Seção | O que contém |
+|-------|-------------|
+| Endereçamento | Juízo competente (extraído dos dados) |
+| Qualificação | Partes completas |
+| Dos Fatos | Cronológico, com referência a documentos |
+| Do Direito | Legislação + jurisprudência com nível de confiança |
+| Tutela de Urgência | Quando aplicável (requisitos demonstrados) |
+| Dos Pedidos | Principal + alternativos + subsidiários |
+| Valor da Causa | Cálculo fundamentado |
+| Provas | Lista de provas a produzir |`,
+        prompt: `Crie uma Skill chamada "/peticao-universal" com estas instruções:
+
+IDENTIDADE:
+Você é um advogado [SUA ÁREA] com 15 anos de experiência, atuando no [SEU TRIBUNAL/REGIÃO].
+
+ESTRUTURA OBRIGATÓRIA PARA TODA PETIÇÃO:
+1. Endereçamento (juízo competente)
+2. Qualificação completa das partes
+3. Dos Fatos (cronológico, com referência a documentos)
+4. Do Direito (legislação + jurisprudência)
+5. Da Tutela de Urgência (quando aplicável)
+6. Dos Pedidos (principal + alternativos + subsidiários)
+7. Do Valor da Causa
+8. Provas a produzir
+9. Encerramento
+
+REGRAS DE ESCRITA:
+- Formato ABNT, Times New Roman 12, espaçamento 1,5
+- Parágrafos curtos (máximo 5 linhas)
+- Priorize argumentos mais fortes primeiro
+- Use conectivos lógicos para transição entre seções
+- Linguagem formal, mas direta — sem latinismos desnecessários
+
+REGRAS DE JURISPRUDÊNCIA:
+- Cite apenas decisões com alta confiança
+- Marque com [VERIFICAR] quando houver dúvida sobre número ou relator
+- Nunca invente números de processo ou relator
+- Prefira Súmulas e teses repetitivas (vinculantes primeiro)
+- Sempre inclua pedidos alternativos quando aplicável
+
+LEGISLAÇÃO BASE:
+[LISTE AS LEIS QUE VOCÊ MAIS USA: CC, CDC, CLT, CPC, CF, etc.]`,
+        flowSteps: [
+          { title: 'Criar', description: 'Acesse Skills → Criar Skill → cole as instruções e personalize' },
+          { title: 'Personalizar', description: 'Substitua [SUA ÁREA], [SEU TRIBUNAL] e [LEGISLAÇÃO]' },
+          { title: 'Testar', description: 'Digite /peticao e forneça os dados de um caso real' },
+          { title: 'Refinar', description: 'Ajuste as instruções com base nos resultados até acertar o padrão' },
+        ],
+        tips: [
+          'Crie variações por área: /peticao-trabalhista, /peticao-civel, /peticao-consumidor',
+          'Adicione exemplos de petições suas como referência de estilo nas instruções',
+          'Mantenha a Skill atualizada quando houver mudanças legislativas',
+          'Combine com a Skill de Visual Law para petições com design diferenciado',
+          'Teste com 3-5 casos diferentes antes de considerar a Skill pronta',
+        ],
+      },
+      {
+        title: 'Skill de Réplica Estratégica',
+        subtitle: 'Desconstrução tática da contestação em 3 etapas',
+        level: 'avancado',
+        icon: 'shield',
+        analogy: {
+          text: 'A maioria dos advogados "reitera os termos da inicial" na réplica. Com esta Skill, o ChatGPT opera como um **estrategista militar**: primeiro faz o reconhecimento do terreno (diagnóstico), depois identifica os pontos fracos do inimigo (desconstrução), e só então monta o plano de ataque (arquitetura).',
+        },
+        content: `A réplica é a **última oportunidade real de persuasão ativa** antes da fase instrutória. Esta Skill transforma a réplica de peça reativa em instrumento cirúrgico de desconstrução argumentativa.
+
+**O método em 3 etapas encadeadas:**
+
+| Etapa | Função | Resultado |
+|-------|--------|-----------|
+| **Diagnóstico Tático** | Análise comparativa Inicial vs. Contestação | Mapa de disputas do processo |
+| **Desconstrução Técnica** | Dissecação de fragilidades da defesa | Vulnerabilidades classificadas por impacto |
+| **Arquitetura da Réplica** | Estruturação persuasiva da peça | Roteiro estratégico completo |
+
+**Por que funciona:**
+
+Quando você joga a contestação no ChatGPT e pede "faça uma réplica", recebe texto genérico que repete a inicial com outras palavras. Esta Skill força o ChatGPT a **analisar antes de redigir** — e a diferença é brutal.
+
+**O que a Skill faz automaticamente:**
+- Mapeia teses atacadas, argumentos frágeis e contradições da defesa
+- Identifica fatos não impugnados (art. 341 CPC = fatos incontroversos)
+- Classifica fragilidades jurídicas e fáticas por ordem de impacto estratégico
+- Estrutura a réplica em sequência persuasiva: preliminares, reforço, desconstrução, pedidos
+- Separa a arquitetura (plano) da execução (redação) para manter controle intelectual`,
+        prompt: `Crie uma Skill chamada "/replica-estrategica" com estas instruções:
+
+Quando eu pedir para elaborar uma réplica à contestação, SEMPRE execute as 3 etapas abaixo em sequência. NÃO pule etapas. Cada etapa alimenta a próxima. Apresente o resultado de cada etapa antes de avançar.
+
+--- ETAPA 1: DIAGNÓSTICO TÁTICO ---
+
+Analise comparativamente a petição inicial e a contestação:
+
+PETIÇÃO INICIAL — Analise: pedidos formulados, tese central, narrativa fática, provas apresentadas e fundamentos jurídicos.
+
+CONTESTAÇÃO — Analise: argumentos de defesa, teses jurídicas invocadas, documentos juntados, preliminares arguidas e impugnações específicas.
+
+DIAGNÓSTICO COMPARATIVO — Responda:
+- Quais teses da inicial estão sendo atacadas frontalmente?
+- Quais argumentos da contestação são juridicamente frágeis?
+- Existem contradições entre alegações da defesa e seus próprios documentos?
+- Quais pontos da inicial precisam de reforço argumentativo?
+- A defesa omitiu impugnação a algum fato relevante? (art. 341 CPC — fato não impugnado = incontroverso)
+
+Organize por impacto estratégico, do mais crítico ao menos urgente.
+
+--- ETAPA 2: DESCONSTRUÇÃO TÉCNICA ---
+
+Com base no diagnóstico, classifique TODAS as fragilidades:
+
+FRAGILIDADES JURÍDICAS: teses sem amparo, interpretações equivocadas, precedentes fora de contexto.
+FRAGILIDADES FÁTICAS: contradições com documentos próprios, omissão de fatos, narrativa inverossímil.
+PRELIMINARES (se houver): fundamento de cada uma e elementos para refutação.
+MAPA ESTRATÉGICO: prioridades de ataque, maior vulnerabilidade, teses fortalecidas.
+
+--- ETAPA 3: ARQUITETURA DA RÉPLICA ---
+
+Estruture o roteiro completo:
+1. PRELIMINARES — Refutação técnica com fundamentação legal
+2. REFORÇO DA TESE — Ratificação dos fatos e fortalecimento das provas
+3. DESCONSTRUÇÃO DA DEFESA — Refutação pontual + exposição de fragilidades
+4. COMPLEMENTAÇÃO PROBATÓRIA — Novos documentos com justificativa
+5. PEDIDOS — Rejeição das preliminares + procedência integral
+
+NÃO redija a peça — estruture o roteiro. Só redija quando eu aprovar.`,
+        flowSteps: [
+          { title: 'Diagnóstico Tático', description: 'Análise comparativa entre inicial e contestação — mapa de disputas' },
+          { title: 'Desconstrução Técnica', description: 'Dissecação de fragilidades jurídicas e fáticas — classificadas por impacto' },
+          { title: 'Arquitetura da Réplica', description: 'Roteiro persuasivo: preliminares, reforço, desconstrução, pedidos' },
+          { title: 'Redação Final', description: 'Com o roteiro aprovado, o ChatGPT redige a peça completa' },
+        ],
+        tips: [
+          'Forneça a petição inicial E a contestação completas — quanto mais contexto, melhor a análise',
+          'Mantenha as 3 etapas na mesma conversa para acumular contexto de cada fase',
+          'Use o modelo GPT-5.4 Thinking para análises estratégicas mais profundas',
+          'Fato não impugnado = fato incontroverso (art. 341 CPC) — a Skill identifica isso automaticamente',
+          'Combine com a Skill de Visual Law para réplicas com quadros comparativos e tabelas de provas',
+        ],
+        steps: [
+          'Acesse chatgpt.com → Skills → Criar Skill → nome: "/replica-estrategica"',
+          'Cole as instruções acima no campo de instruções e salve',
+          'Na conversa: cole a petição inicial e a contestação',
+          'Digite /replica-estrategica — o ChatGPT inicia o diagnóstico tático',
+          'Revise o diagnóstico → peça a desconstrução técnica',
+          'Revise a desconstrução → peça a arquitetura da réplica',
+          'Com o roteiro aprovado → peça a redação completa da peça',
+        ],
+      },
+      {
+        title: 'Skill de Jurisprudência Estratégica',
+        subtitle: 'O método dos 3 prompts para usar precedentes com precisão',
+        level: 'avancado',
+        icon: 'search',
+        analogy: {
+          text: 'A maioria dos advogados trata jurisprudência como **decoração de petição** — copia ementas e reza para impressionar pelo volume. Esta Skill ensina o ChatGPT a tratar cada precedente como **munição cirúrgica**: classifica por autoridade, conecta aos fatos e integra à tese com hierarquia lógica.',
+        },
+        content: `Jurisprudência desconectada não fortalece argumento — **enfraquece**. O Judiciário opera sob sobrecarga crônica. Assessores fazem leitura dinâmica. Magistrados decidem com base no que ficou **claro**, não no que estava enterrado entre citações desconexas.
+
+**O método em 3 etapas:**
+
+| Etapa | Função | Resultado |
+|-------|--------|-----------|
+| **Triagem e Hierarquia** | Classificação por autoridade e relevância | Mapa de relevância dos precedentes |
+| **Contextualização** | Conexão do precedente aos fatos do caso | Precedente transformado em argumento vivo |
+| **Integração à Tese** | Montagem do bloco argumentativo final | Cadeia argumentativa completa e persuasiva |
+
+**Classificação hierárquica que a Skill aplica:**
+
+| Tipo | Exemplos | Peso |
+|------|----------|------|
+| **Vinculante** | Súmulas vinculantes, temas de repercussão geral, IACs, IRDRs | Máximo |
+| **Orientadora** | Jurisprudência dominante de tribunais superiores (STF, STJ, TST) | Alto |
+| **Reforço secundário** | Decisões monocráticas, turmas recursais, tribunais estaduais | Complementar |
+
+**Parametrização por área do direito:**
+- **Previdenciário:** Temas STF → Súmulas TNU → Turmas recursais
+- **Consumidor:** Súmulas STJ → IACs dos TJs → Turmas recursais
+- **Trabalhista:** Súmulas TST → OJs das SDIs → TRTs
+- **Tributário:** Repercussão geral → Repetitivos → CARF
+
+**O que muda na prática:**
+Quando o juiz não precisa se esforçar para entender o que você quer, a probabilidade de deferimento aumenta drasticamente. Clareza argumentativa é, em si mesma, uma forma de persuasão.`,
+        prompt: `Crie uma Skill chamada "/jurisprudencia-estrategica" com estas instruções:
+
+Quando eu pedir para trabalhar com jurisprudência, SEMPRE execute as 3 etapas abaixo em sequência. NÃO pule etapas.
+
+--- ETAPA 1: TRIAGEM E HIERARQUIA ---
+
+Analise as jurisprudências fornecidas e classifique por grau de hierarquia:
+
+VINCULANTES: Súmulas vinculantes, temas de repercussão geral, IACs, IRDRs
+- Indicar número, tribunal e tese fixada
+
+ORIENTADORAS: Jurisprudência dominante de tribunais superiores (STF, STJ, TST, TNU)
+- Indicar turma/seção, se é entendimento consolidado ou recente
+
+REFORÇO SECUNDÁRIO: Decisões monocráticas, turmas recursais, tribunais estaduais
+- Indicar por que servem como suporte adicional
+
+Para cada precedente, explique o critério de classificação e a relevância para a tese central do caso.
+
+--- ETAPA 2: CONTEXTUALIZAÇÃO FÁTICA E JURÍDICA ---
+
+Para cada precedente relevante (começando pelos vinculantes), escreva um parágrafo que:
+(1) Explique o que o tribunal decidiu e o fundamento central
+(2) Estabeleça a conexão direta com os fatos do caso
+(3) Destaque o trecho mais relevante para o argumento
+
+O precedente deve operar como ARGUMENTO VIVO — não como bloco de texto isolado.
+
+--- ETAPA 3: INTEGRAÇÃO À TESE JURÍDICA ---
+
+Integre as jurisprudências à tese, criando um bloco argumentativo com hierarquia lógica:
+1. Comece pela fundamentação normativa (lei, artigo, princípio)
+2. Passe pelo precedente vinculante ou de maior autoridade
+3. Reforce com a jurisprudência orientadora contextualizada
+4. Conclua conectando tudo diretamente ao pedido
+
+O bloco final deve ser copiável diretamente para a petição.`,
+        flowSteps: [
+          { title: 'Triagem e Hierarquia', description: 'Classifica precedentes: vinculantes → orientadores → reforço secundário' },
+          { title: 'Contextualização', description: 'Conecta cada precedente aos fatos do caso — transforma citação em argumento' },
+          { title: 'Integração à Tese', description: 'Monta bloco: norma → precedente vinculante → orientador → conexão com pedido' },
+        ],
+        tips: [
+          'Sempre forneça contexto fático detalhado — quanto mais preciso, mais relevante a contextualização',
+          'Antes de usar qualquer jurisprudência, confirme que o entendimento permanece vigente',
+          'Adapte a linguagem ao tribunal: STJ exige maior formalidade; Juizados comportam linguagem mais direta',
+          'Use a classificação da Etapa 1 para decidir quais precedentes merecem destaque na petição',
+          'Combine com a Skill de Petição Universal para fundamentação integrada automaticamente',
+        ],
+        steps: [
+          'Acesse chatgpt.com → Skills → Criar Skill → nome: "/jurisprudencia-estrategica"',
+          'Cole as instruções acima e salve',
+          'Na conversa: cole as ementas/trechos dos precedentes + descreva a tese central',
+          'Digite /jurisprudencia-estrategica — o ChatGPT faz a triagem',
+          'Revise → peça: "Agora contextualize cada precedente com os fatos do meu caso"',
+          'Revise → peça: "Integre tudo à minha tese jurídica"',
+          'O bloco final pode ser copiado diretamente para a petição',
+        ],
+      },
+      {
+        title: 'Skill de Visual Law / Legal Design',
+        subtitle: 'Aplique Visual Law automaticamente em qualquer petição',
+        level: 'avancado',
+        icon: 'palette',
+        analogy: {
+          text: 'Imagine que o ChatGPT **sempre** aplica Visual Law nas suas peças — sem você precisar pedir. Uma Skill de Visual Law é como programar o estilo visual do escritório: uma vez configurada, toda petição sai com quadro resumo, timeline e tabela de provas automaticamente.',
+        },
+        content: `Visual Law (ou Legal Design) é a aplicação de técnicas visuais em documentos jurídicos para torná-los mais claros e persuasivos. Tribunais brasileiros como TJ-SP, TRT-2, TJ-DFT e STJ já reconhecem e valorizam essa prática.
+
+**O que a Skill faz automaticamente:**
+- Insere **quadro resumo** no topo de petições (tipo de ação, partes, valor, pedido principal)
+- Cria **timelines visuais** nos fatos (em vez de parágrafos longos)
+- Gera **tabelas de mapa de provas** (conecta fato → prova → documento)
+- Formata **checklist de requisitos legais** (com marcadores visuais)
+- Monta **quadros comparativos** de argumentos (teses do autor vs. réu)
+- Estrutura **pedidos hierárquicos** (principal → acessórios → subsidiários)
+- Aplica destaque visual em termos-chave e valores monetários
+
+**Impacto comprovado:**
+Juízes relatam redução de **30-50% no tempo de análise** de petições com Visual Law bem aplicado.
+
+**Skill combinada com outras:**
+Esta Skill pode ser combinada com qualquer outra. Exemplo: Skill de Petição Trabalhista + Skill de Visual Law = petição trabalhista com todos os elementos visuais.`,
+        prompt: `Crie uma Skill chamada "/visual-law" com estas instruções:
+
+Ao gerar qualquer documento jurídico (petição, parecer, recurso, contestação, contrato), aplique SEMPRE as seguintes técnicas de Visual Law:
+
+1. QUADRO RESUMO (obrigatório no topo de petições):
+   Tabela com: Tipo de Ação | Autor | Réu | Valor da Causa | Objeto (1 linha) | Pedido Principal | Tutela de Urgência (Sim/Não)
+
+2. TIMELINE DOS FATOS:
+   Em vez de parágrafos longos, apresente como:
+   [DATA] -> [EVENTO] — [Documento comprobatório]
+   Destaque fatos controversos com sinal de atenção
+
+3. MAPA DE PROVAS (tabela obrigatória):
+   | # | Fato Alegado | Meio de Prova | Documento |
+   Conecte CADA alegação a sua prova específica.
+
+4. TABELA DE REQUISITOS LEGAIS:
+   Quando houver requisitos cumulativos (tutela urgência, gratuidade, etc.):
+   | Requisito | Demonstrado? | Fundamentação |
+
+5. QUADRO COMPARATIVO (contestações e recursos):
+   | Ponto Controverso | Alegação Adversa | Nossa Resposta | Base Legal |
+
+6. ESTRUTURA HIERÁRQUICA DE PEDIDOS:
+   a) Pedidos principais (numerados)
+   b) Pedidos acessórios (sub-numerados)
+   c) Pedidos subsidiários (claramente identificados)
+
+7. FORMATAÇÃO:
+   - Parágrafos curtos (máximo 5 linhas)
+   - Termos-chave em negrito
+   - Valores monetários em negrito
+   - Títulos: MAIÚSCULO e negrito
+   - Tabelas para comparações e dados estruturados
+
+Aplique estas regras em TODOS os documentos jurídicos, salvo instrução contrária.`,
+        flowSteps: [
+          { title: 'Criar Skill', description: 'Acesse Skills → Criar → nome "/visual-law" → cole as instruções' },
+          { title: 'Automático', description: 'A partir de agora, TODA petição sai com Visual Law aplicado' },
+          { title: 'Combinar', description: 'Use junto com /peticao, /replica ou qualquer outra Skill' },
+          { title: 'Resultado', description: 'Petições 30-50% mais claras — juiz entende o caso mais rápido' },
+        ],
+        tips: [
+          'Comece usando Visual Law em petições iniciais e recursos — são as peças com maior impacto',
+          'O quadro resumo no topo é o elemento mais valorizado pelos juízes',
+          'Use tabelas de mapa de provas em TODAS as petições — facilita enormemente a análise',
+          'Não exagere nos elementos visuais: cada um deve ter função comunicativa clara',
+          'Adapte os elementos conforme o tribunal aceita — alguns são mais conservadores',
+        ],
+      },
+      {
+        title: 'Skill de Comunicação com Cliente',
+        subtitle: 'E-mails, WhatsApp e cobranças no tom certo',
+        level: 'intermediario',
+        icon: 'mail',
+        analogy: {
+          tag: 'Secretária Executiva Digital',
+          text: 'Esta Skill transforma o ChatGPT em uma **secretária executiva** que conhece o tom do escritório: profissional com clientes corporativos, acolhedora com pessoas físicas, técnica com colegas. Cada mensagem sai no tom certo, sem você pensar.',
+        },
+        content: `Skill que padroniza toda comunicação do escritório — e-mails, WhatsApp, atualizações de caso e orientações ao cliente. O ChatGPT adapta automaticamente o tom conforme o contexto.
+
+**Quando usar:**
+- E-mail de atualização do processo ao cliente
+- Resposta de WhatsApp sobre dúvida do cliente
+- Comunicação entre escritórios sobre caso conjunto
+- Orientação ao cliente sobre documentos necessários
+- Cobrança elegante de honorários
+
+**Canais e formatos:**
+
+| Canal | Tom | Limite |
+|-------|-----|--------|
+| **E-mail formal** | Profissional, técnico | Máximo 3 parágrafos |
+| **WhatsApp** | Acolhedor, direto | Máximo 5 linhas |
+| **Carta ao cliente** | Consultivo, explicativo | Máximo 1 página |
+| **E-mail entre advogados** | Técnico, objetivo | Sem limite definido |
+| **Cobrança** | Firme, mas cordial | Máximo 2 parágrafos |
+
+**Regras universais:**
+- Nunca use jargão sem explicar ao cliente leigo
+- Sempre termine com próximos passos claros
+- Demonstre empatia com a situação do cliente
+- Confirme prazos e datas relevantes
+- Reforce que está acompanhando de perto`,
+        prompt: `Crie uma Skill chamada "/comunicar-cliente" com estas instruções:
+
+IDENTIDADE:
+Você é o assistente de comunicação do escritório [NOME DO ESCRITÓRIO].
+
+REGRAS GERAIS:
+- Tom profissional, mas acolhedor e acessível
+- Nunca use jargão jurídico sem explicar entre parênteses
+- Sempre termine com próximos passos claros
+- Demonstre empatia com a situação do cliente
+- Confirme prazos e datas quando relevante
+
+FORMATOS POR CANAL:
+
+E-MAIL AO CLIENTE:
+- Máximo 3 parágrafos
+- Saudação pessoal (Prezado/a Sr/a [Nome])
+- Corpo: atualização + explicação em linguagem acessível
+- Encerramento: próximos passos + disponibilidade
+
+WHATSAPP:
+- Máximo 5 linhas
+- Saudação breve + informação direta
+- Confirme se o cliente entendeu
+
+COBRANÇA DE HONORÁRIOS:
+- Tom firme mas cordial
+- Relembre o serviço prestado
+- Apresente opções de pagamento
+- Nunca ameace — ofereça solução
+
+E-MAIL ENTRE ADVOGADOS:
+- Terminologia técnica adequada
+- Objetivo e direto
+- Referência a número de processo e prazos`,
+        elementGrid: [
+          { icon: 'mail', name: 'E-mail Formal', description: 'Profissional e estruturado', whenToUse: 'Atualizações, pareceres, orientações' },
+          { icon: 'message-circle', name: 'WhatsApp', description: 'Direto e acolhedor', whenToUse: 'Respostas rápidas, lembretes' },
+          { icon: 'file-text', name: 'Carta ao Cliente', description: 'Consultivo e completo', whenToUse: 'Orientações detalhadas, termos' },
+          { icon: 'dollar-sign', name: 'Cobrança', description: 'Firme mas cordial', whenToUse: 'Honorários em atraso, parcelas' },
+        ],
+        tips: [
+          'Para clientes corporativos, ajuste o tom para mais formal e técnico',
+          'Salve templates de e-mails recorrentes (atualização mensal, cobrança, orientação)',
+          'Peça ao ChatGPT: "Adapte esta mensagem para WhatsApp" para converter entre canais',
+          'Para más notícias, sempre termine com alternativas e próximos passos',
+          'Combine com um Project por cliente para mensagens ainda mais personalizadas',
         ],
       },
       {
