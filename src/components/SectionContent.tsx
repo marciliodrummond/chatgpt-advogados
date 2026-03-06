@@ -2,6 +2,9 @@ import { useState, useEffect } from 'react'
 import { ExpandableCard } from './ExpandableCard'
 import { SectionIcon } from './Icons'
 import { sections } from '../data/sections'
+import { useProgress } from '../hooks/useProgress'
+import { useChecklist } from '../hooks/useChecklist'
+import { useFavorites } from '../hooks/useFavorites'
 
 interface SectionContentProps {
   activeTab: string
@@ -13,6 +16,9 @@ interface SectionContentProps {
 export function SectionContent({ activeTab, openCardIndex, onCardToggle, levelFilter }: SectionContentProps) {
   const section = sections.find(s => s.id === activeTab)
   const [animateKey, setAnimateKey] = useState(0)
+  const { markCardViewed, isCardViewed, getSectionProgress } = useProgress()
+  const checklist = useChecklist()
+  const { isFavorite, toggleFavorite } = useFavorites()
 
   useEffect(() => {
     setAnimateKey(k => k + 1)
@@ -22,6 +28,8 @@ export function SectionContent({ activeTab, openCardIndex, onCardToggle, levelFi
 
   if (!section) return null
 
+  const progress = getSectionProgress(activeTab)
+
   const filteredCards = levelFilter === 'todos'
     ? section.cards
     : section.cards.filter(c => c.level === levelFilter)
@@ -30,7 +38,7 @@ export function SectionContent({ activeTab, openCardIndex, onCardToggle, levelFi
   const sectionNumber = String(sectionIndex + 1).padStart(2, '0')
 
   return (
-    <div key={animateKey} className="space-y-3 relative" style={{ animation: 'fadeUp 0.4s ease both' }}>
+    <div key={animateKey} role="tabpanel" id="section-panel" aria-labelledby={`tab-${activeTab}`} tabIndex={0} className="space-y-3 relative" style={{ animation: 'fadeUp 0.4s ease both' }}>
       {/* Section number watermark */}
       <div className="absolute -top-2 right-0 pointer-events-none select-none font-display text-[80px] sm:text-[100px] font-extrabold leading-none" style={{
         color: 'var(--fg-accent)',
@@ -53,6 +61,28 @@ export function SectionContent({ activeTab, openCardIndex, onCardToggle, levelFi
           </h2>
         </div>
         <p className="text-sm text-[var(--fg-secondary)] ml-[52px]">{section.description}</p>
+
+        {/* Section progress bar */}
+        <div className="ml-[52px] mt-3">
+          <div className="flex items-center gap-2 mb-1.5">
+            <div className="flex-1 h-1.5 rounded-full overflow-hidden" style={{ background: 'var(--bg-surface)' }}>
+              <div
+                className="h-full rounded-full transition-all duration-500 ease-out"
+                style={{
+                  width: `${progress.percent}%`,
+                  background: 'linear-gradient(90deg, var(--fg-accent), var(--fg-accent))',
+                  opacity: progress.percent > 0 ? 1 : 0,
+                }}
+              />
+            </div>
+            <span className="text-[10px] font-mono text-[var(--fg-muted)] whitespace-nowrap">
+              {progress.viewed}/{progress.total}
+            </span>
+          </div>
+          <p className="text-[11px] text-[var(--fg-muted)]">
+            {progress.viewed} de {progress.total} cards explorados
+          </p>
+        </div>
       </div>
 
       {filteredCards.length === 0 ? (
@@ -67,7 +97,17 @@ export function SectionContent({ activeTab, openCardIndex, onCardToggle, levelFi
               <ExpandableCard
                 card={card}
                 isOpen={openCardIndex === originalIndex}
-                onToggle={() => onCardToggle(openCardIndex === originalIndex ? null : originalIndex)}
+                onToggle={() => {
+                  const willOpen = openCardIndex !== originalIndex
+                  onCardToggle(willOpen ? originalIndex : null)
+                  if (willOpen) markCardViewed(activeTab, originalIndex)
+                }}
+                viewed={isCardViewed(activeTab, originalIndex)}
+                sectionId={activeTab}
+                cardIndex={originalIndex}
+                checklist={checklist}
+                isFavorite={isFavorite(activeTab, originalIndex)}
+                onToggleFavorite={() => toggleFavorite(activeTab, originalIndex, card.title)}
               />
             </div>
           )

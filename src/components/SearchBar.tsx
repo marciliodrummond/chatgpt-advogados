@@ -104,6 +104,11 @@ export function SearchBar({ query, onQueryChange, results, onSelectResult, isFoc
           onBlur={onBlur}
           onKeyDown={handleKeyDown}
           placeholder="Buscar tutoriais, prompts, Skills, Plugins..."
+          role="combobox"
+          aria-expanded={showDropdown}
+          aria-autocomplete="list"
+          aria-controls="search-results"
+          aria-activedescendant={activeIndex >= 0 ? `search-result-${activeIndex}` : undefined}
           className="w-full h-11 pl-10 pr-10 rounded-xl border text-sm font-sans outline-none transition-all duration-200 focus:border-[var(--border-focus)] focus:shadow-[var(--accent-glow-sm)]"
           style={{
             background: 'var(--bg-surface)',
@@ -114,6 +119,7 @@ export function SearchBar({ query, onQueryChange, results, onSelectResult, isFoc
         {query && (
           <button
             onClick={() => { onQueryChange(''); inputRef.current?.focus() }}
+            aria-label="Limpar busca"
             className="absolute right-3.5 top-1/2 -translate-y-1/2 text-[var(--fg-muted)] hover:text-[var(--fg-primary)] cursor-pointer bg-transparent border-none p-0"
           >
             <X className="w-4 h-4" />
@@ -125,6 +131,8 @@ export function SearchBar({ query, onQueryChange, results, onSelectResult, isFoc
       {showDropdown && (
         <div
           ref={listRef}
+          role="listbox"
+          id="search-results"
           className="absolute top-[calc(100%+6px)] left-0 right-0 rounded-xl border overflow-hidden shadow-2xl z-50 max-h-[420px] overflow-y-auto"
           style={{
             background: 'var(--bg-elevated)',
