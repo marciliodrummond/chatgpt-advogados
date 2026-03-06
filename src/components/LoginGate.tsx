@@ -4,6 +4,12 @@ import { Lock, AlertCircle, Eye, EyeOff, ArrowRight, MessageSquare } from 'lucid
 const ACCESS_KEY = '11632GPTchat'
 const STORAGE_KEY = 'si-chatgpt-advogados-auth'
 
+const FREE_SECTIONS = new Set(['primeiros-passos', 'ecossistema'])
+
+export function isFreeSection(sectionId: string): boolean {
+  return FREE_SECTIONS.has(sectionId)
+}
+
 // ChatGPT-inspired teal/green palette (distinct from Claude gold)
 const TEAL = {
   primary: '#10a37f',
@@ -241,7 +247,7 @@ export function LoginGate({ onAuthenticated }: LoginGateProps) {
           }} />
 
           <div className="p-7 sm:p-9">
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-6" aria-label="Formulário de acesso">
               <div>
                 <label className="flex items-center gap-1.5 text-[11px] font-semibold text-[var(--fg-secondary)] uppercase tracking-[0.08em] font-mono mb-2.5">
                   <Lock className="w-3.5 h-3.5" style={{ color: TEAL.primary }} />
@@ -279,7 +285,7 @@ export function LoginGate({ onAuthenticated }: LoginGateProps) {
                 </div>
 
                 {/* Error message */}
-                <div className={`flex items-center gap-1.5 mt-2.5 transition-all duration-300 ${error ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-1 pointer-events-none'}`}>
+                <div role="alert" aria-live="polite" className={`flex items-center gap-1.5 mt-2.5 transition-all duration-300 ${error ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-1 pointer-events-none'}`}>
                   <AlertCircle className="w-3.5 h-3.5 text-red-400 shrink-0" />
                   <span className="text-xs text-red-400 font-medium">Chave de acesso incorreta. Tente novamente.</span>
                 </div>

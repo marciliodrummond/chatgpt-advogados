@@ -13,14 +13,17 @@ interface LevelFilterProps {
 
 export function LevelFilter({ active, onChange }: LevelFilterProps) {
   return (
-    <div className="flex items-center gap-1.5 flex-wrap">
+    <div role="radiogroup" aria-label="Filtro por nível" className="flex items-center gap-1.5 flex-wrap">
       <span className="text-xs text-[var(--fg-muted)] font-mono mr-1">NÍVEL:</span>
       {levels.map((l) => (
         <button
           key={l.id}
+          role="radio"
+          aria-checked={active === l.id}
           onClick={() => onChange(l.id)}
           className={`
             px-2.5 py-1 rounded-full text-[11px] font-medium transition-all duration-200 cursor-pointer border
+            focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--fg-accent)] focus-visible:ring-offset-1
             ${active === l.id ? 'opacity-100' : 'opacity-50 hover:opacity-80'}
           `}
           style={{
