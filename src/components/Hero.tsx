@@ -1,10 +1,23 @@
+import { useMemo } from 'react'
 import { Scale, BookOpen, Layers, Zap } from 'lucide-react'
+import { sections } from '../data/sections'
 
 interface HeroProps {
   onStart: () => void
 }
 
 export function Hero({ onStart }: HeroProps) {
+  const metrics = useMemo(() => {
+    const totalCards = sections.reduce((sum, s) => sum + s.cards.length, 0)
+    const totalPrompts = sections.reduce((sum, s) => sum + s.cards.filter(c => c.prompt).length, 0)
+    return [
+      { icon: Layers, value: String(sections.length), label: 'Seções' },
+      { icon: BookOpen, value: String(totalCards), label: 'Tutoriais' },
+      { icon: Zap, value: String(totalPrompts), label: 'Prompts Prontos' },
+      { icon: Scale, value: '4', label: 'Níveis' },
+    ]
+  }, [])
+
   return (
     <section className="relative min-h-[85vh] flex flex-col justify-center py-24 sm:py-32">
       {/* Animated orbs */}
@@ -48,12 +61,7 @@ export function Hero({ onStart }: HeroProps) {
           className="flex flex-wrap gap-6 sm:gap-8 mt-10"
           style={{ animation: 'fadeUp 0.8s ease 0.35s both' }}
         >
-          {[
-            { icon: Layers, value: '10', label: 'Seções' },
-            { icon: BookOpen, value: '116', label: 'Tutoriais' },
-            { icon: Zap, value: '32', label: 'Prompts Prontos' },
-            { icon: Scale, value: '4', label: 'Níveis' },
-          ].map((m, i) => (
+          {metrics.map((m, i) => (
             <div key={i} className="flex items-center gap-3">
               <div className="w-9 h-9 rounded-lg flex items-center justify-center" style={{
                 background: 'var(--bg-accent-subtle)',

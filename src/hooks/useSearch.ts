@@ -34,6 +34,9 @@ export const popularSuggestions: Suggestion[] = [
   { query: 'economizar tokens', label: 'Otimização de Uso', icon: 'trending-up' },
   { query: 'prompt perfeito', label: 'Framework CONTEXTO', icon: 'target' },
   { query: 'marketing', label: 'Marketing Jurídico', icon: 'trending-up' },
+  { query: 'audiência', label: 'Preparar Audiência', icon: 'briefcase' },
+  { query: 'skill', label: 'Skills Prontas', icon: 'star' },
+  { query: 'agent mode', label: 'Agent Mode', icon: 'zap' },
 ]
 
 // ── Normalization ───────────────────────────────────────────
@@ -111,7 +114,7 @@ const synonyms: Record<string, string[]> = {
   'jurisprudencia': ['jurisprudencia', 'precedente', 'tribunal', 'stj', 'stf', 'vinculante', 'sumula', 'triagem'],
   'precedente': ['jurisprudencia', 'precedente', 'vinculante', 'orientadora', 'sumula'],
   'parecer': ['parecer', 'opiniao', 'analise juridica', 'viabilidade'],
-  'audiencia': ['audiencia', 'preparacao', 'testemunha', 'depoimento', 'conciliacao'],
+  'audiencia': ['audiencia', 'preparacao', 'testemunha', 'depoimento', 'conciliacao', 'cronologia', 'roteiro', 'dossie'],
   'acordo': ['acordo', 'negociacao', 'mediacao', 'conciliacao', 'batna', 'zopa'],
 
   // Peças processuais estratégicas
@@ -277,6 +280,31 @@ const synonyms: Record<string, string[]> = {
   'biblioteca': ['biblioteca', 'colecao', 'prompts prontos', 'template', 'modelo'],
   'template': ['template', 'modelo', 'pronto', 'biblioteca', 'formulario'],
   'modelo': ['modelo', 'template', 'pronto', 'exemplo', 'referencia'],
+
+  // Agent Mode cards
+  'agent mode': ['agent mode', 'agente', 'autonomo', 'automatico', 'navegador', 'desktop'],
+  'agent': ['agent mode', 'agente', 'autonomo', 'automatico', 'operator'],
+  'operator': ['agent mode', 'operator', 'agente', 'autonomo'],
+  'autonomo': ['autonomo', 'automatico', 'agent mode', 'sozinho'],
+  'organizar documento': ['organizar', 'documento', 'renomear', 'classificar', 'pdf', 'pasta'],
+  'renomear': ['renomear', 'organizar', 'classificar', 'documento', 'pdf', 'pasta'],
+  'classificar': ['classificar', 'organizar', 'renomear', 'documento', 'tipo'],
+  'preparar audiencia': ['audiencia', 'preparacao', 'cronologia', 'roteiro', 'teses', 'perguntas'],
+  'testemunha': ['testemunha', 'audiencia', 'perguntas', 'contradita', 'depoimento'],
+  'cronologia': ['cronologia', 'timeline', 'fatos', 'audiencia', 'preparacao'],
+  'relatorio': ['relatorio', 'cliente', 'andamento', 'status', 'comunicacao'],
+  'juridiques': ['juridiques', 'linguagem simples', 'acessivel', 'leigo', 'cliente'],
+  'andamento': ['andamento', 'status', 'movimentacao', 'relatorio', 'processo'],
+
+  // Skills cards
+  'skill': ['skill', 'skills', 'fluxo', 'automacao', 'reutilizavel', 'receita'],
+  'skills': ['skill', 'skills', 'fluxo', 'automacao', 'reutilizavel'],
+  'peticao universal': ['peticao universal', 'template', 'skill', 'qualquer area', 'formulario'],
+  'replica estrategica': ['replica', 'contestacao', 'desconstrucao', 'tatico', 'skill'],
+  'jurisprudencia estrategica': ['jurisprudencia', 'precedente', 'triagem', 'hierarquia', 'vinculante', 'skill'],
+  'comunicar cliente': ['comunicacao', 'email', 'whatsapp', 'cobranca', 'cliente', 'skill'],
+  'tom': ['tom', 'linguagem', 'formal', 'acolhedor', 'profissional', 'comunicacao'],
+  'honorario': ['honorario', 'cobranca', 'pagamento', 'inadimplencia', 'fee'],
 }
 
 // ── Intent map (expanded for 103 cards) ─────────────────────
@@ -456,8 +484,38 @@ const intentMap: Record<string, string[]> = {
   'instrucao comunicacao': ['Custom Instructions de Comunicacao com Cliente'],
   'email cliente': ['Custom Instructions de Comunicacao com Cliente', 'E mails Juridicos'],
   'whatsapp cliente': ['Custom Instructions de Comunicacao com Cliente'],
-  'cobranca honorario': ['Custom Instructions de Comunicacao com Cliente'],
+  'cobranca honorario': ['Custom Instructions de Comunicacao com Cliente', 'Skill de Comunicacao com Cliente'],
   'instrucao marketing': ['Custom Instructions de Marketing Juridico'],
+
+  // Agent Mode cards
+  'pesquisar jurisprudencia automatico': ['Pesquisa de Jurisprudencia Automatizada'],
+  'agent mode pesquisa': ['Pesquisa de Jurisprudencia Automatizada', 'Agent Mode no Navegador'],
+  'organizar documentos': ['Organizacao de Documentos Processuais'],
+  'renomear pdf': ['Organizacao de Documentos Processuais'],
+  'classificar documento': ['Organizacao de Documentos Processuais'],
+  'preparar audiencia': ['Preparacao Completa para Audiencias'],
+  'roteiro perguntas': ['Preparacao Completa para Audiencias'],
+  'dossie audiencia': ['Preparacao Completa para Audiencias'],
+  'relatorio cliente': ['Relatorio para Cliente'],
+  'comunicar andamento': ['Relatorio para Cliente', 'Comunicacao com Cliente'],
+  'sem juridiques': ['Relatorio para Cliente'],
+
+  // Skills cards
+  'criar skill': ['Criando sua Primeira Skill', 'Skill de Peticao Universal'],
+  'skill peticao': ['Skill de Peticao Universal'],
+  'peticao automatica': ['Skill de Peticao Universal'],
+  'skill replica': ['Skill de Replica Estrategica'],
+  'desconstruir contestacao': ['Skill de Replica Estrategica'],
+  'diagnostico tatico': ['Skill de Replica Estrategica'],
+  'skill jurisprudencia': ['Skill de Jurisprudencia Estrategica'],
+  'triagem precedente': ['Skill de Jurisprudencia Estrategica'],
+  'hierarquia jurisprudencia': ['Skill de Jurisprudencia Estrategica'],
+  'skill visual law': ['Skill de Visual Law / Legal Design'],
+  'quadro resumo': ['Skill de Visual Law / Legal Design', 'Peticoes com Visual Law'],
+  'timeline fatos': ['Skill de Visual Law / Legal Design', 'Peticoes com Visual Law'],
+  'mapa provas': ['Skill de Visual Law / Legal Design', 'Peticoes com Visual Law'],
+  'skill comunicacao': ['Skill de Comunicacao com Cliente'],
+  'email whatsapp': ['Skill de Comunicacao com Cliente'],
 }
 
 // ── Multi-field weighted scoring ────────────────────────────
@@ -719,6 +777,15 @@ const relatedMap: Record<string, string[]> = {
   'GPTs Auxiliares: Meta-Assistentes de IA': ['Persona Utópica: O Método Elite para GPTs', 'Os 10 Elementos do GPT Perfeito', 'GPTs por Setor: Organizando a Equipe de IA'],
   'GPTs por Setor: Organizando a Equipe de IA': ['GPTs Auxiliares: Meta-Assistentes de IA', 'Os 10 Elementos do GPT Perfeito', 'Estratégia Expert de GPTs'],
   'Criando GPTs Personalizados': ['Os 10 Elementos do GPT Perfeito', 'Persona Utópica: O Método Elite para GPTs', 'Knowledge Base (RAG) para GPTs Jurídicos'],
+  'Pesquisa de Jurisprudência Automatizada': ['Skill de Jurisprudência Estratégica', 'Pesquisa Jurídica Avançada no Chat', 'Deep Research: Pesquisa Autônoma'],
+  'Organização de Documentos Processuais': ['Preparação Completa para Audiências', 'Pasta do Cliente Completa'],
+  'Preparação Completa para Audiências': ['Organização de Documentos Processuais', 'Relatório para Cliente'],
+  'Relatório para Cliente': ['Skill de Comunicação com Cliente', 'E-mails Jurídicos Profissionais'],
+  'Skill de Petição Universal': ['Skill de Visual Law / Legal Design', 'Petições e Peças Processuais', 'Framework CONTEXTO: Prompt Jurídico Perfeito'],
+  'Skill de Réplica Estratégica': ['Skill de Jurisprudência Estratégica', 'Skill de Visual Law / Legal Design'],
+  'Skill de Jurisprudência Estratégica': ['Pesquisa de Jurisprudência Automatizada', 'Skill de Réplica Estratégica', 'Skill de Petição Universal'],
+  'Skill de Visual Law / Legal Design': ['Skill de Petição Universal', 'Skill de Réplica Estratégica', 'Petições com Visual Law / Legal Design'],
+  'Skill de Comunicação com Cliente': ['Relatório para Cliente', 'E-mails Jurídicos Profissionais', 'Custom Instructions de Comunicação com Cliente'],
 }
 
 export function getRelatedCards(cardTitle: string): string[] {
