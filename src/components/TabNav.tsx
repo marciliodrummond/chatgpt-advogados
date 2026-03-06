@@ -1,13 +1,16 @@
 import { useRef, useEffect, useCallback } from 'react'
+import { Lock } from 'lucide-react'
 import { sections } from '../data/sections'
 import { Icon } from './Icons'
+import { isFreeSection } from './LoginGate'
 
 interface TabNavProps {
   activeTab: string
   onTabChange: (id: string) => void
+  isAuthenticated?: boolean
 }
 
-export function TabNav({ activeTab, onTabChange }: TabNavProps) {
+export function TabNav({ activeTab, onTabChange, isAuthenticated = true }: TabNavProps) {
   const navRef = useRef<HTMLElement>(null)
   const activeRef = useRef<HTMLButtonElement>(null)
 
@@ -41,8 +44,9 @@ export function TabNav({ activeTab, onTabChange }: TabNavProps) {
       className="flex gap-1 overflow-x-auto sm:flex-wrap sm:justify-center scrollbar-hide snap-x snap-mandatory pb-1"
       style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
     >
-      {sections.map((s) => {
+      {sections.map((s, i) => {
         const isActive = activeTab === s.id
+        const locked = !isAuthenticated && !isFreeSection(s.id)
 
         return (
           <button
@@ -65,6 +69,7 @@ export function TabNav({ activeTab, onTabChange }: TabNavProps) {
           >
             <Icon name={s.icon} size={14} className="shrink-0" />
             <span>{s.title}</span>
+            {locked && <Lock className="w-3 h-3 shrink-0 opacity-50" />}
           </button>
         )
       })}
