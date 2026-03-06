@@ -44,7 +44,7 @@ export function TabNav({ activeTab, onTabChange, isAuthenticated = true }: TabNa
       className="flex gap-1 overflow-x-auto sm:flex-wrap sm:justify-center scrollbar-hide snap-x snap-mandatory pb-1"
       style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
     >
-      {sections.map((s, i) => {
+      {sections.map((s) => {
         const isActive = activeTab === s.id
         const locked = !isAuthenticated && !isFreeSection(s.id)
 
