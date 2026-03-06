@@ -631,16 +631,69 @@ Para o **ecossistema mais completo** e maduro, com GPTs, Canvas, Code Interprete
           { label: 'Blog OpenAI', url: 'https://openai.com/blog' },
         ],
       },
+      {
+        title: 'Novidades Março 2026',
+        subtitle: 'GPT-5.3 Instant, GPT-5.4, Skills e mais',
+        level: 'iniciante',
+        icon: 'sparkles',
+        analogy: {
+          tag: 'Atualização Importante',
+          text: 'O ChatGPT passou por uma **renovação completa** em março de 2026. Novos modelos, novo recurso de Skills, upload expandido e tom mais natural. É como se o escritório tivesse feito uma **reforma geral** — mesma estrutura, mas tudo mais eficiente.',
+        },
+        content: `Resumo das principais mudanças de março de 2026:
+
+**Novos Modelos:**
+
+| Modelo | O que é | Destaques |
+|--------|---------|-----------|
+| **GPT-5.3 Instant** | Novo modelo padrão (substitui GPT-5.2) | Inventa 26,8% menos informações, tom mais natural, recusa menos pedidos legítimos |
+| **GPT-5.4 Thinking** | Novo modelo de raciocínio (substitui GPT-5.2 Thinking) | Pensa antes de responder com plano ajustável, pesquisa profunda melhorada, lê até ~3.000 páginas |
+| **GPT-5.4 Pro** | Modelo máximo (Pro e Enterprise) | Pode operar apps no seu computador, lê ~3.000 páginas, encontra ferramentas sozinho |
+
+**Skills (Novo recurso):**
+Fluxos de trabalho reutilizáveis que você cria uma vez e reutiliza sempre. Combine várias Skills numa conversa, compartilhe com a equipe, ative com barra /. Veja a seção completa de Skills neste guia.
+
+**Agent Mode (Novo recurso):**
+O ChatGPT agora pode navegar na internet e executar tarefas sozinho. Disponível nos planos Plus, Pro, Business, Enterprise e Edu. Veja a seção completa de Agent Mode neste guia.
+
+**Outras melhorias:**
+- **Upload expandido:** Agora aceita até **20 arquivos** por mensagem (antes era 10)
+- **Tom mais natural:** GPT-5.3 Instant tem respostas menos "robotizadas" e menos paternalistas
+- **Menos recusas:** Prompts legítimos são recusados com menos frequência
+- **Projects aprimorado:** Knowledge base viva — cole links do Slack, Drive, salve respostas do ChatGPT
+- **Windows Codex:** App desktop para programadores rodarem múltiplos assistentes de código`,
+        checklist: [
+          {
+            title: 'O que fazer agora',
+            items: [
+              'Testar o GPT-5.3 Instant — note o tom mais natural nas respostas',
+              'Experimentar GPT-5.4 Thinking para uma análise jurídica complexa',
+              'Criar sua primeira Skill (ex: revisão de contrato)',
+              'Testar upload de múltiplos arquivos (até 20) numa única mensagem',
+              'Explorar o Agent Mode para pesquisas automatizadas',
+            ],
+          },
+        ],
+        tips: [
+          'O GPT-5.3 Instant já está ativo por padrão — você não precisa fazer nada',
+          'O GPT-5.4 Thinking substitui o GPT-5.2 Thinking — selecione no menu de modelos',
+          'Skills são o futuro dos workflows — comece a migrar seus GPTs repetitivos para Skills',
+          'Upload de 20 arquivos é perfeito para análise de processos com muitas peças',
+        ],
+        links: [
+          { label: 'Release Notes Oficiais', url: 'https://help.openai.com/en/articles/6825453-chatgpt-release-notes' },
+        ],
+      },
     ],
   },
 
   // ═══════════════════════════════════════════════════════════
-  // SEÇÃO 3: CHATGPT CHAT & CANVAS
+  // SEÇÃO 3: CHATGPT CHAT
   // ═══════════════════════════════════════════════════════════
   {
     id: 'chatgpt-chat',
-    title: 'ChatGPT Chat & Canvas',
-    description: 'Domine as funcionalidades do chat e projetos',
+    title: 'ChatGPT Chat',
+    description: 'Domine as funcionalidades do chat',
     icon: 'message-square',
     cards: [
       {
@@ -1216,7 +1269,499 @@ Organize em formato de relatório com seções claras. Marque com [VERIFICAR] qu
   },
 
   // ═══════════════════════════════════════════════════════════
-  // SEÇÃO 4: CANVAS & PROJECTS
+  // SEÇÃO 4: AGENT MODE
+  // ═══════════════════════════════════════════════════════════
+  {
+    id: 'agent-mode',
+    title: 'Agent Mode',
+    description: 'O ChatGPT executa tarefas completas por você',
+    icon: 'zap',
+    cards: [
+      {
+        title: 'O que é o Agent Mode',
+        subtitle: 'Seu assistente que trabalha sozinho',
+        level: 'iniciante',
+        icon: 'monitor',
+        analogy: {
+          text: 'A **sala de trabalho** do escritório. Você entrega os documentos, explica a tarefa e **sai para tomar café**. Quando volta, o trabalho está pronto — pesquisas, comparações, relatórios, tudo finalizado.',
+        },
+        content: `O Agent Mode (antigo "Operator") transforma o ChatGPT em um **assistente autônomo** que navega na internet, pesquisa informações e executa tarefas de múltiplas etapas — tudo sozinho, sem você precisar ficar no chat.
+
+**Como funciona:**
+O ChatGPT abre um navegador virtual e executa ações como um ser humano faria: clica em links, preenche formulários, lê páginas, compara informações e entrega o resultado final.
+
+**O que ele pode fazer sozinho:**
+- Pesquisar jurisprudência em sites de tribunais
+- Comparar preços de serviços para o escritório
+- Reservar passagens e hotéis para compromissos
+- Preencher formulários em sites governamentais
+- Monitorar publicações no Diário Oficial
+
+**Quem pode usar:**
+Disponível nos planos **Plus** (~30-40 usos/mês), **Pro** (uso ampliado), **Business**, **Enterprise** e **Edu**. Não está disponível nos planos Free e Go.
+
+**Importante:** O Agent Mode funciona pelo navegador (chatgpt.com) e também pelo aplicativo ChatGPT Desktop (para computador). São duas experiências complementares.`,
+        tips: [
+          'No navegador: o ChatGPT usa um navegador virtual da OpenAI para executar tarefas online',
+          'No Desktop: o ChatGPT pode interagir com programas do seu computador (Word, Excel, PJe)',
+          'Comece com tarefas simples de pesquisa antes de pedir automações complexas',
+          'Sempre revise o resultado — o Agent Mode executa, mas a responsabilidade é sua',
+        ],
+        links: [
+          { label: 'Sobre o Agent Mode', url: 'https://openai.com/index/introducing-operator/' },
+        ],
+      },
+      {
+        title: 'Como Baixar o ChatGPT Desktop',
+        subtitle: 'Instale no computador para usar o Agent Mode com apps locais',
+        level: 'iniciante',
+        icon: 'download',
+        analogy: {
+          text: 'Usar o ChatGPT só pelo site é como ter um estagiário que **só trabalha por telefone**. Instalar o Desktop é dar acesso ao escritório — agora ele abre Word, Excel, PJe e qualquer programa no seu computador.',
+        },
+        content: `O ChatGPT Desktop é o aplicativo oficial da OpenAI para Windows e Mac. Com ele, o Agent Mode pode interagir diretamente com os programas instalados no seu computador.
+
+**Por que instalar:**
+- O Agent Mode no Desktop acessa seus arquivos locais
+- Pode abrir e editar documentos Word e planilhas Excel
+- Interage com sistemas como PJe, e-SAJ, PROJUDI
+- Funciona junto com qualquer programa aberto na sua tela
+
+**Como instalar:**`,
+        steps: [
+          'Acesse chatgpt.com/download no seu navegador',
+          'Clique em "Download para Windows" (ou Mac)',
+          'Execute o arquivo baixado e siga a instalação',
+          'Faça login com sua conta do ChatGPT',
+          'Pronto! O ícone do ChatGPT aparece na barra de tarefas',
+          'Para usar o Agent Mode: abra uma conversa e selecione o modo "Agent" no seletor de modelos',
+        ],
+        tips: [
+          'O atalho Alt+Espaço (Windows) ou Option+Espaço (Mac) abre o ChatGPT rapidamente',
+          'Mantenha o app atualizado para receber novas funcionalidades do Agent Mode',
+          'O Desktop funciona offline para conversas já iniciadas — mas o Agent Mode precisa de internet',
+        ],
+        links: [
+          { label: 'Download ChatGPT Desktop', url: 'https://chatgpt.com/download' },
+        ],
+      },
+      {
+        title: 'Agent Mode no Navegador',
+        subtitle: 'Pesquisas e tarefas online automatizadas',
+        level: 'intermediario',
+        icon: 'chrome',
+        analogy: {
+          text: 'Como pedir para um estagiário: **"pesquise nos últimos 3 anos de jurisprudência do TJ-SP sobre dano moral em plano de saúde e me traga um resumo"**. Ele vai, pesquisa, lê, compara e volta com tudo organizado.',
+        },
+        content: `No navegador (chatgpt.com), o Agent Mode usa um **navegador virtual da OpenAI** para executar tarefas na internet. Ele navega, clica, lê e extrai informações como um humano faria.
+
+**Exemplos práticos para advogados:**
+
+**1. Pesquisa de Jurisprudência**
+"Pesquise no site do TJ-SP as últimas 10 decisões sobre responsabilidade civil médica em 2025-2026. Para cada decisão, extraia: número do processo, data, comarca, valor da condenação e ementa resumida."
+
+**2. Monitoramento de Publicações**
+"Acesse o Diário da Justiça Eletrônico e verifique se há publicações hoje para os processos: [lista de números]."
+
+**3. Pesquisa de Mercado para o Escritório**
+"Compare preços de 3 softwares jurídicos (Astrea, Jusbrasil Pro, Themis) e me apresente uma tabela com: funcionalidades, preço mensal, avaliação dos usuários."
+
+**4. Preparação de Reunião**
+"Pesquise informações sobre a empresa XYZ Ltda: CNPJ, quadro societário, notícias recentes, processos judiciais relevantes. Organize em um briefing executivo."`,
+        prompt: `Pesquise nos sites dos tribunais superiores (STF e STJ) as decisões mais recentes sobre [TEMA JURÍDICO]. Para cada decisão encontrada, extraia:
+
+1. Número do processo
+2. Relator(a)
+3. Data do julgamento
+4. Ementa resumida (máximo 3 linhas)
+5. Resultado (provido/desprovido/parcial)
+6. Tese jurídica fixada (se houver)
+
+Organize em uma tabela comparativa e identifique a tendência jurisprudencial predominante.
+
+Ao final, apresente:
+- Total de decisões encontradas
+- Porcentagem favorável vs. desfavorável
+- Tese mais forte para fundamentação`,
+        flowSteps: [
+          { title: 'Comando', description: 'Descreva a tarefa de pesquisa com detalhes específicos' },
+          { title: 'Navegação', description: 'O ChatGPT abre o navegador virtual e acessa os sites' },
+          { title: 'Coleta', description: 'Lê páginas, extrai dados e navega entre resultados' },
+          { title: 'Resultado', description: 'Entrega tudo organizado em tabela ou relatório' },
+        ],
+        tips: [
+          'Seja específico: tribunal, período, tema, formato de saída desejado',
+          'O Agent Mode funciona melhor com sites públicos — sites com login podem não funcionar',
+          'Para tarefas longas, o ChatGPT mostra o progresso em tempo real',
+          'Limite de ~30-40 usos/mês no plano Plus — use com estratégia',
+        ],
+      },
+      {
+        title: 'Agent Mode no Desktop',
+        subtitle: 'Automatize tarefas com Word, Excel e sistemas jurídicos',
+        level: 'intermediario',
+        icon: 'laptop',
+        analogy: {
+          text: 'Imagine dizer ao estagiário: **"abra o Word, crie uma petição com este modelo, preencha os dados do cliente e salve na pasta do processo"**. No Agent Mode Desktop, o ChatGPT faz exatamente isso — mexe nos programas do seu computador como um assistente presencial.',
+        },
+        content: `Com o ChatGPT Desktop instalado, o Agent Mode pode interagir diretamente com os programas do seu computador. Ele vê sua tela, clica, digita e executa ações como um assistente humano.
+
+**Exemplos práticos:**
+
+**1. Organização de Documentos**
+"Abra a pasta 'Processo 12345' no meu computador. Renomeie todos os PDFs com o padrão: NÚMERO_TIPO_DATA. Crie subpastas para Petições, Decisões e Documentos."
+
+**2. Criação de Documentos no Word**
+"Abra o Word. Crie uma petição inicial trabalhista usando o modelo do escritório. Preencha com os dados: Reclamante Maria Silva, Reclamada Empresa ABC Ltda, pedido de rescisão indireta."
+
+**3. Planilha de Controle no Excel**
+"Abra o Excel. Crie uma planilha de controle de prazos com: Processo, Prazo, Data Limite, Status. Formate com cores: vermelho para urgente, amarelo para atenção, verde para ok."
+
+**4. Interação com Sistemas Jurídicos**
+"Abra o PJe no navegador. Faça login. Consulte o andamento do processo nº 0001234-56.2025.5.03.0001. Me diga qual foi a última movimentação."
+
+**Atenção:** O Agent Mode no Desktop é mais poderoso, mas também requer mais cuidado. Sempre supervisione as primeiras execuções de uma tarefa nova.`,
+        prompt: `No meu computador, faça o seguinte:
+
+1. Abra a pasta "Clientes/Empresa ABC" no Explorador de Arquivos
+2. Leia todos os PDFs desta pasta
+3. Para cada documento, identifique o tipo (contrato, procuração, certidão, etc.)
+4. Renomeie cada arquivo com o padrão: TIPO_DESCRICAO_DATA.pdf
+5. Crie subpastas: Contratos, Certidões, Procurações, Outros
+6. Mova cada arquivo para a subpasta correta
+7. Abra o Excel e crie um índice com: Nome Original, Nome Novo, Tipo, Subpasta, Resumo
+
+Peça minha confirmação antes de renomear ou mover qualquer arquivo.`,
+        checklist: [
+          {
+            title: 'Primeira Automação no Desktop',
+            items: [
+              'Instalar o ChatGPT Desktop (chatgpt.com/download)',
+              'Conceder permissão para o Agent Mode acessar arquivos',
+              'Testar com uma tarefa simples: "liste os arquivos da minha Área de Trabalho"',
+              'Experimentar organização de uma pasta com poucos arquivos',
+              'Testar criação de documento no Word via Agent Mode',
+            ],
+          },
+        ],
+        tips: [
+          'Sempre peça confirmação antes de ações destrutivas (renomear, mover, deletar)',
+          'Comece com pastas de teste — não use pastas críticas na primeira vez',
+          'O Agent Mode no Desktop tem acesso ao que está na sua tela — não deixe informações sensíveis visíveis',
+          'Para tarefas repetitivas, salve o prompt e reutilize como uma Skill',
+        ],
+      },
+      {
+        title: 'Automações Avançadas com Agent Mode',
+        subtitle: 'Fluxos complexos que combinam navegador e computador',
+        level: 'avancado',
+        icon: 'target',
+        analogy: {
+          text: 'O nível máximo: combine pesquisa online + criação de documentos + organização local em **um único comando**. É como ter um assistente que pesquisa jurisprudência no tribunal, monta a petição no Word e salva na pasta do cliente — tudo automaticamente.',
+        },
+        content: `Combine o poder do Agent Mode no navegador e no Desktop para criar fluxos de trabalho completos que automatizam tarefas de ponta a ponta.
+
+**Fluxo 1 — Pesquisa e Petição Automatizada:**
+"Pesquise no STJ as 5 decisões mais recentes sobre [tema]. Depois, abra o Word e crie uma petição usando essas decisões como fundamentação. Salve na pasta do cliente."
+
+**Fluxo 2 — Due Diligence Express:**
+"Pesquise no Google: CNPJ, processos judiciais, notícias e reclamações sobre a empresa [nome]. Compile tudo em um relatório Word com classificação de riscos."
+
+**Fluxo 3 — Monitoramento + Alerta:**
+"Verifique as publicações do DJe de hoje para os processos da minha lista. Se encontrar alguma intimação com prazo, crie um alerta no Excel de controle de prazos."
+
+**Modos de trabalho prontos (copie e use):**`,
+        commandList: [
+          { command: 'Modo Pesquisador', description: '"Pesquise no [site/tribunal] sobre [tema]. Para cada resultado: título, data, resumo, link. Organize em tabela e identifique tendências."' },
+          { command: 'Modo Organizador', description: '"Na pasta [caminho], leia todos os documentos, identifique tipo e data, renomeie com padrão profissional e crie índice em Excel."' },
+          { command: 'Modo Redator', description: '"Pesquise jurisprudência sobre [tema], depois abra o Word e crie [peça jurídica] com fundamentação baseada nas decisões encontradas."' },
+          { command: 'Modo Monitor', description: '"Acesse [site] e verifique [informação]. Se encontrar algo relevante, compile em relatório e salve na pasta [caminho]."' },
+          { command: 'Modo Due Diligence', description: '"Pesquise informações públicas sobre [empresa/pessoa]: CNPJ, processos, notícias, reclamações. Compile relatório de riscos em Word."' },
+        ],
+        tips: [
+          'Fluxos complexos funcionam melhor quando divididos em etapas claras',
+          'Use o plano Pro para automações frequentes — o limite do Plus (30-40/mês) pode ser insuficiente',
+          'Salve seus fluxos favoritos como prompts reutilizáveis',
+          'O Agent Mode pode falhar em sites com CAPTCHA ou autenticação complexa',
+        ],
+      },
+    ],
+  },
+
+  // ═══════════════════════════════════════════════════════════
+  // SEÇÃO 5: SKILLS
+  // ═══════════════════════════════════════════════════════════
+  {
+    id: 'skills',
+    title: 'Skills',
+    description: 'Fluxos reutilizáveis que automatizam tarefas no ChatGPT',
+    icon: 'star',
+    cards: [
+      {
+        title: 'O que são Skills',
+        subtitle: 'Fluxos prontos que o ChatGPT executa para você',
+        level: 'iniciante',
+        icon: 'book-open',
+        analogy: {
+          text: 'Os **manuais de procedimento** do escritório. "Quando chegar um caso de dano moral, siga estes passos..." O estagiário novo não sabe nada, mas **quando lê o manual, segue o procedimento certo toda vez**.',
+        },
+        content: `Skills são **fluxos de trabalho reutilizáveis** que ensinam o ChatGPT a executar uma tarefa específica do jeito que você quer. Pense nelas como "receitas" — você cria uma vez e reutiliza para sempre.
+
+**Como funcionam na prática:**
+Você digita **/** no campo de mensagem do ChatGPT e aparece uma lista de Skills disponíveis. Selecione uma e o ChatGPT executa o fluxo completo automaticamente.
+
+**Exemplo simples:**
+Você criou uma Skill chamada "/revisao-contrato". Toda vez que receber um contrato para revisar, basta digitar / e selecionar a Skill. O ChatGPT vai analisar cláusula por cláusula, classificar riscos com cores e gerar um resumo executivo — sempre no mesmo padrão.
+
+**Por que usar Skills:**
+- Padroniza a qualidade do trabalho do escritório
+- Economiza tempo em tarefas repetitivas
+- Funciona como treinamento para novos membros da equipe
+- Pode ser compartilhada com colegas
+
+**Onde encontrar:**
+Acesse **chatgpt.com → menu lateral → Skills** ou simplesmente **digite / no chat**.`,
+        tips: [
+          'Skills são diferentes de GPTs: uma Skill é um fluxo específico, um GPT é um assistente completo',
+          'Você pode combinar várias Skills na mesma conversa',
+          'Skills funcionam no navegador, celular e no app Desktop',
+          'Comece usando Skills prontas antes de criar as suas',
+        ],
+      },
+      {
+        title: 'Skills Prontas para Advogados',
+        subtitle: 'Encontre e use Skills sem criar nada',
+        level: 'iniciante',
+        icon: 'search',
+        analogy: {
+          text: 'Antes de escrever seu próprio manual do zero, veja se alguém já escreveu um parecido. A biblioteca de Skills é como um **acervo de manuais prontos** — adapte o que já existe ao invés de começar do zero.',
+        },
+        content: `Existem Skills prontas disponíveis na biblioteca do ChatGPT. Você pode pesquisar, instalar e usar imediatamente.
+
+**Como encontrar Skills prontas:**
+
+**Passo 1:** Acesse chatgpt.com e abra uma conversa
+**Passo 2:** Digite **/** no campo de mensagem
+**Passo 3:** Navegue pela lista ou pesquise por palavra-chave
+**Passo 4:** Selecione a Skill desejada
+
+**Skills úteis para advogados:**
+- **/summarize** — Resume documentos longos em pontos-chave
+- **/translate** — Traduz contratos e documentos internacionais
+- **/analyze-data** — Analisa dados de planilhas e gera gráficos
+- **/write-email** — Redige e-mails profissionais no tom adequado
+- **/proofread** — Revisa gramática e clareza de textos
+
+**Como avaliar uma Skill:**
+Antes de usar em trabalho real, teste com um documento de exemplo. Verifique se o formato de saída atende às suas necessidades e se a qualidade é consistente.`,
+        steps: [
+          'Abra chatgpt.com e inicie uma conversa',
+          'Digite / no campo de mensagem para ver as Skills disponíveis',
+          'Pesquise por "contrato", "resumo" ou "análise"',
+          'Selecione uma Skill e teste com um documento de exemplo',
+          'Se gostar do resultado, use no dia a dia',
+        ],
+        tips: [
+          'A lista de Skills cresce constantemente — verifique novidades toda semana',
+          'Você pode favoritar Skills para acesso rápido',
+          'Skills da comunidade podem ser adaptadas — use como ponto de partida',
+        ],
+      },
+      {
+        title: 'Criando sua Primeira Skill',
+        subtitle: 'Passo a passo visual para criar uma Skill do zero',
+        level: 'intermediario',
+        icon: 'pen-tool',
+        analogy: {
+          text: 'Escrever uma Skill é como criar um **checklist para estagiário**: "Quando fizer revisão de contrato: 1) leia todas as cláusulas, 2) classifique por risco, 3) sugira alterações, 4) faça resumo executivo." O ChatGPT segue e acerta toda vez.',
+        },
+        content: `Criar uma Skill é simples — você descreve o que quer e o ChatGPT monta o fluxo para você. Não precisa programar nada.
+
+**Método 1 — Pelo Chat (mais fácil):**
+Peça diretamente: "Crie uma Skill para [descrição da tarefa]"
+O ChatGPT gera a Skill automaticamente. Você revisa e salva.
+
+**Método 2 — Pelo Editor Visual:**
+Acesse chatgpt.com → Skills → Criar Skill. Use o editor para definir nome, instruções e formato de saída.
+
+**Anatomia de uma boa Skill jurídica:**
+
+| Elemento | O que colocar | Exemplo |
+|----------|--------------|---------|
+| **Nome** | Verbo + objeto | "Revisão de Contrato" |
+| **Descrição** | O que faz em 1 frase | "Analisa contratos com classificação de risco por cores" |
+| **Instruções** | Passo a passo detalhado | "1) Leia cada cláusula. 2) Classifique: verde/amarelo/vermelho..." |
+| **Formato de saída** | Como o resultado deve ser | "Tabela de análise + resumo executivo" |
+| **Legislação** | Leis que deve considerar | "Código Civil, CDC, LGPD" |`,
+        prompt: `Crie uma Skill chamada "Revisão de Contrato Jurídico" com estas especificações:
+
+OBJETIVO: Analisar contratos e identificar riscos com classificação por cores.
+
+INSTRUÇÕES:
+1. Receba o contrato (texto colado ou arquivo)
+2. Identifique as partes, objeto e vigência
+3. Analise CADA cláusula com semáforo:
+   Verde = cláusula padrão, sem risco
+   Amarelo = atenção necessária, risco moderado
+   Vermelho = risco alto, requer alteração
+4. Para cada cláusula amarela/vermelha, sugira redação alternativa
+5. Gere um RESUMO EXECUTIVO: total de cláusulas, distribuição de riscos, top 3 pontos críticos
+6. Finalize com checklist de ações recomendadas
+
+FORMATO: Tabela de análise + resumo executivo + checklist
+LEGISLAÇÃO BASE: Código Civil, CDC quando aplicável, LGPD para dados pessoais`,
+        flowSteps: [
+          { title: 'Definir', description: 'Escolha a tarefa repetitiva que quer automatizar' },
+          { title: 'Criar', description: 'Peça ao ChatGPT: "Crie uma Skill para [tarefa]"' },
+          { title: 'Testar', description: 'Use a Skill com um documento real e verifique o resultado' },
+          { title: 'Refinar', description: 'Ajuste instruções com base nos resultados' },
+          { title: 'Usar', description: 'Digite / e selecione a Skill sempre que precisar' },
+        ],
+        tips: [
+          'Comece com a tarefa que você mais repete no escritório',
+          'Seja específico nas instruções: formato, tom, legislação, estrutura',
+          'Inclua exemplos de saída esperada para melhores resultados',
+          'Teste com 3-5 documentos diferentes antes de considerar a Skill pronta',
+        ],
+      },
+      {
+        title: 'Skills vs GPTs',
+        subtitle: 'Quando usar cada um e como combinar',
+        level: 'intermediario',
+        icon: 'git-compare',
+        analogy: {
+          text: 'GPTs são **escritórios especializados** — cada um tem sua porta e recepção. Skills são **procedimentos operacionais** que qualquer advogado pode seguir em qualquer sala. Um GPT é o especialista. Uma Skill é o manual que qualquer um executa.',
+        },
+        content: `Muita gente confunde Skills com GPTs. Aqui está a diferença clara:
+
+**GPTs (Assistentes Personalizados):**
+- São assistentes completos com personalidade e especialidade
+- Funcionam como um "ChatGPT temático" (ex: GPT Trabalhista)
+- Cada GPT tem seu próprio contexto isolado
+- Você abre um GPT específico para trabalhar com ele
+
+**Skills (Fluxos Reutilizáveis):**
+- São tarefas específicas com instruções claras
+- Funcionam dentro de qualquer conversa do ChatGPT
+- Podem ser combinadas: /triagem + /parecer na mesma conversa
+- Ativadas com / ou automaticamente pelo contexto
+
+**Tabela comparativa:**
+
+| Aspecto | Skills | GPTs |
+|---------|--------|------|
+| **Escopo** | Uma tarefa específica | Assistente completo |
+| **Ativação** | / no chat ou automática | Menu lateral |
+| **Combinação** | Várias na mesma conversa | Um por vez |
+| **Criação** | No chat ou editor visual | GPT Builder |
+| **Compartilhamento** | Link, workspace, busca | GPT Store ou link |
+
+**Quando usar cada um:**
+- Use **Skills** para tarefas pontuais e repetitivas (revisão, triagem, cálculo)
+- Use **GPTs** quando precisa de um assistente completo com contexto especializado
+- **Combine ambos:** use um GPT especialista + Skills de tarefas dentro dele`,
+        tips: [
+          'Converta GPTs que fazem uma coisa só em Skills — são mais práticas',
+          'Mantenha GPTs para assistentes complexos com múltiplas funções',
+          'Skills são mais portáteis: funcionam no navegador, celular, Desktop e API',
+          'Use GPTs como "modo de trabalho" e Skills como "ações específicas"',
+        ],
+      },
+      {
+        title: 'Skills Jurídicas Prontas para Copiar',
+        subtitle: 'Templates por área de atuação',
+        level: 'avancado',
+        icon: 'briefcase',
+        analogy: {
+          text: 'Manuais de procedimento **prontos para copiar e colar**. Cada área do direito tem o seu — basta adaptar com suas preferências e legislação.',
+        },
+        content: `Templates de Skills prontos para as principais áreas jurídicas. Copie, adapte e use.
+
+**Skill — Triagem de Petição:**
+"Receba a petição. Identifique: tipo de ação, competência, partes, pedidos, valor da causa, prazo para contestar. Gere checklist de documentos necessários e alerta de prazos."
+
+**Skill — Cálculo Trabalhista:**
+"Receba: data de admissão, data de demissão, salário, tipo de rescisão, férias vencidas. Calcule: saldo de salário, aviso prévio, férias + 1/3, 13º proporcional, FGTS + 40%, total da rescisão."
+
+**Skill — Parecer Rápido:**
+"Receba a pergunta jurídica. Estruture: I) Consulta, II) Fundamento Legal, III) Jurisprudência Aplicável, IV) Análise, V) Conclusão. Marque com [VERIFICAR] quando não tiver certeza de uma referência."
+
+**Skill — Análise LGPD:**
+"Analise o documento/processo quanto à conformidade com a LGPD. Identifique: dados pessoais tratados, base legal (art. 7º), medidas de segurança, necessidade de RIPD, riscos e recomendações."
+
+**Skill — Comunicação com Cliente:**
+"Receba a atualização processual. Reescreva em linguagem simples para enviar ao cliente. Inclua: o que aconteceu, o que significa, próximos passos, prazos. Sem juridiquês."`,
+        prompt: `Crie as seguintes Skills para meu uso como advogado:
+
+1. "/triagem-peticao" — Identifica tipo de ação, competência, partes, pedidos, valor da causa. Gera checklist documental e alerta de prazos.
+
+2. "/parecer-rapido" — Estrutura parecer: Consulta → Fundamento Legal → Jurisprudência → Análise → Conclusão. Marca [VERIFICAR] em referências incertas.
+
+3. "/comunicar-cliente" — Reescreve atualização processual em linguagem simples. Inclui: o que aconteceu, o que significa, próximos passos, prazos.
+
+Para cada Skill, defina instruções claras, formato de saída e legislação base aplicável.`,
+        tips: [
+          'Adapte a legislação para sua área específica de atuação',
+          'Combine Skills: /triagem-peticao → /parecer-rapido em sequência',
+          'Compartilhe Skills com a equipe para padronizar entregas',
+          'Mantenha as Skills atualizadas quando houver mudanças legislativas',
+        ],
+      },
+      {
+        title: 'Arquitetura de Skills para Escritório',
+        subtitle: 'Sistema organizado de Skills para equipes',
+        level: 'expert',
+        icon: 'database',
+        analogy: {
+          text: 'Um escritório organizado tem **normas em camadas**: política interna (vale para todos), manual por área (trabalhista, cível), procedimento por tarefa (petição, parecer). Skills seguem a mesma lógica — organize em camadas e toda a equipe trabalha no mesmo padrão.',
+        },
+        content: `Para escritórios com equipe, monte uma **arquitetura de Skills organizada** em camadas:
+
+**Camada 1 — Skills Base (toda a equipe):**
+Formatação padrão, estilo de redação, cabeçalho/rodapé do escritório. Todo mundo usa.
+
+**Camada 2 — Skills por Área:**
+Um conjunto para cada área de atuação (trabalhista, cível, tributário). Contém legislação específica e estilo de argumentação da área.
+
+**Camada 3 — Skills por Tarefa:**
+Petição inicial, contestação, recurso, parecer, contrato. Cada uma com estrutura e formato próprios.
+
+| Camada | Quem usa | Exemplo |
+|--------|----------|---------|
+| Base | Todos do escritório | /formato-padrao, /cabecalho |
+| Área | Advogados da área | /trabalhista-peticao, /civel-contestacao |
+| Tarefa | Quem executa | /revisao-contrato, /parecer-rapido |
+
+**Como compartilhar com a equipe:**
+- Envie por link direto para colegas
+- Use o workspace da equipe (planos Business/Enterprise)
+- Crie um documento interno listando todas as Skills do escritório
+
+**Resultado:** Toda a equipe produz no mesmo padrão de qualidade, estagiários novos são produtivos desde o primeiro dia e o sócio sabe que qualquer entrega vai seguir o padrão do escritório.`,
+        tips: [
+          'Comece pela Camada 1 (base) e vá adicionando gradualmente',
+          'Evite contradições entre Skills — mantenha instruções consistentes',
+          'Faça uma reunião mensal para revisar e atualizar Skills da equipe',
+          'Documente todas as Skills em um "Catálogo de Skills do Escritório"',
+        ],
+        checklist: [
+          {
+            title: 'Implementação de Skills no Escritório',
+            items: [
+              'Definir a Skill base com formato e estilo padrão do escritório',
+              'Criar pelo menos 1 Skill por área de atuação',
+              'Criar Skills para as 3 tarefas mais repetitivas',
+              'Compartilhar com toda a equipe e treinar o uso',
+              'Agendar revisão mensal das Skills',
+            ],
+          },
+        ],
+      },
+    ],
+  },
+
+  // ═══════════════════════════════════════════════════════════
+  // SEÇÃO 6: CANVAS & PROJECTS
   // ═══════════════════════════════════════════════════════════
   {
     id: 'canvas',
@@ -2735,11 +3280,11 @@ Apresente cada documento separadamente no Canvas para que eu possa baixar indivi
   },
 
   // ═══════════════════════════════════════════════════════════
-  // SEÇÃO 5: CUSTOM INSTRUCTIONS & PERSONAS
+  // SEÇÃO 7: CUSTOM INSTRUCTIONS
   // ═══════════════════════════════════════════════════════════
   {
     id: 'custom-instructions',
-    title: 'Custom Instructions & Personas',
+    title: 'Custom Instructions',
     description: 'Instruções personalizadas que especializam o ChatGPT',
     icon: 'star',
     cards: [
@@ -3636,7 +4181,7 @@ REGRA: Seja criticamente honesto. Se o caso é fraco, diga. Se há risco alto de
   },
 
   // ═══════════════════════════════════════════════════════════
-  // SEÇÃO 6: GPTs (ASSISTENTES PERSONALIZADOS)
+  // SEÇÃO 8: GPTs (ASSISTENTES PERSONALIZADOS)
   // ═══════════════════════════════════════════════════════════
   {
     id: 'gpts',
@@ -3774,89 +4319,6 @@ Ambos são especialmente úteis para:
 - Recuperação judicial (análise de créditos)
 - Jurimetria e análise de probabilidade
 - Compliance financeiro`,
-      },
-      {
-        title: 'Skills: Fluxos Reutilizáveis no ChatGPT',
-        subtitle: 'Automatize tarefas repetitivas com fluxos prontos',
-        level: 'intermediario',
-        icon: 'zap',
-        analogy: {
-          tag: 'Novidade Março 2026',
-          text: 'Se os GPTs são **escritórios especializados**, as Skills são **procedimentos operacionais padronizados (POPs)**. Um GPT é um advogado especialista. Uma Skill é o **checklist que qualquer advogado segue** para executar uma tarefa com consistência — revisão de contrato, triagem de petição, análise de risco. Você cria uma vez e reutiliza para sempre.',
-        },
-        content: `**Skills** são fluxos de trabalho reutilizáveis que ensinam o ChatGPT a executar uma tarefa específica de forma consistente. Diferente dos GPTs, as Skills são **modulares** — você pode combinar várias numa mesma conversa.
-
-**O que uma Skill pode conter:**
-- **Instruções:** Passo a passo de como executar a tarefa
-- **Exemplos:** Modelos de entrada e saída para calibrar a qualidade
-- **Código:** Scripts e automações embutidos
-- **Contexto:** Documentos e referências que a Skill consulta
-
-**Skills vs GPTs — quando usar cada um:**
-
-| Aspecto | **Skills** | **GPTs** |
-|---------|-----------|---------|
-| **Escopo** | Uma tarefa específica | Assistente completo com múltiplas funções |
-| **Combinação** | Várias Skills na mesma conversa | Um GPT por vez |
-| **Criação** | No chat ou no editor visual | No GPT Builder |
-| **Ativação** | Digite / no chat ou automática | Menu lateral ou link direto |
-| **Compartilhamento** | Link, workspace, ou busca | GPT Store ou link |
-| **Portabilidade** | Web, mobile, API, apps terceiros | Web e mobile |
-
-**Exemplos práticos para advogados:**
-- **/revisao-contrato** — Analisa cláusulas, classifica riscos (verde/amarelo/vermelho), sugere alterações
-- **/triagem-peticao** — Identifica tipo de ação, prazo, competência e gera checklist documental
-- **/parecer-rapido** — Estrutura parecer com fundamentação legal a partir de uma pergunta
-- **/calculo-trabalhista** — Calcula verbas rescisórias com correção monetária
-
-**Onde encontrar e gerenciar Skills:**
-Acesse **chatgpt.com → menu lateral → Skills** ou digite **/** no campo de mensagem para ver as Skills disponíveis.`,
-        flowSteps: [
-          { title: 'Criar a Skill', description: 'No chat: peça "Crie uma Skill para [tarefa]". Ou acesse o editor visual na página de Skills.' },
-          { title: 'Configurar instruções', description: 'Defina o passo a passo, exemplos de entrada/saída e documentos de referência.' },
-          { title: 'Testar na conversa', description: 'Digite / e selecione a Skill, ou o ChatGPT a identifica automaticamente pelo contexto.' },
-          { title: 'Compartilhar', description: 'Envie por link, compartilhe no workspace da equipe ou publique para a comunidade.' },
-          { title: 'Combinar Skills', description: 'Use várias Skills na mesma conversa: ex. /triagem-peticao + /parecer-rapido em sequência.' },
-        ],
-        prompt: `Crie uma Skill chamada "Revisão de Contrato Jurídico" com as seguintes especificações:
-
-OBJETIVO: Analisar contratos e identificar riscos jurídicos com classificação por cores.
-
-INSTRUÇÕES:
-1. Receba o contrato (texto colado ou arquivo anexo)
-2. Identifique as partes, objeto e vigência
-3. Analise CADA cláusula com semáforo:
-   🟢 Verde = cláusula padrão, sem risco
-   🟡 Amarelo = atenção necessária, risco moderado
-   🔴 Vermelho = risco alto, requer alteração
-4. Para cada cláusula amarela/vermelha, sugira redação alternativa
-5. Gere um RESUMO EXECUTIVO com: total de cláusulas, distribuição de riscos, top 3 pontos críticos
-6. Finalize com checklist de ações recomendadas
-
-FORMATO DE SAÍDA: Tabela de análise + resumo executivo + checklist.
-LEGISLAÇÃO BASE: Código Civil brasileiro, CDC quando aplicável, LGPD para cláusulas de dados.`,
-        tips: [
-          'Skills são carregadas sob demanda — não consomem tokens quando não estão ativas',
-          'Converta seus GPTs favoritos em Skills com um clique (opção disponível no GPT Builder)',
-          'Combine Skills: "/triagem-peticao" para classificar e depois "/parecer-rapido" para fundamentar',
-          'Compartilhe Skills com sua equipe — padronize a qualidade das entregas do escritório',
-          'Skills funcionam em web, mobile, API e apps de terceiros — verdadeiramente portáteis',
-        ],
-        checklist: [
-          {
-            title: 'Minha Primeira Skill Jurídica',
-            items: [
-              'Abrir chatgpt.com e ir em Skills no menu lateral',
-              'Criar uma Skill de revisão de contrato com o prompt acima',
-              'Testar com um contrato real (ou modelo)',
-              'Compartilhar com um colega do escritório',
-              'Criar uma segunda Skill para outra tarefa repetitiva',
-            ],
-          },
-        ],
-        links: [
-          { label: 'Página de Skills no ChatGPT', url: 'https://chatgpt.com/skills' },
-        ],
       },
       {
         title: 'Criando GPTs Personalizados',
@@ -4422,11 +4884,11 @@ Não crie todos de uma vez. Comece pelo GPT que resolve o maior gargalo do escri
   },
 
   // ═══════════════════════════════════════════════════════════
-  // SEÇÃO 7: ACTIONS & INTEGRAÇÕES
+  // SEÇÃO 9: INTEGRAÇÕES
   // ═══════════════════════════════════════════════════════════
   {
     id: 'actions',
-    title: 'Actions & Integrações',
+    title: 'Integrações',
     description: 'Conecte o ChatGPT às suas ferramentas externas',
     icon: 'link',
     cards: [
@@ -4578,11 +5040,11 @@ Para cada fluxo, documente no Custom Instructions do Projeto: quais conectores u
   },
 
   // ═══════════════════════════════════════════════════════════
-  // SEÇÃO 8: EXTENSÕES & FERRAMENTAS
+  // SEÇÃO 10: EXTENSÕES
   // ═══════════════════════════════════════════════════════════
   {
     id: 'extensoes',
-    title: 'Extensões & Ferramentas',
+    title: 'Extensões',
     description: 'Navegação web, extensões e ferramentas complementares',
     icon: 'chrome',
     cards: [
@@ -5017,7 +5479,7 @@ Organize num relatório de due diligence com todos os resultados.`,
   },
 
   // ═══════════════════════════════════════════════════════════
-  // SEÇÃO 9: OTIMIZAÇÃO DE USO
+  // SEÇÃO 11: OTIMIZAÇÃO DE USO
   // ═══════════════════════════════════════════════════════════
   {
     id: 'otimizacao',
@@ -5575,65 +6037,14 @@ Substitua: nomes reais → "Parte Autora / Parte Ré", CPF → "XXX.XXX.XXX-XX",
   },
 
   // ═══════════════════════════════════════════════════════════
-  // SEÇÃO 10: AVANÇADO (Code Interpreter e MCP)
+  // SEÇÃO 12: CODE INTERPRETER, CODEX E MCP
   // ═══════════════════════════════════════════════════════════
   {
     id: 'avancado',
-    title: 'Avançado & Roadmap',
-    description: 'Ferramentas avançadas e o caminho do advogado de IA',
+    title: 'Code Interpreter, Codex e MCP',
+    description: 'Ferramentas avançadas para automação e integração técnica',
     icon: 'wrench',
     cards: [
-      {
-        title: 'Novidades Março 2026',
-        subtitle: 'GPT-5.3 Instant, GPT-5.4, Skills e mais',
-        level: 'iniciante',
-        icon: 'sparkles',
-        analogy: {
-          tag: 'Atualização Importante',
-          text: 'O ChatGPT passou por uma **renovação completa** em março de 2026. Novos modelos, novo recurso de Skills, upload expandido e tom mais natural. É como se o escritório tivesse feito uma **reforma geral** — mesma estrutura, mas tudo mais eficiente.',
-        },
-        content: `Resumo das principais mudanças de março de 2026:
-
-**Novos Modelos:**
-
-| Modelo | O que é | Destaques |
-|--------|---------|-----------|
-| **GPT-5.3 Instant** | Novo modelo padrão (substitui GPT-5.2) | Inventa 26,8% menos informações, tom mais natural, recusa menos pedidos legítimos |
-| **GPT-5.4 Thinking** | Novo modelo de raciocínio (substitui GPT-5.2 Thinking) | Pensa antes de responder com plano ajustável, pesquisa profunda melhorada, lê até ~3.000 páginas |
-| **GPT-5.4 Pro** | Modelo máximo (Pro e Enterprise) | Pode operar apps no seu computador, lê ~3.000 páginas, encontra ferramentas sozinho |
-
-**Skills (Novo recurso):**
-Fluxos de trabalho reutilizáveis que você cria uma vez e reutiliza sempre. Combine várias Skills numa conversa, compartilhe com a equipe, ative com barra /. Veja o card completo na seção GPTs.
-
-**Outras melhorias:**
-- **Upload expandido:** Agora aceita até **20 arquivos** por mensagem (antes era 10)
-- **Tom mais natural:** GPT-5.3 Instant tem respostas menos "robotizadas" e menos paternalistas
-- **Menos recusas:** Prompts legítimos são recusados com menos frequência
-- **Projects aprimorado:** Knowledge base viva — cole links do Slack, Drive, salve respostas do ChatGPT
-- **Windows Codex:** App desktop para programadores rodarem múltiplos assistentes de código
-- **Operação de apps:** GPT-5.4 Pro pode navegar e operar aplicativos no seu computador por você`,
-        checklist: [
-          {
-            title: 'O que fazer agora',
-            items: [
-              'Testar o GPT-5.3 Instant — note o tom mais natural nas respostas',
-              'Experimentar GPT-5.4 Thinking para uma análise jurídica complexa',
-              'Criar sua primeira Skill (ex: revisão de contrato)',
-              'Testar upload de múltiplos arquivos (até 20) numa única mensagem',
-              'Atualizar suas Custom Instructions para mencionar os novos modelos',
-            ],
-          },
-        ],
-        tips: [
-          'O GPT-5.3 Instant já está ativo por padrão — você não precisa fazer nada',
-          'O GPT-5.4 Thinking substitui o GPT-5.2 Thinking — selecione no menu de modelos',
-          'Skills são o futuro dos workflows — comece a migrar seus GPTs repetitivos para Skills',
-          'Upload de 20 arquivos é perfeito para análise de processos com muitas peças',
-        ],
-        links: [
-          { label: 'Release Notes Oficiais', url: 'https://help.openai.com/en/articles/6825453-chatgpt-release-notes' },
-        ],
-      },
       {
         title: 'O que é o Code Interpreter?',
         subtitle: 'A versão "engenheiro" do ChatGPT',
